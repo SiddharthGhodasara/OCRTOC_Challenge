@@ -1,0 +1,26 @@
+<annotation>
+  <folder>input</folder>
+  <filename>457.jpg</filename>
+  <path>/home/gaurav/YOLO/OpenLabeling/main/input/457.jpg</path>
+  <source>
+    <database>Unknown</database>
+  </source>
+  <size>
+    <width>1024</width>
+    <height>1024</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>power_drill</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>521</xmin>
+      <ymin>403</ymin>
+      <xmax>629</xmax>
+      <ymax>493</ymax>
+    </bndbox>
+  </object>
+</annotation>

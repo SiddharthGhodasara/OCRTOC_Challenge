@@ -1,0 +1,14 @@
+<annotation>
+  <folder>input</folder>
+  <filename>frame2181.jpg</filename>
+  <path>/home/gaurav/YOLO/OpenLabeling/main/input/frame2181.jpg</path>
+  <source>
+    <database>Unknown</database>
+  </source>
+  <size>
+    <width>1280</width>
+    <height>720</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+</annotation>
