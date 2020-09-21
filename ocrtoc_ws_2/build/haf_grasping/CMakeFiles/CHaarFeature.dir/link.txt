@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -O3 -DNDEBUG   -shared -Wl,-soname,libCHaarFeature.so -o /home/kaushik/ocrtoc_ws/devel/lib/libCHaarFeature.so CMakeFiles/CHaarFeature.dir/src/CHaarFeature.cpp.o 

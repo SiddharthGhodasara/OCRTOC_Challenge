@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: /home/kaushik/ocrtoc_ws/src
+# Build directory: /home/kaushik/ocrtoc_ws/build
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+subdirs("gtest")
+subdirs("description/robotiq_2f_85_gripper_visualization")
+subdirs("description/robotiq_85_gripper-master/robotiq_85_driver")
+subdirs("description/robotiq_85_gripper-master/robotiq_85_simulation/robotiq_85_gazebo")
+subdirs("description/robotiq_85_gripper-master/robotiq_85_gripper")
+subdirs("description/robotiq_85_gripper-master/robotiq_85_simulation/robotiq_85_simulation")
+subdirs("description/realsense2_description")
+subdirs("sapien_simulator")
+subdirs("description/ur_e_description")
+subdirs("gazebo_simulator/gazebo_simulator")
+subdirs("description/robotiq_85_gripper-master/robotiq_85_bringup")
+subdirs("description/robotiq_85_gripper-master/robotiq_85_description")
+subdirs("description/robotiq_85_gripper-master/robotiq_85_msgs")
+subdirs("description/robotiq_85_gripper-master/si_utils")
+subdirs("ocrtoc_task")
+subdirs("general-message-pkgs/path_navigation_msgs")
+subdirs("general-message-pkgs/object_msgs")
+subdirs("gazebo-pkgs/gazebo_test_tools")
+subdirs("gazebo-pkgs/gazebo_version_helpers")
+subdirs("gazebo-pkgs/gazebo_grasp_plugin")
+subdirs("gazebo-pkgs/gazebo_world_plugin_loader")
+subdirs("general-message-pkgs/object_msgs_tools")
+subdirs("gazebo-pkgs/gazebo_state_plugins")
+subdirs("haf_grasping")
+subdirs("ocrtoc_solution")
+subdirs("gazebo_simulator/realsense_plugin")
+subdirs("gazebo_simulator/roboticsgroup_gazebo_plugins")
+subdirs("ur5e_arm_controller_ikfast_plugin")
+subdirs("description/robotiq_85_gripper-master/robotiq_85_moveit_config")
+subdirs("ur5e_moveit_config/ur5e_moveit_config")

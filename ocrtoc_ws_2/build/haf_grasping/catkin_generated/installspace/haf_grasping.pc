@@ -1,0 +1,8 @@
+prefix=/home/kaushik/ocrtoc_ws/install
+
+Name: haf_grasping
+Description: Description of haf_grasping
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: actionlib actionlib_msgs std_msgs geometry_msgs message_runtime pcl_conversions pcl_ros sensor_msgs visualization_msgs

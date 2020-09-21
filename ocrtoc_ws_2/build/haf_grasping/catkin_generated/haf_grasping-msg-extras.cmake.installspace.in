@@ -1,0 +1,2 @@
+set(haf_grasping_MESSAGE_FILES "msg/GraspInput.msg;msg/GraspOutput.msg;msg/CalcGraspPointsServerAction.msg;msg/CalcGraspPointsServerActionGoal.msg;msg/CalcGraspPointsServerActionResult.msg;msg/CalcGraspPointsServerActionFeedback.msg;msg/CalcGraspPointsServerGoal.msg;msg/CalcGraspPointsServerResult.msg;msg/CalcGraspPointsServerFeedback.msg")
+set(haf_grasping_SERVICE_FILES "srv/GraspSearchCenter.srv;srv/GraspSearchRectangleSize.srv;srv/GraspCalculationTimeMax.srv;srv/GraspApproachVector.srv;srv/ShowOnlyBestGrasp.srv;srv/GraspPreGripperOpeningWidth.srv")
