@@ -6,7 +6,7 @@ import rospy
 import ocrtoc_task.msg
 from control_msgs.msg import GripperCommandActionGoal
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
-
+import math
 #Our Imported Libraries
 import tf
 import sys
@@ -121,13 +121,13 @@ class CommitSolution(object):
 			#Replacing the pervoius object with current object in goal list
 			goal.object_list[i], goal.object_list[idx] = goal.object_list[idx],goal.object_list[i]
 			goal.scale_list[i], goal.scale_list[idx] = goal.scale_list[idx], goal.scale_list[i]
-			goal.pose_list[i].position.x , goal.pose_list[idx].position.x = goal.pose_list[idx].position.x , goal.pose_list[i].position.x 
+			goal.pose_list[i].position.x , goal.pose_list[idx].position.x = goal.pose_list[idx].position.x , goal.pose_list[i].position.x
 			goal.pose_list[i].position.y, goal.pose_list[idx].position.y = goal.pose_list[idx].position.y, goal.pose_list[i].position.y
 			goal.pose_list[i].position.z, goal.pose_list[idx].position.z = goal.pose_list[idx].position.z, goal.pose_list[i].position.z
 		return goal
+
 	#@with_goto
 	def execute_callback(self, goal):
-
 		#Defining the use of global variables
 		global robot
 		global scene
@@ -178,7 +178,7 @@ class CommitSolution(object):
 			#Assiging Linear Coordinates
 			grasp_pose.pose.position.x = position_x
 			grasp_pose.pose.position.y = position_y
-			grasp_pose.pose.position.z = position_z + 0.1
+			grasp_pose.pose.position.z = position_z + 0.05
 			#Converting degrees to radians
 			r_rad = (r*3.14159265358979323846)/180
 			p_rad = (p*3.14159265358979323846)/180
@@ -210,7 +210,7 @@ class CommitSolution(object):
 			#Going down to pick the object
 			waypoints = []
 			wpose = group.get_current_pose().pose
-			wpose.position.z -= scale * 0.1
+			wpose.position.z -= scale * 0.055
 			waypoints.append(copy.deepcopy(wpose))
 			(cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 			group.execute(cartesian_plan, wait=True)
@@ -230,7 +230,7 @@ class CommitSolution(object):
 					gripper_cmd.goal.command.position = cmd
 					gripper_cmd.goal.command.max_effort = 0.01
 					gripper_cmd_pub.publish(gripper_cmd)
-					cmd -= 0.0005
+					cmd -= 0.00018
 					rate.sleep()
 				#Re do the task if the lower limit is reached
 				else:
@@ -278,11 +278,11 @@ class CommitSolution(object):
 
 			#Getting the Quaternion coordinates from Euler
 			q = quaternion_from_euler(r,p,y)
-
-
+			print("Printing roll in degrees")
+			print(math.degrees(r))
 			grasp_pose.pose.position.x = goal.pose_list[i].position.x# + diff_x
 			grasp_pose.pose.position.y = goal.pose_list[i].position.y# + diff_y
-			grasp_pose.pose.position.z = goal.pose_list[i].position.z + 0.1
+			grasp_pose.pose.position.z = position_z + 0.1
 			grasp_pose.pose.orientation.x = q[0]#quat[0] #grasps_plots.orientation.x
 			grasp_pose.pose.orientation.y = q[1]#quat[1] #grasps_plots.orientation.y
 			grasp_pose.pose.orientation.z = q[2]#quat[2] #grasps_plots.orientation.z
@@ -295,7 +295,7 @@ class CommitSolution(object):
 			group.go(wait=True)
 			rospy.sleep(1)
 
-			#Going down to pick the object
+			#Going down to place the object
 			waypoints = []
 			wpose = group.get_current_pose().pose
 			wpose.position.z -= goal.pose_list[i].position.z * 2
@@ -311,7 +311,7 @@ class CommitSolution(object):
 			#Moving up from the placing location
 			waypoints = []
 			wpose = group.get_current_pose().pose
-			wpose.position.z += goal.pose_list[i].position.z * 2
+			wpose.position.z += position_z + 0.1
 			waypoints.append(copy.deepcopy(wpose))
 			(cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 			group.execute(cartesian_plan, wait=True)
@@ -322,14 +322,9 @@ class CommitSolution(object):
 			plan3 = group_1.go(wait=True)
 
 			#Going back to task pose
-			group.set_named_target("task_pose")
+			group.set_named_target("pose1")
 			plan3 = group.go(wait=True)
 			rospy.sleep(10)
-
-			print("YAAAAAAAAHHHHHHHHHH!!!!!!")
-
-		print("Complete Done")
-
 
 if __name__ == '__main__':
 	rospy.init_node('commit_solution')
@@ -364,7 +359,7 @@ if __name__ == '__main__':
 	cb.registerCallback(callback)
 
 	#Going the task pose
-	group.set_named_target("task_pose")
+	group.set_named_target("pose1")
 	plan = group.go(wait=True)
 
 	commit_solution = CommitSolution('commit_solution')
