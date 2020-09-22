@@ -1,6 +1,6 @@
 # OCRTOC_Challenge
 
-##To Do: 
+## To Do: 
 
 1. Test on muliple scenes and find common modes of failure 
 2. Optimize grasping for elliptical box and pudding box 
@@ -55,12 +55,12 @@ For later:
 
 
 
-##Assumptions: 
+## Assumptions: 
 
 1. Robustness of the object detector, grasp detector (BIG PROBLEM), accuracy of the target world files 
 
 
-##Failure Log: 
+## Failure Log: 
 
 1. Elliptical box grasp failure: Orientation given by haf grasping was good 
 2. Jenga box graped towards the end, causing problems \
