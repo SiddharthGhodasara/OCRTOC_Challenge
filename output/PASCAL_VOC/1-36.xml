@@ -59,4 +59,16 @@
       <ymax>332</ymax>
     </bndbox>
   </object>
+  <object>
+    <name>tuna_fish_can</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1212</xmin>
+      <ymin>597</ymin>
+      <xmax>1272</xmax>
+      <ymax>689</ymax>
+    </bndbox>
+  </object>
 </annotation>
