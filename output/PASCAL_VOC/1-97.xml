@@ -59,4 +59,16 @@
       <ymax>229</ymax>
     </bndbox>
   </object>
+  <object>
+    <name>cracker_box</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1171</xmin>
+      <ymin>588</ymin>
+      <xmax>1278</xmax>
+      <ymax>676</ymax>
+    </bndbox>
+  </object>
 </annotation>

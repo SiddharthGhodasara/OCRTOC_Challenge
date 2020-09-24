@@ -71,4 +71,16 @@
       <ymax>517</ymax>
     </bndbox>
   </object>
+  <object>
+    <name>gelatin_box</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>921</xmin>
+      <ymin>527</ymin>
+      <xmax>1113</xmax>
+      <ymax>694</ymax>
+    </bndbox>
+  </object>
 </annotation>

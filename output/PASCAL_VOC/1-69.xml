@@ -71,4 +71,16 @@
       <ymax>675</ymax>
     </bndbox>
   </object>
+  <object>
+    <name>potted_meat_can</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>933</xmin>
+      <ymin>65</ymin>
+      <xmax>1088</xmax>
+      <ymax>202</ymax>
+    </bndbox>
+  </object>
 </annotation>

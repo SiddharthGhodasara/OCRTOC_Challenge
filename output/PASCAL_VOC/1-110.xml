@@ -11,4 +11,28 @@
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
+  <object>
+    <name>wood_block</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1084</xmin>
+      <ymin>477</ymin>
+      <xmax>1276</xmax>
+      <ymax>698</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>cracker_box</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1154</xmin>
+      <ymin>458</ymin>
+      <xmax>1278</xmax>
+      <ymax>557</ymax>
+    </bndbox>
+  </object>
 </annotation>
