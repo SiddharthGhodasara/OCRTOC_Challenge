@@ -1,11 +1,11 @@
 file(REMOVE_RECURSE
-  "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/msg/_Object.py"
-  "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/msg/_ObjectPose.py"
-  "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/msg/__init__.py"
-  "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/srv/_ObjectInfo.py"
-  "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/srv/_RegisterObject.py"
-  "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/srv/__init__.py"
   "CMakeFiles/object_msgs_generate_messages_py"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/msg/_ObjectPose.py"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/msg/_Object.py"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/srv/_ObjectInfo.py"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/srv/_RegisterObject.py"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/msg/__init__.py"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs/srv/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

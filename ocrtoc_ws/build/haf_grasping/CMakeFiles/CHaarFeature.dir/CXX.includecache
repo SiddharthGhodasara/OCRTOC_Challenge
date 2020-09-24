@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/kaushik/ocrtoc_ws/src/haf_grasping/include/CHaarFeature.h
+/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping/include/CHaarFeature.h
 vector
 -
 opencv2/opencv.hpp
 -
 
-/home/kaushik/ocrtoc_ws/src/haf_grasping/src/CHaarFeature.cpp
+/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping/src/CHaarFeature.cpp
 iostream
 -
 CHaarFeature.h
-/home/kaushik/ocrtoc_ws/src/haf_grasping/src/CHaarFeature.h
+/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping/src/CHaarFeature.h
 vector
 -
 opencv/cv.h

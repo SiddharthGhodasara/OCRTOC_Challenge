@@ -1,8 +1,8 @@
-# Install script for directory: /home/kaushik/ocrtoc_ws/src/description/ur_e_description
+# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/ur_e_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/description/ur_e_description/catkin_generated/installspace/ur_e_description.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/ur_e_description/catkin_generated/installspace/ur_e_description.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur_e_description/cmake" TYPE FILE FILES
-    "/home/kaushik/ocrtoc_ws/build/description/ur_e_description/catkin_generated/installspace/ur_e_descriptionConfig.cmake"
-    "/home/kaushik/ocrtoc_ws/build/description/ur_e_description/catkin_generated/installspace/ur_e_descriptionConfig-version.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/ur_e_description/catkin_generated/installspace/ur_e_descriptionConfig.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/ur_e_description/catkin_generated/installspace/ur_e_descriptionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur_e_description" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/description/ur_e_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur_e_description" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/ur_e_description/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur_e_description" TYPE DIRECTORY FILES
-    "/home/kaushik/ocrtoc_ws/src/description/ur_e_description/cfg"
-    "/home/kaushik/ocrtoc_ws/src/description/ur_e_description/meshes"
-    "/home/kaushik/ocrtoc_ws/src/description/ur_e_description/urdf"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/ur_e_description/cfg"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/ur_e_description/meshes"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/ur_e_description/urdf"
     )
 endif()
 

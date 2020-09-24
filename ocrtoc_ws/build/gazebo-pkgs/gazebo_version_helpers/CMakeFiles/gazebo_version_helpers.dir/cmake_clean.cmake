@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/kaushik/ocrtoc_ws/devel/lib/libgazebo_version_helpers.pdb"
-  "/home/kaushik/ocrtoc_ws/devel/lib/libgazebo_version_helpers.so"
   "CMakeFiles/gazebo_version_helpers.dir/src/GazeboVersionHelpers.cpp.o"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libgazebo_version_helpers.pdb"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libgazebo_version_helpers.so"
 )
 
 # Per-language clean rules from dependency scanning.

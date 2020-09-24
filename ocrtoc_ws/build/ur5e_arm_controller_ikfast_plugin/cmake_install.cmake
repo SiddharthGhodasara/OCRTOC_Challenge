@@ -1,8 +1,8 @@
-# Install script for directory: /home/kaushik/ocrtoc_ws/src/ur5e_arm_controller_ikfast_plugin
+# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/ur5e_arm_controller_ikfast_plugin
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,18 +38,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/ur5e_arm_controller_ikfast_plugin/catkin_generated/installspace/ur5e_arm_controller_ikfast_plugin.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/ur5e_arm_controller_ikfast_plugin/catkin_generated/installspace/ur5e_arm_controller_ikfast_plugin.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur5e_arm_controller_ikfast_plugin/cmake" TYPE FILE FILES
-    "/home/kaushik/ocrtoc_ws/build/ur5e_arm_controller_ikfast_plugin/catkin_generated/installspace/ur5e_arm_controller_ikfast_pluginConfig.cmake"
-    "/home/kaushik/ocrtoc_ws/build/ur5e_arm_controller_ikfast_plugin/catkin_generated/installspace/ur5e_arm_controller_ikfast_pluginConfig-version.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/ur5e_arm_controller_ikfast_plugin/catkin_generated/installspace/ur5e_arm_controller_ikfast_pluginConfig.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/ur5e_arm_controller_ikfast_plugin/catkin_generated/installspace/ur5e_arm_controller_ikfast_pluginConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur5e_arm_controller_ikfast_plugin" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/ur5e_arm_controller_ikfast_plugin/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur5e_arm_controller_ikfast_plugin" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/ur5e_arm_controller_ikfast_plugin/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,12 +59,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libur5e_arm_controller_moveit_ikfast_plugin.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/kaushik/ocrtoc_ws/devel/lib/libur5e_arm_controller_moveit_ikfast_plugin.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libur5e_arm_controller_moveit_ikfast_plugin.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libur5e_arm_controller_moveit_ikfast_plugin.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libur5e_arm_controller_moveit_ikfast_plugin.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libur5e_arm_controller_moveit_ikfast_plugin.so"
-         OLD_RPATH "/home/kaushik/catkin_ws/devel/lib:/opt/ros/melodic/lib:"
+         OLD_RPATH "/opt/ros/melodic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libur5e_arm_controller_moveit_ikfast_plugin.so")
@@ -73,9 +73,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur5e_arm_controller_ikfast_plugin" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/ur5e_arm_controller_ikfast_plugin/ur5e_arm_controller_moveit_ikfast_plugin_description.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ur5e_arm_controller_ikfast_plugin" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/ur5e_arm_controller_ikfast_plugin/ur5e_arm_controller_moveit_ikfast_plugin_description.xml")
 endif()
 

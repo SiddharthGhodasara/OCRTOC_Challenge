@@ -1,4 +1,4 @@
-prefix=/home/kaushik/ocrtoc_ws/install
+prefix=/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install
 
 Name: roboticsgroup_gazebo_plugins
 Description: Description of roboticsgroup_gazebo_plugins

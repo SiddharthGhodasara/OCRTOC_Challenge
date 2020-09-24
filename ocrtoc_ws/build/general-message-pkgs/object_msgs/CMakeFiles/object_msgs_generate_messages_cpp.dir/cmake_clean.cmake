@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/kaushik/ocrtoc_ws/devel/include/object_msgs/Object.h"
-  "/home/kaushik/ocrtoc_ws/devel/include/object_msgs/ObjectInfo.h"
-  "/home/kaushik/ocrtoc_ws/devel/include/object_msgs/ObjectPose.h"
-  "/home/kaushik/ocrtoc_ws/devel/include/object_msgs/RegisterObject.h"
   "CMakeFiles/object_msgs_generate_messages_cpp"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include/object_msgs/ObjectPose.h"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include/object_msgs/Object.h"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include/object_msgs/ObjectInfo.h"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include/object_msgs/RegisterObject.h"
 )
 
 # Per-language clean rules from dependency scanning.

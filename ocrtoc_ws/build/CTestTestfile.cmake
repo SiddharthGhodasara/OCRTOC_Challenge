@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/kaushik/ocrtoc_ws/src
-# Build directory: /home/kaushik/ocrtoc_ws/build
+# Source directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src
+# Build directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
@@ -31,6 +31,6 @@ subdirs("haf_grasping")
 subdirs("ocrtoc_solution")
 subdirs("gazebo_simulator/realsense_plugin")
 subdirs("gazebo_simulator/roboticsgroup_gazebo_plugins")
-subdirs("ur5e_arm_controller_ikfast_plugin")
 subdirs("description/robotiq_85_gripper-master/robotiq_85_moveit_config")
-subdirs("ur5e_moveit_config/ur5e_moveit_config")
+subdirs("ur5e_arm_controller_ikfast_plugin")
+subdirs("ur5e_moveit_config")

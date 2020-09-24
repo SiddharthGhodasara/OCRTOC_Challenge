@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/kaushik/ocrtoc_ws/devel/share/roseus/ros/gazebo_test_tools/manifest.l"
-  "/home/kaushik/ocrtoc_ws/devel/share/roseus/ros/gazebo_test_tools/srv/RecognizeGazeboObject.l"
   "CMakeFiles/gazebo_test_tools_generate_messages_eus"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/roseus/ros/gazebo_test_tools/srv/RecognizeGazeboObject.l"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/roseus/ros/gazebo_test_tools/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

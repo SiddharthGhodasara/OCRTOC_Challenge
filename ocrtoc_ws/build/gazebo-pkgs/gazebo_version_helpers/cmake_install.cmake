@@ -1,8 +1,8 @@
-# Install script for directory: /home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_version_helpers
+# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_version_helpers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,18 +38,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/gazebo-pkgs/gazebo_version_helpers/catkin_generated/installspace/gazebo_version_helpers.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo-pkgs/gazebo_version_helpers/catkin_generated/installspace/gazebo_version_helpers.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_version_helpers/cmake" TYPE FILE FILES
-    "/home/kaushik/ocrtoc_ws/build/gazebo-pkgs/gazebo_version_helpers/catkin_generated/installspace/gazebo_version_helpersConfig.cmake"
-    "/home/kaushik/ocrtoc_ws/build/gazebo-pkgs/gazebo_version_helpers/catkin_generated/installspace/gazebo_version_helpersConfig-version.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo-pkgs/gazebo_version_helpers/catkin_generated/installspace/gazebo_version_helpersConfig.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo-pkgs/gazebo_version_helpers/catkin_generated/installspace/gazebo_version_helpersConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_version_helpers" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_version_helpers/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_version_helpers" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_version_helpers/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,12 +59,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_version_helpers.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/kaushik/ocrtoc_ws/devel/lib/libgazebo_version_helpers.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libgazebo_version_helpers.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_version_helpers.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_version_helpers.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_version_helpers.so"
-         OLD_RPATH "/home/kaushik/catkin_ws/devel/lib:/opt/ros/melodic/lib:"
+         OLD_RPATH "/opt/ros/melodic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_version_helpers.so")
@@ -73,9 +73,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gazebo_version_helpers" TYPE DIRECTORY FILES "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_version_helpers/include/gazebo_version_helpers/" FILES_MATCHING REGEX "/[^/]*\\.h$" REGEX "/\\.svn$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gazebo_version_helpers" TYPE DIRECTORY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_version_helpers/include/gazebo_version_helpers/" FILES_MATCHING REGEX "/[^/]*\\.h$" REGEX "/\\.svn$" EXCLUDE)
 endif()
 

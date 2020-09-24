@@ -2,7 +2,7 @@
 
 message(STATUS "robotiq_85_msgs: 2 messages, 0 services")
 
-set(MSG_I_FLAGS "-Irobotiq_85_msgs:/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Irobotiq_85_msgs:/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,14 +17,14 @@ add_custom_target(robotiq_85_msgs_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
 add_custom_target(_robotiq_85_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "robotiq_85_msgs" "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "robotiq_85_msgs" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" ""
 )
 
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
 add_custom_target(_robotiq_85_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "robotiq_85_msgs" "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "robotiq_85_msgs" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" "std_msgs/Header"
 )
 
 #
@@ -34,13 +34,13 @@ add_custom_target(_robotiq_85_msgs_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/robotiq_85_msgs
 )
 _generate_msg_cpp(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/robotiq_85_msgs
@@ -60,9 +60,9 @@ add_custom_target(robotiq_85_msgs_generate_messages_cpp
 add_dependencies(robotiq_85_msgs_generate_messages robotiq_85_msgs_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_cpp _robotiq_85_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_cpp _robotiq_85_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -75,13 +75,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robotiq_85_msgs_generate_messages_c
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/robotiq_85_msgs
 )
 _generate_msg_eus(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/robotiq_85_msgs
@@ -101,9 +101,9 @@ add_custom_target(robotiq_85_msgs_generate_messages_eus
 add_dependencies(robotiq_85_msgs_generate_messages robotiq_85_msgs_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_eus _robotiq_85_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_eus _robotiq_85_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -116,13 +116,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robotiq_85_msgs_generate_messages_e
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/robotiq_85_msgs
 )
 _generate_msg_lisp(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/robotiq_85_msgs
@@ -142,9 +142,9 @@ add_custom_target(robotiq_85_msgs_generate_messages_lisp
 add_dependencies(robotiq_85_msgs_generate_messages robotiq_85_msgs_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_lisp _robotiq_85_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_lisp _robotiq_85_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -157,13 +157,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robotiq_85_msgs_generate_messages_l
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/robotiq_85_msgs
 )
 _generate_msg_nodejs(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/robotiq_85_msgs
@@ -183,9 +183,9 @@ add_custom_target(robotiq_85_msgs_generate_messages_nodejs
 add_dependencies(robotiq_85_msgs_generate_messages robotiq_85_msgs_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_nodejs _robotiq_85_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_nodejs _robotiq_85_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -198,13 +198,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robotiq_85_msgs_generate_messages_n
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/robotiq_85_msgs
 )
 _generate_msg_py(robotiq_85_msgs
-  "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/robotiq_85_msgs
@@ -224,9 +224,9 @@ add_custom_target(robotiq_85_msgs_generate_messages_py
 add_dependencies(robotiq_85_msgs_generate_messages robotiq_85_msgs_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperCmd.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_py _robotiq_85_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_msgs/msg/GripperStat.msg" NAME_WE)
 add_dependencies(robotiq_85_msgs_generate_messages_py _robotiq_85_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

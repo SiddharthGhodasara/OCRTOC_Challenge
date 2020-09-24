@@ -1,8 +1,8 @@
-# Install script for directory: /home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs
+# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/general-message-pkgs/object_msgs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,62 +39,62 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_msgs/msg" TYPE FILE FILES
-    "/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs/msg/Object.msg"
-    "/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs/msg/ObjectPose.msg"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/general-message-pkgs/object_msgs/msg/Object.msg"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/general-message-pkgs/object_msgs/msg/ObjectPose.msg"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_msgs/srv" TYPE FILE FILES
-    "/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs/srv/ObjectInfo.srv"
-    "/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs/srv/RegisterObject.srv"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/general-message-pkgs/object_msgs/srv/ObjectInfo.srv"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/general-message-pkgs/object_msgs/srv/RegisterObject.srv"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_msgs/cmake" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgs-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_msgs/cmake" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgs-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/kaushik/ocrtoc_ws/devel/include/object_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include/object_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/kaushik/ocrtoc_ws/devel/share/roseus/ros/object_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/roseus/ros/object_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/kaushik/ocrtoc_ws/devel/share/common-lisp/ros/object_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/common-lisp/ros/object_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/kaushik/ocrtoc_ws/devel/share/gennodejs/ros/object_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/gennodejs/ros/object_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/python2.7/dist-packages/object_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgs.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgs.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_msgs/cmake" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgs-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_msgs/cmake" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgs-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_msgs/cmake" TYPE FILE FILES
-    "/home/kaushik/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgsConfig.cmake"
-    "/home/kaushik/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgsConfig-version.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgsConfig.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/general-message-pkgs/object_msgs/catkin_generated/installspace/object_msgsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_msgs" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_msgs" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/general-message-pkgs/object_msgs/package.xml")
 endif()
 

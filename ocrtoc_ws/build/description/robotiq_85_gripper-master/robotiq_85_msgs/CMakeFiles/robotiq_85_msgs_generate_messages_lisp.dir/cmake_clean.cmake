@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/kaushik/ocrtoc_ws/devel/share/common-lisp/ros/robotiq_85_msgs/msg/GripperCmd.lisp"
-  "/home/kaushik/ocrtoc_ws/devel/share/common-lisp/ros/robotiq_85_msgs/msg/GripperStat.lisp"
   "CMakeFiles/robotiq_85_msgs_generate_messages_lisp"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/common-lisp/ros/robotiq_85_msgs/msg/GripperCmd.lisp"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/common-lisp/ros/robotiq_85_msgs/msg/GripperStat.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

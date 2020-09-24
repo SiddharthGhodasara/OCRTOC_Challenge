@@ -2,7 +2,7 @@
 
 message(STATUS "ocrtoc_task: 7 messages, 0 services")
 
-set(MSG_I_FLAGS "-Iocrtoc_task:/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Iocrtoc_task:/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,39 +17,39 @@ add_custom_target(ocrtoc_task_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
 add_custom_target(_ocrtoc_task_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" "ocrtoc_task/CleanFeedback:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" ""
 )
 
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
 add_custom_target(_ocrtoc_task_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" "actionlib_msgs/GoalID:geometry_msgs/Pose:ocrtoc_task/CleanGoal:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" "actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:ocrtoc_task/CleanResult:std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
 add_custom_target(_ocrtoc_task_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" "actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:ocrtoc_task/CleanFeedback:std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
 add_custom_target(_ocrtoc_task_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" "geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/Point"
 )
 
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
 add_custom_target(_ocrtoc_task_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" "actionlib_msgs/GoalID:ocrtoc_task/CleanResult:actionlib_msgs/GoalStatus:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" ""
 )
 
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
 add_custom_target(_ocrtoc_task_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" "geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" "actionlib_msgs/GoalID:ocrtoc_task/CleanActionFeedback:ocrtoc_task/CleanResult:actionlib_msgs/GoalStatus:ocrtoc_task/CleanFeedback:ocrtoc_task/CleanActionGoal:ocrtoc_task/CleanGoal:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Quaternion:ocrtoc_task/CleanActionResult:geometry_msgs/Point"
 )
 
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
 add_custom_target(_ocrtoc_task_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" "actionlib_msgs/GoalID:ocrtoc_task/CleanResult:ocrtoc_task/CleanFeedback:actionlib_msgs/GoalStatus:ocrtoc_task/CleanActionGoal:geometry_msgs/Pose:ocrtoc_task/CleanActionResult:ocrtoc_task/CleanGoal:ocrtoc_task/CleanActionFeedback:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ocrtoc_task" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" "actionlib_msgs/GoalID:ocrtoc_task/CleanGoal:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Point"
 )
 
 #
@@ -59,45 +59,45 @@ add_custom_target(_ocrtoc_task_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_cpp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_cpp(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_cpp(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_cpp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_cpp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_cpp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_cpp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_cpp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ocrtoc_task
 )
 
@@ -115,19 +115,19 @@ add_custom_target(ocrtoc_task_generate_messages_cpp
 add_dependencies(ocrtoc_task_generate_messages ocrtoc_task_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_cpp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_cpp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_cpp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_cpp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_cpp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_cpp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_cpp _ocrtoc_task_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -140,45 +140,45 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ocrtoc_task_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_eus(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_eus(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_eus(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_eus(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_eus(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_eus(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_eus(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_eus(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ocrtoc_task
 )
 
@@ -196,19 +196,19 @@ add_custom_target(ocrtoc_task_generate_messages_eus
 add_dependencies(ocrtoc_task_generate_messages ocrtoc_task_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_eus _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_eus _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_eus _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_eus _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_eus _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_eus _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_eus _ocrtoc_task_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -221,45 +221,45 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ocrtoc_task_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_lisp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_lisp(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_lisp(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_lisp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_lisp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_lisp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_lisp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_lisp(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ocrtoc_task
 )
 
@@ -277,19 +277,19 @@ add_custom_target(ocrtoc_task_generate_messages_lisp
 add_dependencies(ocrtoc_task_generate_messages ocrtoc_task_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_lisp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_lisp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_lisp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_lisp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_lisp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_lisp _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_lisp _ocrtoc_task_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -302,45 +302,45 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ocrtoc_task_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_nodejs(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_nodejs(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_nodejs(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_nodejs(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_nodejs(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_nodejs(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_nodejs(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_nodejs(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ocrtoc_task
 )
 
@@ -358,19 +358,19 @@ add_custom_target(ocrtoc_task_generate_messages_nodejs
 add_dependencies(ocrtoc_task_generate_messages ocrtoc_task_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_nodejs _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_nodejs _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_nodejs _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_nodejs _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_nodejs _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_nodejs _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_nodejs _ocrtoc_task_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -383,45 +383,45 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ocrtoc_task_generate_messages_nodej
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_py(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_py(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ocrtoc_task
+)
+_generate_msg_py(ocrtoc_task
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_py(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_py(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ocrtoc_task
 )
 _generate_msg_py(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_py(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ocrtoc_task
-)
-_generate_msg_py(ocrtoc_task
-  "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ocrtoc_task
 )
 
@@ -439,19 +439,19 @@ add_custom_target(ocrtoc_task_generate_messages_py
 add_dependencies(ocrtoc_task_generate_messages ocrtoc_task_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_py _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_py _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_py _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_py _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_py _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_py _ocrtoc_task_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg" NAME_WE)
+get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg" NAME_WE)
 add_dependencies(ocrtoc_task_generate_messages_py _ocrtoc_task_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

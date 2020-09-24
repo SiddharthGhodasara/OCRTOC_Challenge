@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/kaushik/ocrtoc_ws/devel/lib/libCIntImage_to_Featurevec.pdb"
-  "/home/kaushik/ocrtoc_ws/devel/lib/libCIntImage_to_Featurevec.so"
   "CMakeFiles/CIntImage_to_Featurevec.dir/src/CIntImage_to_Featurevec.cpp.o"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libCIntImage_to_Featurevec.pdb"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libCIntImage_to_Featurevec.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
-# Install script for directory: /home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_driver
+# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,29 +38,29 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/kaushik/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/safe_execute_install.cmake")
+  include("/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/safe_execute_install.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_driver.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_driver.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robotiq_85_driver/cmake" TYPE FILE FILES
-    "/home/kaushik/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_driverConfig.cmake"
-    "/home/kaushik/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_driverConfig-version.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_driverConfig.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_driverConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robotiq_85_driver" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_driver/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robotiq_85_driver" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/robotiq_85_driver/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robotiq_85_driver" TYPE PROGRAM FILES "/home/kaushik/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_driver")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robotiq_85_driver" TYPE PROGRAM FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_driver")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robotiq_85_driver" TYPE PROGRAM FILES "/home/kaushik/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_test")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robotiq_85_driver" TYPE PROGRAM FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_85_gripper-master/robotiq_85_driver/catkin_generated/installspace/robotiq_85_test")
 endif()
 

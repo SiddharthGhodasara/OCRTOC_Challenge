@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/kaushik/ocrtoc_ws/devel/lib/libobject_msgs_tools.pdb"
-  "/home/kaushik/ocrtoc_ws/devel/lib/libobject_msgs_tools.so"
-  "CMakeFiles/object_msgs_tools.dir/src/ObjectFunctions.cpp.o"
   "CMakeFiles/object_msgs_tools.dir/src/ObjectTFBroadcaster.cpp.o"
+  "CMakeFiles/object_msgs_tools.dir/src/ObjectFunctions.cpp.o"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libobject_msgs_tools.pdb"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libobject_msgs_tools.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/kaushik/ocrtoc_ws/devel/lib/libCHaarFeature.pdb"
-  "/home/kaushik/ocrtoc_ws/devel/lib/libCHaarFeature.so"
   "CMakeFiles/CHaarFeature.dir/src/CHaarFeature.cpp.o"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libCHaarFeature.pdb"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libCHaarFeature.so"
 )
 
 # Per-language clean rules from dependency scanning.

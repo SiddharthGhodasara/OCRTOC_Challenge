@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kaushik/ocrtoc_ws/src/gazebo_simulator/realsense_plugin/src/RealSensePlugin.cpp" "/home/kaushik/ocrtoc_ws/build/gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o"
-  "/home/kaushik/ocrtoc_ws/src/gazebo_simulator/realsense_plugin/src/gazebo_ros_realsense.cpp" "/home/kaushik/ocrtoc_ws/build/gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo_simulator/realsense_plugin/src/RealSensePlugin.cpp" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo_simulator/realsense_plugin/src/gazebo_ros_realsense.cpp" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,16 +16,11 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"realsense_gazebo_plugin\""
-  "realsense_gazebo_plugin_EXPORTS"
   )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/kaushik/ocrtoc_ws/src/gazebo_simulator/realsense_plugin/include"
-  "/home/kaushik/catkin_ws/devel/include"
-  "/home/kaushik/catkin_ws/src/geometry2/tf2_ros/include"
-  "/home/kaushik/catkin_ws/src/geometry2/tf2/include"
-  "/home/kaushik/catkin_ws/src/geometry2/tf2_msgs/include"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo_simulator/realsense_plugin/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/gazebo-9"
@@ -41,6 +36,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/ignition/common1"
   "/usr/include/ignition/fuel_tools1"
   "/usr/include/uuid"
+  "/usr/include/x86_64-linux-gnu"
   )
 
 # Targets to which this target links.

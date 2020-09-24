@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "actionlib;actionlib_msgs;control_msgs;geometry_msgs;nav_msgs;message_runtime".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "path_navigation_msgs"
-PROJECT_SPACE_DIR = "/home/kaushik/ocrtoc_ws/install"
+PROJECT_SPACE_DIR = "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install"
 PROJECT_VERSION = "1.0.0"

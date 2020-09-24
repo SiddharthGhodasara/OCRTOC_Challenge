@@ -5,7 +5,7 @@
   <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
   <arg name="gui" default="true" doc="Starts gazebo gui" />
   <arg name="gripper" default="robotiq_2f_85"  doc="Attach gripper on manipulator" />
-  <arg name="materials_dir" default="/home/kaushik/ocrtoc_materials"  doc="The models and scenes path" />
+  <arg name="materials_dir" default="/home/gaurav/ocrtoc_materials"  doc="The models and scenes path" />
 
   <env name="GAZEBO_MODEL_PATH" value="$(arg materials_dir)/models" />
 

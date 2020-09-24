@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/kaushik/ocrtoc_ws/devel/lib/haf_grasping/calc_grasppoints_action_server"
-  "/home/kaushik/ocrtoc_ws/devel/lib/haf_grasping/calc_grasppoints_action_server.pdb"
   "CMakeFiles/calc_grasppoints_action_server.dir/src/calc_grasppoints_action_server.cpp.o"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/haf_grasping/calc_grasppoints_action_server.pdb"
+  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/haf_grasping/calc_grasppoints_action_server"
 )
 
 # Per-language clean rules from dependency scanning.

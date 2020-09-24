@@ -1,4 +1,4 @@
-prefix=/home/kaushik/ocrtoc_ws/devel
+prefix=/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel
 
 Name: robotiq_85_driver
 Description: Description of robotiq_85_driver

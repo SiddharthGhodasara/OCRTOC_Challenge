@@ -1,8 +1,8 @@
-# Install script for directory: /home/kaushik/ocrtoc_ws/src/sapien_simulator
+# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/sapien_simulator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,30 +38,30 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/sapien_simulator/catkin_generated/installspace/sapien_simulator.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/sapien_simulator/catkin_generated/installspace/sapien_simulator.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sapien_simulator/cmake" TYPE FILE FILES
-    "/home/kaushik/ocrtoc_ws/build/sapien_simulator/catkin_generated/installspace/sapien_simulatorConfig.cmake"
-    "/home/kaushik/ocrtoc_ws/build/sapien_simulator/catkin_generated/installspace/sapien_simulatorConfig-version.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/sapien_simulator/catkin_generated/installspace/sapien_simulatorConfig.cmake"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/sapien_simulator/catkin_generated/installspace/sapien_simulatorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sapien_simulator" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/sapien_simulator/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sapien_simulator" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/sapien_simulator/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sapien_simulator" TYPE DIRECTORY FILES
-    "/home/kaushik/ocrtoc_ws/src/sapien_simulator/config"
-    "/home/kaushik/ocrtoc_ws/src/sapien_simulator/glsl_shader"
-    "/home/kaushik/ocrtoc_ws/src/sapien_simulator/launch"
-    "/home/kaushik/ocrtoc_ws/src/sapien_simulator/rviz"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/sapien_simulator/config"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/sapien_simulator/glsl_shader"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/sapien_simulator/launch"
+    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/sapien_simulator/rviz"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/sapien_simulator" TYPE PROGRAM FILES "/home/kaushik/ocrtoc_ws/src/sapien_simulator/scripts/sapien_env.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/sapien_simulator" TYPE PROGRAM FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/sapien_simulator/scripts/sapien_env.py")
 endif()
 
