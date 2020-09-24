@@ -1,0 +1,18 @@
+controller_list:
+  - name: fake_arm_controller_controller
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+  - name: fake_gripper_controller_controller
+    joints:
+      - ur5_l_finger_joint
+      - ur5_r_finger_joint
+initial:  # Define initial robot poses.
+  - group: arm_controller
+    pose: init_pose
+  - group: gripper_controller
+    pose: gripper_close
