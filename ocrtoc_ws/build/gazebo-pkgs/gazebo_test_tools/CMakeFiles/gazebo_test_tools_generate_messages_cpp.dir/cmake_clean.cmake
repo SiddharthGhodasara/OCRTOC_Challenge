@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/include/gazebo_test_tools/RecognizeGazeboObject.h"
   "CMakeFiles/gazebo_test_tools_generate_messages_cpp"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include/gazebo_test_tools/RecognizeGazeboObject.h"
 )
 
 # Per-language clean rules from dependency scanning.

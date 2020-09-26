@@ -67,14 +67,14 @@ set(gazebo_state_plugins_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(gazebo_state_plugins_SOURCE_PREFIX /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins)
-  set(gazebo_state_plugins_DEVEL_PREFIX /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel)
+  set(gazebo_state_plugins_SOURCE_PREFIX /home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins)
+  set(gazebo_state_plugins_DEVEL_PREFIX /home/kaushik/ocrtoc_ws/devel)
   set(gazebo_state_plugins_INSTALL_PREFIX "")
   set(gazebo_state_plugins_PREFIX ${gazebo_state_plugins_DEVEL_PREFIX})
 else()
   set(gazebo_state_plugins_SOURCE_PREFIX "")
   set(gazebo_state_plugins_DEVEL_PREFIX "")
-  set(gazebo_state_plugins_INSTALL_PREFIX /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install)
+  set(gazebo_state_plugins_INSTALL_PREFIX /home/kaushik/ocrtoc_ws/install)
   set(gazebo_state_plugins_PREFIX ${gazebo_state_plugins_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install/lib;/home/gaurav/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/kaushik/ocrtoc_ws/install/lib;/home/kaushik/catkin_ws/devel/lib;/home/kaushik/ocrtoc_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

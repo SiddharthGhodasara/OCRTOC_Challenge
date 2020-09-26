@@ -1,8 +1,8 @@
-prefix=/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel
+prefix=/home/kaushik/ocrtoc_ws/devel
 
 Name: ocrtoc_task
 Description: Description of ocrtoc_task
 Version: 0.0.0
-Cflags: -I/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include
+Cflags: -I/home/kaushik/ocrtoc_ws/devel/include
 Libs: -L${prefix}/lib 
 Requires: 

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/lib/libroboticsgroup_gazebo_mimic_joint_plugin.pdb"
+  "/home/kaushik/ocrtoc_ws/devel/lib/libroboticsgroup_gazebo_mimic_joint_plugin.so"
   "CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libroboticsgroup_gazebo_mimic_joint_plugin.pdb"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libroboticsgroup_gazebo_mimic_joint_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

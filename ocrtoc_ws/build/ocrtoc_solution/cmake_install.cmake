@@ -1,8 +1,8 @@
-# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/ocrtoc_solution
+# Install script for directory: /home/kaushik/ocrtoc_ws/src/ocrtoc_solution
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,28 +38,28 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/ocrtoc_solution/catkin_generated/installspace/ocrtoc_solution.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/ocrtoc_solution/catkin_generated/installspace/ocrtoc_solution.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ocrtoc_solution/cmake" TYPE FILE FILES
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/ocrtoc_solution/catkin_generated/installspace/ocrtoc_solutionConfig.cmake"
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/ocrtoc_solution/catkin_generated/installspace/ocrtoc_solutionConfig-version.cmake"
+    "/home/kaushik/ocrtoc_ws/build/ocrtoc_solution/catkin_generated/installspace/ocrtoc_solutionConfig.cmake"
+    "/home/kaushik/ocrtoc_ws/build/ocrtoc_solution/catkin_generated/installspace/ocrtoc_solutionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ocrtoc_solution" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/ocrtoc_solution/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ocrtoc_solution" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/ocrtoc_solution/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ocrtoc_solution" TYPE DIRECTORY FILES
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/ocrtoc_solution/controller"
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/ocrtoc_solution/launch"
+    "/home/kaushik/ocrtoc_ws/src/ocrtoc_solution/controller"
+    "/home/kaushik/ocrtoc_ws/src/ocrtoc_solution/launch"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ocrtoc_solution" TYPE PROGRAM FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/ocrtoc_solution/scripts/commit_solution.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ocrtoc_solution" TYPE PROGRAM FILES "/home/kaushik/ocrtoc_ws/src/ocrtoc_solution/scripts/commit_solution.py")
 endif()
 

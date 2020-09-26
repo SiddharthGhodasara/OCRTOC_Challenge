@@ -1,8 +1,8 @@
-# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/si_utils
+# Install script for directory: /home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/si_utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_85_gripper-master/si_utils/catkin_generated/installspace/si_utils.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/description/robotiq_85_gripper-master/si_utils/catkin_generated/installspace/si_utils.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/si_utils/cmake" TYPE FILE FILES
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_85_gripper-master/si_utils/catkin_generated/installspace/si_utilsConfig.cmake"
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_85_gripper-master/si_utils/catkin_generated/installspace/si_utilsConfig-version.cmake"
+    "/home/kaushik/ocrtoc_ws/build/description/robotiq_85_gripper-master/si_utils/catkin_generated/installspace/si_utilsConfig.cmake"
+    "/home/kaushik/ocrtoc_ws/build/description/robotiq_85_gripper-master/si_utils/catkin_generated/installspace/si_utilsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/si_utils" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/si_utils/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/si_utils" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/si_utils/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/si_utils" TYPE PROGRAM FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/si_utils/scripts/timed_roslaunch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/si_utils" TYPE PROGRAM FILES "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/si_utils/scripts/timed_roslaunch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/si_utils" TYPE DIRECTORY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_85_gripper-master/si_utils/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/si_utils" TYPE DIRECTORY FILES "/home/kaushik/ocrtoc_ws/src/description/robotiq_85_gripper-master/si_utils/launch")
 endif()
 

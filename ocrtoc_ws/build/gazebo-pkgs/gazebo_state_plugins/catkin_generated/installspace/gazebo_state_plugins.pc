@@ -1,4 +1,4 @@
-prefix=/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install
+prefix=/home/kaushik/ocrtoc_ws/install
 
 Name: gazebo_state_plugins
 Description: Description of gazebo_state_plugins

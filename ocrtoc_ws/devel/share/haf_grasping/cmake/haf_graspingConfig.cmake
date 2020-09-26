@@ -67,14 +67,14 @@ set(haf_grasping_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(haf_grasping_SOURCE_PREFIX /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping)
-  set(haf_grasping_DEVEL_PREFIX /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel)
+  set(haf_grasping_SOURCE_PREFIX /home/kaushik/ocrtoc_ws/src/haf_grasping)
+  set(haf_grasping_DEVEL_PREFIX /home/kaushik/ocrtoc_ws/devel)
   set(haf_grasping_INSTALL_PREFIX "")
   set(haf_grasping_PREFIX ${haf_grasping_DEVEL_PREFIX})
 else()
   set(haf_grasping_SOURCE_PREFIX "")
   set(haf_grasping_DEVEL_PREFIX "")
-  set(haf_grasping_INSTALL_PREFIX /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install)
+  set(haf_grasping_INSTALL_PREFIX /home/kaushik/ocrtoc_ws/install)
   set(haf_grasping_PREFIX ${haf_grasping_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(haf_grasping_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping/include " STREQUAL " ")
+if(NOT "/home/kaushik/ocrtoc_ws/devel/include;/home/kaushik/ocrtoc_ws/src/haf_grasping/include " STREQUAL " ")
   set(haf_grasping_INCLUDE_DIRS "")
-  set(_include_dirs "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include;/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping/include")
+  set(_include_dirs "/home/kaushik/ocrtoc_ws/devel/include;/home/kaushik/ocrtoc_ws/src/haf_grasping/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/haf_grasping " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include;/home/gaurav/N
         message(FATAL_ERROR "Project 'haf_grasping' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'haf_grasping' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'haf_grasping' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/kaushik/ocrtoc_ws/src/haf_grasping/${idir}'.  ${_report}")
     endif()
     _list_append_unique(haf_grasping_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib;/home/gaurav/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/kaushik/ocrtoc_ws/devel/lib;/home/kaushik/catkin_ws/devel/lib;/home/kaushik/ocrtoc_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

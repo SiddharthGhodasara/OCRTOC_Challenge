@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/share/gennodejs/ros/gazebo_test_tools/srv/RecognizeGazeboObject.js"
   "CMakeFiles/gazebo_test_tools_generate_messages_nodejs"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/gennodejs/ros/gazebo_test_tools/srv/RecognizeGazeboObject.js"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/lib/libgazebo_grasp_fix.pdb"
+  "/home/kaushik/ocrtoc_ws/devel/lib/libgazebo_grasp_fix.so"
   "CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspFix.cpp.o"
   "CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspGripper.cpp.o"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libgazebo_grasp_fix.pdb"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libgazebo_grasp_fix.so"
 )
 
 # Per-language clean rules from dependency scanning.

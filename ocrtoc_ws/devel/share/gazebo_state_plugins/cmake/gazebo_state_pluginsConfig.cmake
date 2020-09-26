@@ -67,14 +67,14 @@ set(gazebo_state_plugins_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(gazebo_state_plugins_SOURCE_PREFIX /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins)
-  set(gazebo_state_plugins_DEVEL_PREFIX /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel)
+  set(gazebo_state_plugins_SOURCE_PREFIX /home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins)
+  set(gazebo_state_plugins_DEVEL_PREFIX /home/kaushik/ocrtoc_ws/devel)
   set(gazebo_state_plugins_INSTALL_PREFIX "")
   set(gazebo_state_plugins_PREFIX ${gazebo_state_plugins_DEVEL_PREFIX})
 else()
   set(gazebo_state_plugins_SOURCE_PREFIX "")
   set(gazebo_state_plugins_DEVEL_PREFIX "")
-  set(gazebo_state_plugins_INSTALL_PREFIX /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install)
+  set(gazebo_state_plugins_INSTALL_PREFIX /home/kaushik/ocrtoc_ws/install)
   set(gazebo_state_plugins_PREFIX ${gazebo_state_plugins_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(gazebo_state_plugins_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins/include " STREQUAL " ")
+if(NOT "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins/include " STREQUAL " ")
   set(gazebo_state_plugins_INCLUDE_DIRS "")
-  set(_include_dirs "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins/include")
+  set(_include_dirs "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_state
         message(FATAL_ERROR "Project 'gazebo_state_plugins' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'gazebo_state_plugins' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'gazebo_state_plugins' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_state_plugins/${idir}'.  ${_report}")
     endif()
     _list_append_unique(gazebo_state_plugins_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib;/home/gaurav/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/kaushik/ocrtoc_ws/devel/lib;/home/kaushik/catkin_ws/devel/lib;/home/kaushik/ocrtoc_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

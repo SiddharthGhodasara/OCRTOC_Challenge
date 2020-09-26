@@ -2,7 +2,7 @@
 
 message(STATUS "gazebo_test_tools: 0 messages, 1 services")
 
-set(MSG_I_FLAGS "-Iobject_msgs:/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/general-message-pkgs/object_msgs/msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg;-Ishape_msgs:/opt/ros/melodic/share/shape_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Iobject_recognition_msgs:/opt/ros/melodic/share/object_recognition_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Iobject_msgs:/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs/msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg;-Ishape_msgs:/opt/ros/melodic/share/shape_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Iobject_recognition_msgs:/opt/ros/melodic/share/object_recognition_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,9 +17,9 @@ add_custom_target(gazebo_test_tools_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
+get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
 add_custom_target(_gazebo_test_tools_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "gazebo_test_tools" "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "gazebo_test_tools" "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" ""
 )
 
 #
@@ -31,7 +31,7 @@ add_custom_target(_gazebo_test_tools_generate_messages_check_deps_${_filename}
 
 ### Generating Services
 _generate_srv_cpp(gazebo_test_tools
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
+  "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/gazebo_test_tools
@@ -49,7 +49,7 @@ add_custom_target(gazebo_test_tools_generate_messages_cpp
 add_dependencies(gazebo_test_tools_generate_messages gazebo_test_tools_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
+get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
 add_dependencies(gazebo_test_tools_generate_messages_cpp _gazebo_test_tools_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -64,7 +64,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS gazebo_test_tools_generate_messages
 
 ### Generating Services
 _generate_srv_eus(gazebo_test_tools
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
+  "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/gazebo_test_tools
@@ -82,7 +82,7 @@ add_custom_target(gazebo_test_tools_generate_messages_eus
 add_dependencies(gazebo_test_tools_generate_messages gazebo_test_tools_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
+get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
 add_dependencies(gazebo_test_tools_generate_messages_eus _gazebo_test_tools_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -97,7 +97,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS gazebo_test_tools_generate_messages
 
 ### Generating Services
 _generate_srv_lisp(gazebo_test_tools
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
+  "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/gazebo_test_tools
@@ -115,7 +115,7 @@ add_custom_target(gazebo_test_tools_generate_messages_lisp
 add_dependencies(gazebo_test_tools_generate_messages gazebo_test_tools_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
+get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
 add_dependencies(gazebo_test_tools_generate_messages_lisp _gazebo_test_tools_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -130,7 +130,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS gazebo_test_tools_generate_messages
 
 ### Generating Services
 _generate_srv_nodejs(gazebo_test_tools
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
+  "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/gazebo_test_tools
@@ -148,7 +148,7 @@ add_custom_target(gazebo_test_tools_generate_messages_nodejs
 add_dependencies(gazebo_test_tools_generate_messages gazebo_test_tools_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
+get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
 add_dependencies(gazebo_test_tools_generate_messages_nodejs _gazebo_test_tools_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -163,7 +163,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS gazebo_test_tools_generate_messages
 
 ### Generating Services
 _generate_srv_py(gazebo_test_tools
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
+  "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/gazebo_test_tools
@@ -181,7 +181,7 @@ add_custom_target(gazebo_test_tools_generate_messages_py
 add_dependencies(gazebo_test_tools_generate_messages gazebo_test_tools_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
+get_filename_component(_filename "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/srv/RecognizeGazeboObject.srv" NAME_WE)
 add_dependencies(gazebo_test_tools_generate_messages_py _gazebo_test_tools_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

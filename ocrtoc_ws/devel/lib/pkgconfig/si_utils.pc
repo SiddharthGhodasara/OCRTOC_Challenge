@@ -1,4 +1,4 @@
-prefix=/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel
+prefix=/home/kaushik/ocrtoc_ws/devel
 
 Name: si_utils
 Description: Description of si_utils

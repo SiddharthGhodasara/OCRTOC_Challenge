@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/lib/libgazebo_test_tools.pdb"
+  "/home/kaushik/ocrtoc_ws/devel/lib/libgazebo_test_tools.so"
   "CMakeFiles/gazebo_test_tools.dir/src/cube_spawner.cpp.o"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libgazebo_test_tools.pdb"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libgazebo_test_tools.so"
 )
 
 # Per-language clean rules from dependency scanning.

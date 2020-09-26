@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.pdb"
+  "/home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so"
   "CMakeFiles/fake_object_recognizer.dir/src/FakeObjectRecognizer.cpp.o"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libfake_object_recognizer.pdb"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libfake_object_recognizer.so"
 )
 
 # Per-language clean rules from dependency scanning.

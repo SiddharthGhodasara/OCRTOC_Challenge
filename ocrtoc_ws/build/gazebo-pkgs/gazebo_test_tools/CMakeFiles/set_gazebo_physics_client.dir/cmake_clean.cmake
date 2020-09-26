@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/lib/gazebo_test_tools/set_gazebo_physics_client"
+  "/home/kaushik/ocrtoc_ws/devel/lib/gazebo_test_tools/set_gazebo_physics_client.pdb"
   "CMakeFiles/set_gazebo_physics_client.dir/src/SetGazeboPhysicsClient.cpp.o"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/gazebo_test_tools/set_gazebo_physics_client.pdb"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/gazebo_test_tools/set_gazebo_physics_client"
 )
 
 # Per-language clean rules from dependency scanning.

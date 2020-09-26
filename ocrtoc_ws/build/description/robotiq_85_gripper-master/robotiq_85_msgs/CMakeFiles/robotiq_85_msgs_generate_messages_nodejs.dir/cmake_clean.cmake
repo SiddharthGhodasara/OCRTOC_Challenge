@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/share/gennodejs/ros/robotiq_85_msgs/msg/GripperCmd.js"
+  "/home/kaushik/ocrtoc_ws/devel/share/gennodejs/ros/robotiq_85_msgs/msg/GripperStat.js"
   "CMakeFiles/robotiq_85_msgs_generate_messages_nodejs"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/gennodejs/ros/robotiq_85_msgs/msg/GripperCmd.js"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/share/gennodejs/ros/robotiq_85_msgs/msg/GripperStat.js"
 )
 
 # Per-language clean rules from dependency scanning.

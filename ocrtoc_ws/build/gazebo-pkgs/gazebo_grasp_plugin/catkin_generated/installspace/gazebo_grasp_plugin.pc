@@ -1,4 +1,4 @@
-prefix=/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install
+prefix=/home/kaushik/ocrtoc_ws/install
 
 Name: gazebo_grasp_plugin
 Description: Description of gazebo_grasp_plugin

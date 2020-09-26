@@ -1,8 +1,8 @@
-prefix=/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel
+prefix=/home/kaushik/ocrtoc_ws/devel
 
 Name: gazebo_test_tools
 Description: Description of gazebo_test_tools
 Version: 1.0.2
-Cflags: -I/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/include -I/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/include
+Cflags: -I/home/kaushik/ocrtoc_ws/devel/include -I/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/include
 Libs: -L${prefix}/lib -lgazebo_test_tools
 Requires: object_msgs gazebo_ros geometry_msgs roscpp std_msgs message_runtime gazebo_ros

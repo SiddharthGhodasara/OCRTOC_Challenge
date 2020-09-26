@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping/include/CHaarFeature.h
+/home/kaushik/ocrtoc_ws/src/haf_grasping/include/CHaarFeature.h
 vector
 -
 opencv2/opencv.hpp
 -
 
-/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping/include/CIntImage_to_Featurevec.h
+/home/kaushik/ocrtoc_ws/src/haf_grasping/include/CIntImage_to_Featurevec.h
 iostream
 -
 string.h
@@ -26,7 +26,7 @@ time.h
 CHaarFeature.h
 -
 
-/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/haf_grasping/src/CIntImage_to_Featurevec.cpp
+/home/kaushik/ocrtoc_ws/src/haf_grasping/src/CIntImage_to_Featurevec.cpp
 CIntImage_to_Featurevec.h
 -
 CHaarFeature.h

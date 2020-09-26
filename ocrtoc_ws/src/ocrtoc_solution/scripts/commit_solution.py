@@ -62,24 +62,38 @@ grasps_plots = ""
 def callback_plots(msg_plots):
 	global grasps_plots
 	grasps_plots = msg_plots.data.split(" ")
-	print(grasps_plots)
+	#print(grasps_plots)
 
 #Function to extract grasp coordinates
 def get_grasps_coord():
+	grasp_buffer = []
 	#Subscribing to the topic publishing the coordinates of grasp
 	grasps_plots_sub = rospy.Subscriber('/haf_grasping/grasp_hypothesis_with_eval', String, callback_plots)
 	global grasps_plots
 	# Wait for gsps to arrive.
-	rate = rospy.Rate(1)
+	rate = rospy.Rate(2)
+
 	#Running till we get a suitable grasp
 	while not rospy.is_shutdown():
-		if grasps_plots != "" :
-			if int(grasps_plots[0]) > 60:
+
+		if (grasps_plots != "" and grasps_plots[0] > 10):
+
+			if int(grasps_plots[0]) < 100: #without scaling search area, the threshold was 70
+				print("searching again for better grasp")
+				grasp_buffer.append(grasps_plots)
+				print(len(grasp_buffer))
+				if len(grasp_buffer) >= 20: 
+					last_ten = grasp_buffer[-10:-1]
+					grasps_plots = max(last_ten)
+					print("The chosen grasp is: ")
+					print(grasps_plots)
+					break
+				else:
+					pass
+			else:
 				print("satisfied grasp condition")
-				print(int(grasps_plots[0]))
+				print(grasps_plots)
 				break
-		else:
-			print("searching again for better grasp")
 		rate.sleep()
 
 
@@ -158,7 +172,7 @@ class CommitSolution(object):
 			rospy.Rate(1).sleep()
 
 			#Getting the grasp coordinates
-			new_grasps = rospy.wait_for_message('/haf_grasping/grasp_hypothesis_with_eval', String)
+			#new_grasps = rospy.wait_for_message('/haf_grasping/grasp_hypothesis_with_eval', String)
 			get_grasps_coord()
 			global grasps_plots
 			#Extracting the X Y Z coordintes
@@ -178,7 +192,7 @@ class CommitSolution(object):
 			#Assiging Linear Coordinates
 			grasp_pose.pose.position.x = position_x
 			grasp_pose.pose.position.y = position_y
-			grasp_pose.pose.position.z = position_z + 0.05
+			grasp_pose.pose.position.z = position_z + 0.03
 			#Converting degrees to radians
 			r_rad = (r*3.14159265358979323846)/180
 			p_rad = (p*3.14159265358979323846)/180
@@ -189,7 +203,7 @@ class CommitSolution(object):
 			#Assigning orientation value to pose message
 			grasp_pose.pose.orientation.x = q[0]#quat[0] #grasps_plots.orientation.x
 			grasp_pose.pose.orientation.y = q[1]#quat[1] #grasps_plots.orientation.y
-			grasp_pose.pose.orientation.z = q[2]#quat[2] #grasps_plots.orientation.z
+			grasp_pose.pose.orientation.z = q[2] #quat[2] #grasps_plots.orientation.z
 			grasp_pose.pose.orientation.w = q[3]#quat[3] #grasps_plots.orientation.w
 
 			#Moving the arm to Picking location
@@ -210,7 +224,7 @@ class CommitSolution(object):
 			#Going down to pick the object
 			waypoints = []
 			wpose = group.get_current_pose().pose
-			wpose.position.z -= scale * 0.060
+			wpose.position.z -= scale * 0.030 + 0.01
 			waypoints.append(copy.deepcopy(wpose))
 			(cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 			group.execute(cartesian_plan, wait=True)
@@ -238,11 +252,11 @@ class CommitSolution(object):
 					i = i - 1
 					#goto .xxx
 					break
-
-			#Going down to pick the object
+			rospy.sleep(2)
+			#Going up after picking up object
 			waypoints = []
 			wpose = group.get_current_pose().pose
-			wpose.position.z += scale * 0.1
+			wpose.position.z += scale * 0.15
 			waypoints.append(copy.deepcopy(wpose))
 			(cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 			group.execute(cartesian_plan, wait=True)
@@ -279,8 +293,6 @@ class CommitSolution(object):
 
 			#Getting the Quaternion coordinates from Euler
 			q = quaternion_from_euler(r,p,y)
-			print("Printing roll in degrees")
-			print(math.degrees(r))
 			grasp_pose.pose.position.x = goal.pose_list[i].position.x# + diff_x
 			grasp_pose.pose.position.y = goal.pose_list[i].position.y# + diff_y
 			grasp_pose.pose.position.z = position_z + 0.1

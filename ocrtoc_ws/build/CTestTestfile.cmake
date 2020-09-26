@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src
-# Build directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build
+# Source directory: /home/kaushik/ocrtoc_ws/src
+# Build directory: /home/kaushik/ocrtoc_ws/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
@@ -10,7 +10,9 @@ subdirs("description/robotiq_85_gripper-master/robotiq_85_driver")
 subdirs("description/robotiq_85_gripper-master/robotiq_85_simulation/robotiq_85_gazebo")
 subdirs("description/robotiq_85_gripper-master/robotiq_85_gripper")
 subdirs("description/robotiq_85_gripper-master/robotiq_85_simulation/robotiq_85_simulation")
+subdirs("ros_controllers/ros_controllers")
 subdirs("description/realsense2_description")
+subdirs("ros_controllers/rqt_joint_trajectory_controller")
 subdirs("sapien_simulator")
 subdirs("description/ur_e_description")
 subdirs("gazebo_simulator/gazebo_simulator")
@@ -20,6 +22,11 @@ subdirs("description/robotiq_85_gripper-master/robotiq_85_msgs")
 subdirs("description/robotiq_85_gripper-master/si_utils")
 subdirs("ocrtoc_task")
 subdirs("general-message-pkgs/path_navigation_msgs")
+subdirs("ros_controllers/force_torque_sensor_controller")
+subdirs("ros_controllers/forward_command_controller")
+subdirs("ros_controllers/position_controllers")
+subdirs("ros_controllers/imu_sensor_controller")
+subdirs("ros_controllers/joint_state_controller")
 subdirs("general-message-pkgs/object_msgs")
 subdirs("gazebo-pkgs/gazebo_test_tools")
 subdirs("gazebo-pkgs/gazebo_version_helpers")
@@ -31,6 +38,13 @@ subdirs("haf_grasping")
 subdirs("ocrtoc_solution")
 subdirs("gazebo_simulator/realsense_plugin")
 subdirs("gazebo_simulator/roboticsgroup_gazebo_plugins")
-subdirs("description/robotiq_85_gripper-master/robotiq_85_moveit_config")
 subdirs("ur5e_arm_controller_ikfast_plugin")
+subdirs("ros_controllers/velocity_controllers")
+subdirs("ros_controllers/diff_drive_controller")
+subdirs("ros_controllers/ackermann_steering_controller")
+subdirs("ros_controllers/effort_controllers")
+subdirs("ros_controllers/gripper_action_controller")
+subdirs("ros_controllers/joint_trajectory_controller")
+subdirs("description/robotiq_85_gripper-master/robotiq_85_moveit_config")
 subdirs("ur5e_moveit_config")
+subdirs("ros_controllers/four_wheel_steering_controller")

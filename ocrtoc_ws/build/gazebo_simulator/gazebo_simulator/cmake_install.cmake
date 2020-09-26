@@ -1,8 +1,8 @@
-# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo_simulator/gazebo_simulator
+# Install script for directory: /home/kaushik/ocrtoc_ws/src/gazebo_simulator/gazebo_simulator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,24 +38,24 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo_simulator/gazebo_simulator/catkin_generated/installspace/gazebo_simulator.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/gazebo_simulator/gazebo_simulator/catkin_generated/installspace/gazebo_simulator.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_simulator/cmake" TYPE FILE FILES
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo_simulator/gazebo_simulator/catkin_generated/installspace/gazebo_simulatorConfig.cmake"
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo_simulator/gazebo_simulator/catkin_generated/installspace/gazebo_simulatorConfig-version.cmake"
+    "/home/kaushik/ocrtoc_ws/build/gazebo_simulator/gazebo_simulator/catkin_generated/installspace/gazebo_simulatorConfig.cmake"
+    "/home/kaushik/ocrtoc_ws/build/gazebo_simulator/gazebo_simulator/catkin_generated/installspace/gazebo_simulatorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_simulator" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo_simulator/gazebo_simulator/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_simulator" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/gazebo_simulator/gazebo_simulator/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_simulator" TYPE DIRECTORY FILES
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo_simulator/gazebo_simulator/launch"
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo_simulator/gazebo_simulator/models"
+    "/home/kaushik/ocrtoc_ws/src/gazebo_simulator/gazebo_simulator/launch"
+    "/home/kaushik/ocrtoc_ws/src/gazebo_simulator/gazebo_simulator/models"
     )
 endif()
 

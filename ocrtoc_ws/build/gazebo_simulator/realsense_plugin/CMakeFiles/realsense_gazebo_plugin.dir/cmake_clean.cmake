@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/lib/librealsense_gazebo_plugin.pdb"
+  "/home/kaushik/ocrtoc_ws/devel/lib/librealsense_gazebo_plugin.so"
   "CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o"
   "CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/librealsense_gazebo_plugin.pdb"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/librealsense_gazebo_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

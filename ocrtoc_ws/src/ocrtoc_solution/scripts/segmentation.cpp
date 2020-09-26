@@ -18,9 +18,6 @@
 //#include <obj_recognition/SegmentedClustersArray.h>
 //#include <obj_recognition/ClusterData.h>
 
-
-
-
 // Topics
 static const std::string IMAGE_TOPIC = "/passthrough/output";
 static const std::string PUBLISH_TOPIC = "/pcl/points";

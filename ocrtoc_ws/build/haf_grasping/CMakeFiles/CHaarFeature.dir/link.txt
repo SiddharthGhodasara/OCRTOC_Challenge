@@ -1,1 +1,1 @@
-/usr/bin/c++ -fPIC     -shared -Wl,-soname,libCHaarFeature.so -o /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libCHaarFeature.so CMakeFiles/CHaarFeature.dir/src/CHaarFeature.cpp.o 
+/usr/bin/c++ -fPIC     -shared -Wl,-soname,libCHaarFeature.so -o /home/kaushik/ocrtoc_ws/devel/lib/libCHaarFeature.so CMakeFiles/CHaarFeature.dir/src/CHaarFeature.cpp.o 

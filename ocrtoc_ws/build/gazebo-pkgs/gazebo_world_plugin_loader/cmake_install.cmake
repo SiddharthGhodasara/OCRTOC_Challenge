@@ -1,8 +1,8 @@
-# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_world_plugin_loader
+# Install script for directory: /home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_world_plugin_loader
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,18 +38,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo-pkgs/gazebo_world_plugin_loader/catkin_generated/installspace/gazebo_world_plugin_loader.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/gazebo-pkgs/gazebo_world_plugin_loader/catkin_generated/installspace/gazebo_world_plugin_loader.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_world_plugin_loader/cmake" TYPE FILE FILES
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo-pkgs/gazebo_world_plugin_loader/catkin_generated/installspace/gazebo_world_plugin_loaderConfig.cmake"
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/gazebo-pkgs/gazebo_world_plugin_loader/catkin_generated/installspace/gazebo_world_plugin_loaderConfig-version.cmake"
+    "/home/kaushik/ocrtoc_ws/build/gazebo-pkgs/gazebo_world_plugin_loader/catkin_generated/installspace/gazebo_world_plugin_loaderConfig.cmake"
+    "/home/kaushik/ocrtoc_ws/build/gazebo-pkgs/gazebo_world_plugin_loader/catkin_generated/installspace/gazebo_world_plugin_loaderConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_world_plugin_loader" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_world_plugin_loader/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_world_plugin_loader" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_world_plugin_loader/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,12 +59,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_world_plugin_loader.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libgazebo_world_plugin_loader.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/kaushik/ocrtoc_ws/devel/lib/libgazebo_world_plugin_loader.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_world_plugin_loader.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_world_plugin_loader.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_world_plugin_loader.so"
-         OLD_RPATH "/opt/ros/melodic/lib:"
+         OLD_RPATH "/home/kaushik/catkin_ws/devel/lib:/opt/ros/melodic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgazebo_world_plugin_loader.so")
@@ -73,10 +73,13 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gazebo_world_plugin_loader" TYPE DIRECTORY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_world_plugin_loader/include/gazebo_world_plugin_loader/" FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_world_plugin_loader" TYPE DIRECTORY FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/gazebo-pkgs/gazebo_world_plugin_loader/launch" FILES_MATCHING REGEX "/[^/]*\\.launch$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gazebo_world_plugin_loader" TYPE DIRECTORY FILES "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_world_plugin_loader/include/gazebo_world_plugin_loader/" FILES_MATCHING REGEX "/[^/]*\\.h$")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_world_plugin_loader" TYPE DIRECTORY FILES "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_world_plugin_loader/launch" FILES_MATCHING REGEX "/[^/]*\\.launch$")
 endif()
 

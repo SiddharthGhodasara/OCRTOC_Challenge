@@ -1,8 +1,8 @@
-# Install script for directory: /home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization
+# Install script for directory: /home/kaushik/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kaushik/ocrtoc_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_2f_85_gripper_visualization/catkin_generated/installspace/robotiq_2f_85_gripper_visualization.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/build/description/robotiq_2f_85_gripper_visualization/catkin_generated/installspace/robotiq_2f_85_gripper_visualization.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robotiq_2f_85_gripper_visualization/cmake" TYPE FILE FILES
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_2f_85_gripper_visualization/catkin_generated/installspace/robotiq_2f_85_gripper_visualizationConfig.cmake"
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/build/description/robotiq_2f_85_gripper_visualization/catkin_generated/installspace/robotiq_2f_85_gripper_visualizationConfig-version.cmake"
+    "/home/kaushik/ocrtoc_ws/build/description/robotiq_2f_85_gripper_visualization/catkin_generated/installspace/robotiq_2f_85_gripper_visualizationConfig.cmake"
+    "/home/kaushik/ocrtoc_ws/build/description/robotiq_2f_85_gripper_visualization/catkin_generated/installspace/robotiq_2f_85_gripper_visualizationConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robotiq_2f_85_gripper_visualization" TYPE FILE FILES "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robotiq_2f_85_gripper_visualization" TYPE FILE FILES "/home/kaushik/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robotiq_2f_85_gripper_visualization" TYPE DIRECTORY FILES
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization/legacy"
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization/meshes"
-    "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization/urdf"
+    "/home/kaushik/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization/legacy"
+    "/home/kaushik/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization/meshes"
+    "/home/kaushik/ocrtoc_ws/src/description/robotiq_2f_85_gripper_visualization/urdf"
     )
 endif()
 

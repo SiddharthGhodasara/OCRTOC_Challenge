@@ -1,4 +1,4 @@
-prefix=/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel
+prefix=/home/kaushik/ocrtoc_ws/devel
 
 Name: robotiq_85_bringup
 Description: Description of robotiq_85_bringup

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/lib/object_msgs_tools/object_tf_broadcaster_node"
+  "/home/kaushik/ocrtoc_ws/devel/lib/object_msgs_tools/object_tf_broadcaster_node.pdb"
   "CMakeFiles/object_tf_broadcaster_node.dir/src/object_tf_broadcaster_node.cpp.o"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/object_msgs_tools/object_tf_broadcaster_node.pdb"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/object_msgs_tools/object_tf_broadcaster_node"
 )
 
 # Per-language clean rules from dependency scanning.

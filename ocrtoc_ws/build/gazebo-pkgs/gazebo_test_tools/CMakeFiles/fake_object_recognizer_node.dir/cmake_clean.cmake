@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_node"
+  "/home/kaushik/ocrtoc_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_node.pdb"
   "CMakeFiles/fake_object_recognizer_node.dir/src/fake_object_recognizer_node.cpp.o"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_node.pdb"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_node"
 )
 
 # Per-language clean rules from dependency scanning.

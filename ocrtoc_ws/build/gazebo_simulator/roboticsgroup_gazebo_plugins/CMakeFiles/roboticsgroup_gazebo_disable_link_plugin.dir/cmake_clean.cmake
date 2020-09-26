@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/kaushik/ocrtoc_ws/devel/lib/libroboticsgroup_gazebo_disable_link_plugin.pdb"
+  "/home/kaushik/ocrtoc_ws/devel/lib/libroboticsgroup_gazebo_disable_link_plugin.so"
   "CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libroboticsgroup_gazebo_disable_link_plugin.pdb"
-  "/home/gaurav/NEW/OCRTOC_Challenge/ocrtoc_ws/devel/lib/libroboticsgroup_gazebo_disable_link_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.
