@@ -158,7 +158,7 @@ class CommitSolution(object):
 			yolo = rospy.wait_for_message('/pose', PointStamped)
 			yolo_x = yolo.point.x
 			yolo_y = yolo.point.y
-			print("Gto Yolo")
+			print("Goto Yolo")
 
 			rospy.Rate(1).sleep()
 
