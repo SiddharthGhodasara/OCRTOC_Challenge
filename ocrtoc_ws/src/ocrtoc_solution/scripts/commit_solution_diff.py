@@ -62,24 +62,38 @@ grasps_plots = ""
 def callback_plots(msg_plots):
 	global grasps_plots
 	grasps_plots = msg_plots.data.split(" ")
-	print(grasps_plots)
+	#print(grasps_plots)
 
 #Function to extract grasp coordinates
 def get_grasps_coord():
+	grasp_buffer = []
 	#Subscribing to the topic publishing the coordinates of grasp
 	grasps_plots_sub = rospy.Subscriber('/haf_grasping/grasp_hypothesis_with_eval', String, callback_plots)
 	global grasps_plots
 	# Wait for gsps to arrive.
-	rate = rospy.Rate(1)
+	rate = rospy.Rate(2)
+
 	#Running till we get a suitable grasp
 	while not rospy.is_shutdown():
-		if grasps_plots != "" :
-			if int(grasps_plots[0]) > 60:
+
+		if (grasps_plots != "" and grasps_plots[0] > 10):
+
+			if int(grasps_plots[0]) < 100: #without scaling search area, the threshold was 70
+				print("searching again for better grasp")
+				grasp_buffer.append(grasps_plots)
+				print(len(grasp_buffer))
+				if len(grasp_buffer) >= 20: 
+					last_ten = grasp_buffer[-10:-1]
+					grasps_plots = max(last_ten)
+					print("The chosen grasp is: ")
+					print(grasps_plots)
+					break
+				else:
+					pass
+			else:
 				print("satisfied grasp condition")
-				print(int(grasps_plots[0]))
+				print(grasps_plots)
 				break
-		else:
-			print("searching again for better grasp")
 		rate.sleep()
 
 
@@ -154,18 +168,17 @@ class CommitSolution(object):
 			while label_pub.get_num_connections() < 1:
 				None
 			label_pub.publish(str(name) + ",1," + str(goal.scale_list[i]))
-
 			yolo = rospy.wait_for_message('/pose', PointStamped)
 			yolo_x = yolo.point.x
 			yolo_y = yolo.point.y
 			print("Goto Yolo")
-
 			rospy.Rate(1).sleep()
 
 			#Getting the grasp coordinates
-			new_grasps = rospy.wait_for_message('/haf_grasping/grasp_hypothesis_with_eval', String)
+			#new_grasps = rospy.wait_for_message('/haf_grasping/grasp_hypothesis_with_eval', String)
 			get_grasps_coord()
 			global grasps_plots
+
 			#Extracting the X Y Z coordintes
 			position_x = float(grasps_plots[-4])
 			position_y = float(grasps_plots[-3])
@@ -176,6 +189,7 @@ class CommitSolution(object):
 			diff_y = yolo_y - position_y
 			print("difference between grasp and geometric centers")
 			print(diff_x, diff_y)
+
 			#Extracting the roll
 			roll = float(grasps_plots[-1])
 			print(grasps_plots[-1])
@@ -188,7 +202,7 @@ class CommitSolution(object):
 			#Assiging Linear Coordinates
 			grasp_pose.pose.position.x = position_x
 			grasp_pose.pose.position.y = position_y
-			grasp_pose.pose.position.z = position_z + 0.05
+			grasp_pose.pose.position.z = position_z + 0.03
 			#Converting degrees to radians
 			r_rad = (r*3.14159265358979323846)/180
 			p_rad = (p*3.14159265358979323846)/180
@@ -199,7 +213,7 @@ class CommitSolution(object):
 			#Assigning orientation value to pose message
 			grasp_pose.pose.orientation.x = q[0]#quat[0] #grasps_plots.orientation.x
 			grasp_pose.pose.orientation.y = q[1]#quat[1] #grasps_plots.orientation.y
-			grasp_pose.pose.orientation.z = q[2]#quat[2] #grasps_plots.orientation.z
+			grasp_pose.pose.orientation.z = q[2] #quat[2] #grasps_plots.orientation.z
 			grasp_pose.pose.orientation.w = q[3]#quat[3] #grasps_plots.orientation.w
 
 			#Moving the arm to Picking location
@@ -207,7 +221,7 @@ class CommitSolution(object):
 			group.set_pose_target(grasp_pose)
 			plan2 = group.plan()
 			group.go(wait=True)
-			rospy.sleep(1)
+			rospy.sleep(2)
 
 			#Opening the gripper
 			gripper_cmd = GripperCommandActionGoal()
@@ -215,19 +229,19 @@ class CommitSolution(object):
 			gripper_cmd.goal.command.max_effort = 0.0
 			gripper_cmd_pub.publish(gripper_cmd)
 			rospy.loginfo("Pub gripper_cmd")
-			rospy.sleep(1.0)
+			rospy.sleep(2)
 
 			#Going down to pick the object
 			waypoints = []
 			wpose = group.get_current_pose().pose
-			wpose.position.z -= scale * 0.055
+			wpose.position.z -= scale * 0.030 + 0.01
 			waypoints.append(copy.deepcopy(wpose))
 			(cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 			group.execute(cartesian_plan, wait=True)
-			rospy.sleep(1)
+			rospy.sleep(2)
 
 			#Closing the gripper till both contact sensors are touching the obejct
-			rate = rospy.Rate(30)
+			rate = rospy.Rate(20)
 			cmd = 0.039
 			global contact
 			while not rospy.is_shutdown():
@@ -240,18 +254,19 @@ class CommitSolution(object):
 					gripper_cmd.goal.command.position = cmd
 					gripper_cmd.goal.command.max_effort = 0.01
 					gripper_cmd_pub.publish(gripper_cmd)
-					cmd -= 0.00018
+					print(cmd)
+					cmd -= 0.0005
 					rate.sleep()
 				#Re do the task if the lower limit is reached
 				else:
 					i = i - 1
 					#goto .xxx
 					break
-
-			#Going down to pick the object
+			rospy.sleep(2)
+			#Going up after picking up object
 			waypoints = []
 			wpose = group.get_current_pose().pose
-			wpose.position.z += scale * 0.1
+			wpose.position.z += scale * 0.15
 			waypoints.append(copy.deepcopy(wpose))
 			(cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 			group.execute(cartesian_plan, wait=True)
@@ -288,8 +303,6 @@ class CommitSolution(object):
 
 			#Getting the Quaternion coordinates from Euler
 			q = quaternion_from_euler(r,p,y)
-			print("Printing roll in degrees")
-			print(math.degrees(r))
 			grasp_pose.pose.position.x = goal.pose_list[i].position.x + diff_x
 			grasp_pose.pose.position.y = goal.pose_list[i].position.y + diff_y
 			grasp_pose.pose.position.z = position_z + 0.1

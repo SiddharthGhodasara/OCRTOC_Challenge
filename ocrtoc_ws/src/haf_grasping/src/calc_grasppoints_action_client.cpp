@@ -80,7 +80,7 @@ public:
 
 	CCalcGrasppointsClient(ros::NodeHandle nh_)
 	{
-		ROS_INFO("NOOOOO!!!!!!");
+		//ROS_INFO("NOOOOO!!!!!!");
 		this->graspsearchcenter.x = -1;
 		nh_.param("grasp_search_size_x", this->grasp_search_size_x, 18);	//default value = max. limit 32
 		nh_.param("grasp_search_size_y", this->grasp_search_size_y, 30);	//default value = max. limit 44
@@ -131,7 +131,7 @@ public:
 // define goal (input) for grasp calculation, send it to grasp action server and receive result
 void CCalcGrasppointsClient::get_coord_cb(const geometry_msgs::PointStamped::ConstPtr& msg)
 {
-	ROS_INFO("Coord Callback");
+	//ROS_INFO("Coord Callback");
 	//Extracting the header
 	std::string str;
 	std::vector<std::string> result;
@@ -151,17 +151,17 @@ void CCalcGrasppointsClient::get_coord_cb(const geometry_msgs::PointStamped::Con
 	this->max_grasp_search_size_x = 18;				//max. limit 32-14=18
 	this->max_grasp_search_size_y = 30;				//max. limit 44-14=30
 	if (this->grasp_search_size_x < 1 or this->grasp_search_size_x >= this->max_grasp_search_size_x)
-		this->grasp_search_size_x = 6;
+		this->grasp_search_size_x = 7;
 	if (this->grasp_search_size_y < 1 or this->grasp_search_size_y >= this->max_grasp_search_size_y)
-		this->grasp_search_size_y = 6;
-	ROS_INFO_STREAM("The correct Search size is: " <<this->grasp_search_size_y << this->grasp_search_size_x);
+		this->grasp_search_size_y = 7;
+	//ROS_INFO_STREAM("The correct Search size is: " <<this->grasp_search_size_y << this->grasp_search_size_x);
 	//Extracting the coordinates
 	this->graspsearchcenter.x = msg->point.x;
 	this->graspsearchcenter.y = msg->point.y;
 	this->graspsearchcenter.z = 0; //msg->point.z;
 
-	ROS_INFO_STREAM("coordinates of yolo x"<<this->graspsearchcenter.x);
-	ROS_INFO_STREAM("coordinates of yolo y"<<this->graspsearchcenter.y);
+	//ROS_INFO_STREAM("coordinates of yolo x"<<this->graspsearchcenter.x);
+	//ROS_INFO_STREAM("coordinates of yolo y"<<this->graspsearchcenter.y);
 }
 
 // open pcd file for given path and start get_grasp_cb (that triggers grasp calculation)
@@ -301,9 +301,9 @@ bool CCalcGrasppointsClient::set_approach_vector(haf_grasping::GraspApproachVect
 {
 	//set grasp approach vector
 	this->approach_vector = req.approach_vector;
-	ROS_INFO("Set approach vector to: [%f,%f,%f]", this->approach_vector.x,this->approach_vector.y,this->approach_vector.z);
+	//ROS_INFO("Set approach vector to: [%f,%f,%f]", this->approach_vector.x,this->approach_vector.y,this->approach_vector.z);
 	res.result = true;
-	ROS_INFO("sending back response: [%d]", (int)res.result);
+	//ROS_INFO("sending back response: [%d]", (int)res.result);
 	return res.result;
 }
 

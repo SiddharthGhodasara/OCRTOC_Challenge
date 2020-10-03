@@ -18,6 +18,9 @@
 //#include <obj_recognition/SegmentedClustersArray.h>
 //#include <obj_recognition/ClusterData.h>
 
+
+
+
 // Topics
 static const std::string IMAGE_TOPIC = "/passthrough/output";
 static const std::string PUBLISH_TOPIC = "/pcl/points";
@@ -89,8 +92,8 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     tree->setInputCloud (object);
     std::vector<pcl::PointIndices> cluster_indices;
     pcl::EuclideanClusterExtraction<pcl::PointXYZRGB> ec;
-    ec.setClusterTolerance (0.1); // 2cm
-    ec.setMinClusterSize (100);
+    ec.setClusterTolerance (0.01); 
+    ec.setMinClusterSize (10);
     ec.setMaxClusterSize (25000);
     ec.setSearchMethod (tree);
     ec.setInputCloud (object);
@@ -103,7 +106,7 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     sensor_msgs::PointCloud2 output;
     pcl::PCLPointCloud2 outputPCL;
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr point_cloud_segmented(new pcl::PointCloud<pcl::PointXYZRGB>);
-/*
+
   int j= 0;
  
   for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin(); it != cluster_indices.end(); ++it)
@@ -189,9 +192,9 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
             }
         j++;
     }
-  */
+ 
   // Convert to ROS data type
-  //point_cloud_segmented->header.frame_id = object->header.frame_id;
+  point_cloud_segmented->header.frame_id = object->header.frame_id;
   //if(point_cloud_segmented->size()) 
   //{
   //    pcl::toPCLPointCloud2(*plane, outputPCL);
@@ -199,7 +202,8 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
   
   //else 
   //{
-     pcl::toPCLPointCloud2(*object, outputPCL);
+     pcl::toPCLPointCloud2(*point_cloud_segmented, outputPCL);
+     //pcl::toPCLPointCloud2(*object, outputPCL);
   //}
   
   pcl_conversions::fromPCL(outputPCL, output);

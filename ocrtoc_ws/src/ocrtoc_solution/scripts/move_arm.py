@@ -50,12 +50,13 @@ cb.registerCallback(callback)
 #rospy.spin()
 
 
-pose_target = geometry_msgs.msg.Pose()
-pose_target.position.x =  -0.066958 #0.245# ##-0.28#3155924902#0.0455312686019
-pose_target.position.y =  0.349095#0.108##-0.03#83420782723#0.463301607729
-pose_target.position.z =  0.009951+0.1#0.0226+0.1##0.399089506#0.391596235061
+pose_target = geometry_msgs.msg.Pose() 
 
-r,p,y= (90,90,0) #deg
+pose_target.position.x = -0.078362 #-0.066958 #0.245# ##-0.28#3155924902#0.0455312686019
+pose_target.position.y = 0.019503# 0.349095#0.108##-0.03#83420782723#0.463301607729
+pose_target.position.z = 0.022651 # 0.009951+0.1#0.0226+0.1##0.399089506#0.391596235061
+
+r,p,y= (0,90,0) #deg
 r_rad = (r*3.14159265358979323846)/180
 p_rad = (p*3.14159265358979323846)/180
 y_rad = (y*3.14159265358979323846)/180
@@ -88,7 +89,7 @@ rospy.loginfo("Opening Gripper")
 waypoints = []
 scale=1
 wpose = group.get_current_pose().pose
-wpose.position.z -= scale * 0.1  
+wpose.position.z -= scale * 0.03 + 0.01  
 waypoints.append(copy.deepcopy(wpose))
 (cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 group.execute(cartesian_plan, wait=True)

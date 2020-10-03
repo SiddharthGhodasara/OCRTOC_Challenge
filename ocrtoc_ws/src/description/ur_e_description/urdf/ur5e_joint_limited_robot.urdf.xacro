@@ -74,7 +74,7 @@
            <gripper_link>ur5_finger1_pad</gripper_link>
            <gripper_link>ur5_finger2_pad</gripper_link>
         </arm>
-       <forces_angle_tolerance>70</forces_angle_tolerance>
+       <forces_angle_tolerance>80</forces_angle_tolerance>
        <update_rate>1000</update_rate>
        <grip_count_threshold>1</grip_count_threshold>
        <max_grip_count>2</max_grip_count>

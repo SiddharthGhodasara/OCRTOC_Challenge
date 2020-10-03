@@ -9,6 +9,8 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 import math
 #Our Imported Libraries
 import tf
+import os
+import cv2
 import sys
 import copy
 import time
@@ -33,6 +35,14 @@ from control_msgs.msg import GripperCommandActionGoal
 from geometry_msgs.msg import Point, Pose, PointStamped
 from moveit_msgs.msg import MoveGroupAction, MoveGroupGoal
 from goto import with_goto
+from PIL import Image as img
+from cv_bridge import CvBridge, CvBridgeError
+from sensor_msgs.msg import Image, CameraInfo
+from image_geometry import PinholeCameraModel
+import rospkg
+from shapely.geometry import Polygon
+
+
 #Initalising the moveit commander
 moveit_commander.roscpp_initialize(sys.argv)
 
@@ -48,6 +58,37 @@ tf_listener = None
 gripper_cmd_pub = None
 display_trajectory_publisher = None
 
+#Defining the bridge
+bridge = CvBridge()
+dictionary = {"master_chef_can": [0.102529, 0.102377, 0.140177],
+"potted_meat_can": [0.057684, 0.101515, 0.083543],
+"pudding_box" : [0.089631, 0.113077, 0.038256],
+"wood_block": [0.206002, 0.089939, 0.090569],"jenga": [0.150000, 0.050000, 0.030000]}
+
+#Defining camera info global varibale
+camera_info = None
+cam_model = None
+
+#Loading the labels
+rospack = rospkg.RosPack()
+package_path = rospack.get_path('ocrtoc_solution')
+#print("Global")
+labelsPath = os.path.sep.join([package_path, 'scripts','yolo', 'yolo-coco', "obj.names"])
+LABELS = open(labelsPath).read().strip().split("\n")
+
+#Initialize a list of colors to represent each possible class label
+np.random.seed(42)
+COLORS = np.random.randint(0, 255, size=(len(LABELS), 3), dtype="uint8")
+
+#Derive the paths to the YOLO weights and model configuration
+
+weightsPath = os.path.sep.join([package_path, 'scripts','yolo' , 'yolo-coco', "yolov3-tiny-obj_3000.weights"])
+configPath = os.path.sep.join([package_path, 'scripts','yolo', 'yolo-coco', "yolov3-tiny-obj.cfg"])
+
+# load our YOLO object detector trained on custom data
+print("[INFO] loading YOLO from disk...")
+net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
+
 #Contact Sensors Callback
 contact1 = None
 contact2 = None
@@ -62,26 +103,176 @@ grasps_plots = ""
 def callback_plots(msg_plots):
 	global grasps_plots
 	grasps_plots = msg_plots.data.split(" ")
-	print(grasps_plots)
+	# print(grasps_plots)
 
 #Function to extract grasp coordinates
 def get_grasps_coord():
+	grasp_buffer = []
 	#Subscribing to the topic publishing the coordinates of grasp
 	grasps_plots_sub = rospy.Subscriber('/haf_grasping/grasp_hypothesis_with_eval', String, callback_plots)
 	global grasps_plots
 	# Wait for gsps to arrive.
-	rate = rospy.Rate(1)
+	rate = rospy.Rate(2)
+
 	#Running till we get a suitable grasp
 	while not rospy.is_shutdown():
-		if grasps_plots != "" :
-			if int(grasps_plots[0]) > 60:
-				print("satisfied grasp condition")
-				print(int(grasps_plots[0]))
-				break
-		else:
-			print("searching again for better grasp")
-		rate.sleep()
 
+		if (grasps_plots != "" and grasps_plots[0] > 10):
+
+			if int(grasps_plots[0]) < 100: #without scaling search area, the threshold was 70
+				print("searching again for better grasp")
+				grasp_buffer.append(grasps_plots)
+				print(len(grasp_buffer))
+				if len(grasp_buffer) >= 20: 
+					last_ten = grasp_buffer[-10:-1]
+					grasps_plots = max(last_ten)
+					print("The chosen grasp is: ")
+					print(grasps_plots)
+					break
+				else:
+					pass
+			else:
+				print("satisfied grasp condition")
+				print(grasps_plots)
+				break
+		rate.sleep()
+image = None 
+def image_callback(data):
+	global image
+	#Function for getting images from kinect camera
+
+	# image = rospy.wait_for_message('/kinect/color/image_raw', Image)
+
+	#Try Except for exception handling
+	try:
+		#Converting Sensor Image to cv2 Image
+		image = bridge.imgmsg_to_cv2(data, 'bgr8')
+
+		
+	except CvBridgeError as e:
+		print(e)
+
+#Function for converting coordinates to base link frame
+def uv_to_xyz(cx, cy):
+	#Converting to XYZ coordinates
+	(x, y, z) = cam_model.projectPixelTo3dRay((cx, cy))
+	#Normalising
+	x = x/z
+	y = y/z
+	z = z/z
+
+	#Getting the depth at given coordinates
+	depth = rospy.wait_for_message('/kinect/depth/image_raw', Image)
+	depth_img = img.frombytes("F", (depth.width, depth.height), depth.data)
+	lookup = depth_img.load()
+	d = lookup[cx, cy]
+
+	#Modifying the coordinates
+	x *= d
+	y *= d
+	z *= d
+
+	#Making Point Stamp Message
+	grasp_pose = geometry_msgs.msg.PointStamped()
+	grasp_pose.header.frame_id = "/kinect_optical_frame"
+	point = geometry_msgs.msg.Point()
+	grasp_pose.point.x =  x
+	grasp_pose.point.y =  y
+	grasp_pose.point.z =  z
+
+	#Transforming
+	target_frame = "world"
+	source_frame = "kinect_optical_frame"
+	transform = tf_buffer.lookup_transform(target_frame, source_frame, rospy.Time(0), rospy.Duration(1.0))
+	pose_transformed = tf2_geometry_msgs.do_transform_point(grasp_pose, transform)
+
+	#Returning the transform coordinates
+	return pose_transformed
+
+
+#Function for YOLO Object Detection
+def yolo(ll, scale):
+	#Getting the image
+	 
+	rospy.Subscriber('/kinect/color/image_raw', Image, image_callback)
+	rospy.sleep(2)
+	print("Got label {}".format(ll))
+
+	#Getting the image dimensions
+	(H, W) = image.shape[:2]
+	# determine only the *output* layer names that we need from YOLO
+	ln = net.getLayerNames()
+	ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+	#Creating Blob from images
+	blob = cv2.dnn.blobFromImage(image, 1 / 255.0, (416, 416), swapRB=True, crop=False)
+	#Feeding the blob as input
+	net.setInput(blob)
+	#Forward pass
+	layerOutputs = net.forward(ln)
+
+	#Initializing lists of Detected Bounding Boxes, Confidences, and Class IDs
+	boxes = []
+	confidences = []
+	classIDs = []
+
+	#Looping over each of the layer outputs
+	for output in layerOutputs:
+		#Looping over each of the detections
+		for detection in output:
+			#Extracting the class ID and confidence
+			scores = detection[5:]
+			classID = np.argmax(scores)
+			confidence = scores[classID]
+
+			#Filtering out weak predictions
+			if confidence > 0.5:
+				#Scale the Bounding Box Coordinates
+				box = detection[0:4] * np.array([W, H, W, H])
+				(centerX, centerY, width, height) = box.astype("int")
+				# use the center (x, y)-coordinates to derive the top and
+				# and left corner of the bounding box
+				x = int(centerX - (width / 2))
+				y = int(centerY - (height / 2))
+				#Updating the Lists
+				boxes.append([x, y, int(width), int(height)])
+				confidences.append(float(confidence))
+				classIDs.append(classID)
+
+	#Applying non-max Suppression
+	idxs = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.3)
+
+	#Ensuring at least one detection exists
+	if len(idxs) > 0:
+		#Looping over the indexes
+		#print(len(idxs))
+		for i in idxs.flatten():
+			#Extracting the bounding box coordinates
+			(x, y) = (boxes[i][0], boxes[i][1])
+			(w, h) = (boxes[i][2], boxes[i][3])
+			#Getting the labels
+			label = LABELS[classIDs[i]]
+			
+			if label == ll:
+				#Getting center coordinates
+				cx = x + (w/2)
+				cy = y + (h/2)
+
+				#Getting the width and height of the object and multipling it by scaling factor
+				if label.strip() in dictionary.keys():
+					print("inside if condition")
+					h = dictionary[label][0] * scale
+					w = dictionary[label][1] * scale
+
+				#Converting the center cooridnates to base link frame
+				xy_pose = uv_to_xyz(cx, cy)
+				#Converting the extreme cooridnates to base link frame
+				xy_pose_2 = uv_to_xyz(x, y)
+				#Publishing the pose
+				xy_pose.header.frame_id = label + " ,"  + str(w) + " ," + str(h)
+				while pub.get_num_connections() < 1:
+					None
+				pub.publish(xy_pose)
+				return xy_pose
 
 
 #Feedback Function
@@ -90,23 +281,30 @@ def feedback(goal):
 	for i in range(len(goal.object_list)):
 		#Getting the object label
 		name = goal.object_list[i]
-		#Sending to YOLO
-		label_pub.publish(str(name) + ",1," + str(goal.scale_list[i]))
-		#Getting the feedback from YOLO
-		pose = rospy.wait_for_message('/pose', PointStamped)
+		#Sending to YOLO and getting output coordinates
+		pose = yolo(str(name), float(goal.scale_list[i]))
 		#Extracting pose of current object
 		pose_curr_x = pose.point.x
-		pose_curr_y = pose.point_cloud2.y
+		pose_curr_y = pose.point.y
 		#pose_curr_z = pose.position.z
-
+		print("current position in x: ")
+		print(pose_curr_x)
+		print("current position in y: ")
+		print(pose_curr_y)
+		print("goal position in x")
+		print(goal.pose_list[i].position.x)
+		print("goal position in y")
+		print(goal.pose_list[i].position.y)
 		#Checking if threshold is within threshold
-		if abs(pose_curr_x - goal.pose_list[i].position.x) <= 0.05 and abs(pose_curr_y - goal.pose_list[i].position.y) >= 0.05:
+		if abs(pose_curr_x - goal.pose_list[i].position.x) <= 0.02 and abs(pose_curr_y - goal.pose_list[i].position.y) <= 0.02:
+
 			print("Good Job for {}".format(name))
 
 		#If not within the threshold, do that object again
 		else:
 			print("Bad Job for {}".format(name))
 
+		rospy.sleep(1)
 
 #Solution Class
 class CommitSolution(object):
@@ -150,7 +348,7 @@ class CommitSolution(object):
 			goal.pose_list[i].position.z, goal.pose_list[idx].position.z = goal.pose_list[idx].position.z, goal.pose_list[i].position.z
 		return goal
 
-	#@with_goto
+	# @with_goto
 	def execute_callback(self, goal):
 		#Defining the use of global variables
 		global robot
@@ -165,41 +363,119 @@ class CommitSolution(object):
 
 		rospy.loginfo("Get clean task.")
 		print(goal)
+
+		#check if target location is occupied 
+
+	
+			#Get the object output coordinates
+
 		##### User code example starts #####
 		# In the following, an example is provided on how to use the predefined software APIs
 		# to get the target configuration, to control the robot, to set the actionlib result.
+		i = 0
+		while(i<len(goal.object_list)):
+			name = str(goal.object_list[i])
+			curr_x = goal.pose_list[i].position.x
+			curr_y = goal.pose_list[i].position.y
 
+			curr_h = dictionary[name][0] * float(goal.scale_list[i])
+			curr_w = dictionary[name][1] * float(goal.scale_list[i])
+
+			curr_x1, curr_y1 = curr_x - curr_w/2, curr_y - curr_h/2
+			curr_x2, curr_y2 = curr_x - curr_w/2, curr_y + curr_h/2
+			curr_x3, curr_y3 = curr_x + curr_w/2, curr_y - curr_h/2
+			curr_x4, curr_y4 = curr_x + curr_w/2, curr_y + curr_h/2
+
+			box_1 = [[curr_x1, curr_y1], [curr_x2, curr_y2], [curr_x4, curr_y4], [curr_x3, curr_y3]]
+
+			poly_1 = Polygon(box_1)
+
+			#Get the cuurent coordinates of all other objects
+			for j in range(i+1, len(goal.object_list)):
+				print(name)
+				pose = yolo(str(goal.object_list[j]), float(goal.scale_list[j]))
+				#Define the region of cuurent yolo object
+				var_list = pose.header.frame_id.split(",")
+				label = var_list[0]
+				w = float(var_list[1])
+				h = float(var_list[2])
+				x = pose.point.x
+				y = pose.point.y
+
+				x1, y1 = x - w/2, y - h/2
+				x2, y2 = x - w/2, y + h/2
+				x3, y3 = x + w/2, y - h/2
+				x4, y4 = x + w/2, y + h/2
+				box_2 = [[x1, y1], [x2, y2], [x4, y4], [x3, y3]]
+				poly_2 = Polygon(box_2)
+				
+					#Check for intersection
+				if poly_1.intersection(poly_2).area != 0:
+					#print("Output Location occupied")
+					#print(box_1, box_2)
+					goal.object_list[i], goal.object_list[j] = goal.object_list[j],goal.object_list[i]
+					# goal.scale_list[i], goal.scale_list[j] = goal.scale_list[j], goal.scale_list[i]
+					goal.pose_list[i].position.x , goal.pose_list[j].position.x = goal.pose_list[j].position.x , goal.pose_list[i].position.x
+					goal.pose_list[i].position.y, goal.pose_list[j].position.y = goal.pose_list[j].position.y, goal.pose_list[i].position.y
+					goal.pose_list[i].position.z, goal.pose_list[j].position.z = goal.pose_list[j].position.z, goal.pose_list[i].position.z
+						
+					goal.pose_list[i].orientation.x , goal.pose_list[j].orientation.x  =goal.pose_list[j].orientation.x , goal.pose_list[i].orientation.x 
+					goal.pose_list[i].orientation.y , goal.pose_list[j].orientation.y  =goal.pose_list[j].orientation.y , goal.pose_list[i].orientation.y
+					goal.pose_list[i].orientation.z , goal.pose_list[j].orientation.z  =goal.pose_list[j].orientation.z , goal.pose_list[i].orientation.z
+					goal.pose_list[i].orientation.w , goal.pose_list[j].orientation.w  =goal.pose_list[j].orientation.w , goal.pose_list[i].orientation.w
+					print("printing goal after swapping")
+					print(goal)
 		#Looping over the list of objects
-		for i in range(len(goal.object_list)):
+		#for i in range(len(goal.object_list)):
 			#Extracting the name of the object
+
 			name = goal.object_list[i]
 			global label_pub
 			rospy.loginfo(type(name))
-			while label_pub.get_num_connections() < 1:
-				None
-			label_pub.publish(str(name) + ",1," + str(goal.scale_list[i]))
-			'''
-			yolo = rospy.wait_for_message('/pose', PointStamped)
-			yolo_x = yolo.point.x
-			yolo_y = yolo.point.y
-			print("Goto Yolo")
-
+			#while label_pub.get_num_connections() < 1:
+			#	None
+			#label_pub.publish(str(name) + ",1," + str(goal.scale_list[i]))
+			xy_pose = yolo(str(name), float(goal.scale_list[i]))
 			rospy.Rate(1).sleep()
-			'''
+
+			#Extracting centroid coordiantes from YOLO
+			yolo_x = xy_pose.point.x
+			yolo_y = xy_pose.point.y
+
 			#Getting the grasp coordinates
 			new_grasps = rospy.wait_for_message('/haf_grasping/grasp_hypothesis_with_eval', String)
 			get_grasps_coord()
 			global grasps_plots
+			#print("THISSSSSSSSSSSSSSSSS is printinign ", int(grasps_plots[0]))
+			if int(grasps_plots[0]) <= 55:
+				print("Slide")
+
+				#List to store the variables
+
+				#Get coordinates of all the objects
+				for i in range(len(goal.object_list)):
+					obj_name = goal.object_list[i]
+					#rospy.loginfo(type(name))
+					#Getting YOLO coordinates
+					xy_pose_temp = yolo(str(name), float(goal.scale_list[i]))
+					print(name, " ", xy_pose_temp)
+
+				#Find the distance vector between all the objects
+
+				#Get the direction of movement
+
+				#Slide
+
+
 			#Extracting the X Y Z coordintes
 			position_x = float(grasps_plots[-4])
 			position_y = float(grasps_plots[-3])
 			position_z = float(grasps_plots[-2])
 
-			#Calculating the difference between Centroid and Grapsing
-			#diff_x = yolo_x - position_x
-			#diff_y = yolo_y - position_y
-			#print("difference")
-			#print(diff_x, diff_y)
+			#Calculating difference between centroid and grasping center
+			diff_x = yolo_x - position_x
+			diff_y = yolo_y - position_y
+
 			#Extracting the roll
 			roll = float(grasps_plots[-1])
 			print(grasps_plots[-1])
@@ -212,7 +488,7 @@ class CommitSolution(object):
 			#Assiging Linear Coordinates
 			grasp_pose.pose.position.x = position_x
 			grasp_pose.pose.position.y = position_y
-			grasp_pose.pose.position.z = position_z + 0.05
+			grasp_pose.pose.position.z = position_z + 0.03
 			#Converting degrees to radians
 			r_rad = (r*3.14159265358979323846)/180
 			p_rad = (p*3.14159265358979323846)/180
@@ -231,7 +507,7 @@ class CommitSolution(object):
 			group.set_pose_target(grasp_pose)
 			plan2 = group.plan()
 			group.go(wait=True)
-			rospy.sleep(1)
+			rospy.sleep(2)
 
 			#Opening the gripper
 			gripper_cmd = GripperCommandActionGoal()
@@ -239,16 +515,16 @@ class CommitSolution(object):
 			gripper_cmd.goal.command.max_effort = 0.0
 			gripper_cmd_pub.publish(gripper_cmd)
 			rospy.loginfo("Pub gripper_cmd")
-			rospy.sleep(1.0)
+			rospy.sleep(2)
 
 			#Going down to pick the object
 			waypoints = []
 			wpose = group.get_current_pose().pose
-			wpose.position.z -= scale * 0.055
+			wpose.position.z -= scale * 0.030 + 0.01
 			waypoints.append(copy.deepcopy(wpose))
 			(cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 			group.execute(cartesian_plan, wait=True)
-			rospy.sleep(1)
+			rospy.sleep(2)
 
 			#Closing the gripper till both contact sensors are touching the obejct
 			rate = rospy.Rate(20)
@@ -259,7 +535,7 @@ class CommitSolution(object):
 				if len(contact1)>0 and len(contact2)>0:
 				   print("contact")
 				   break
-				#Checking if we are not reached the lower closinhg limit
+				 #Checking if we are not reached the lower closinhg limit
 				if cmd > 0.005:
 					gripper_cmd.goal.command.position = cmd
 					gripper_cmd.goal.command.max_effort = 0.01
@@ -269,21 +545,17 @@ class CommitSolution(object):
 					rate.sleep()
 				#Re do the task if the lower limit is reached
 				else:
-					i = i - 1
-					#goto .xxx
+					#i = i - 1
+					# goto	.xxx
 					break
 
 			#Going down to pick the object
 			waypoints = []
 			wpose = group.get_current_pose().pose
-			wpose.position.z += scale * 0.1
+			wpose.position.z += scale * 0.15
 			waypoints.append(copy.deepcopy(wpose))
 			(cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 			group.execute(cartesian_plan, wait=True)
-
-			#Move to a camera location
-			#group.set_named_target("camera_pose")
-			#plan3 = group.go(wait=True)
 
 			#Check object
 			rospy.loginfo(type(name))
@@ -304,7 +576,7 @@ class CommitSolution(object):
 				goal = self.rearrange(i, label_feedback, goal)
 				print(goal)
 				print("label not matching")
-'''
+			'''
 			#Getting the output location
 			quat = [goal.pose_list[i].orientation.x, goal.pose_list[i].orientation.y, goal.pose_list[i].orientation.z, goal.pose_list[i].orientation.w]
 			(r,p,y) = tf.transformations.euler_from_quaternion(quat, axes='sxyz')
@@ -313,10 +585,11 @@ class CommitSolution(object):
 
 			#Getting the Quaternion coordinates from Euler
 			q = quaternion_from_euler(r,p,y)
-			print("Printing roll in degrees")
-			print(math.degrees(r))
-			grasp_pose.pose.position.x = goal.pose_list[i].position.x #+ diff_x
-			grasp_pose.pose.position.y = goal.pose_list[i].position.y #+ diff_y
+			
+			grasp_pose.pose.position.x = goal.pose_list[i].position.x + diff_x
+			grasp_pose.pose.position.y = goal.pose_list[i].position.y - diff_y
+			print("goal location of object")
+			print(grasp_pose.pose.position.x, grasp_pose.pose.position.y)
 			grasp_pose.pose.position.z = position_z + 0.1
 			grasp_pose.pose.orientation.x = q[0]#quat[0] #grasps_plots.orientation.x
 			grasp_pose.pose.orientation.y = q[1]#quat[1] #grasps_plots.orientation.y
@@ -351,7 +624,9 @@ class CommitSolution(object):
 			(cartesian_plan, fraction) = group.compute_cartesian_path(waypoints,0.01, 0.0)
 			group.execute(cartesian_plan, wait=True)
 			rospy.sleep(1)
-			#	.xxx
+
+			# label	.xxx
+
 			#Closing the gripper back
 			group_1.set_named_target("gripper_close")
 			plan3 = group_1.go(wait=True)
@@ -359,13 +634,16 @@ class CommitSolution(object):
 			#Going back to task pose
 			group.set_named_target("pose1")
 			plan3 = group.go(wait=True)
+			i+=1
 			rospy.sleep(10)
-
-		print("GOing for feedback")
+			
+		print("Going for feedback")
 		feedback(goal)
-		print("Done with feedback")
+		print("done with feedback")
 
+#Main Thread
 if __name__ == '__main__':
+	#Initializing the node
 	rospy.init_node('commit_solution')
 
 	#Defining the use of global variables
@@ -389,6 +667,9 @@ if __name__ == '__main__':
 	display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path' , moveit_msgs.msg.DisplayTrajectory,queue_size=20)
 	#Label Publisher
 	label_pub = rospy.Publisher('/label', String, queue_size=1)
+	#Defining the publisher
+	global pub
+	pub = rospy.Publisher('/pose', geometry_msgs.msg.PointStamped, queue_size = 10)
 	#Gripper command publisher
 	gripper_cmd_pub = rospy.Publisher(rospy.resolve_name('gripper_controller/gripper_cmd/goal'),GripperCommandActionGoal, queue_size=10)
 	#Contact Sensors Subscribers
@@ -396,6 +677,15 @@ if __name__ == '__main__':
 	sub2 = message_filters.Subscriber('/finger2_contact_sensor_state', ContactsState)
 	cb = message_filters.TimeSynchronizer([sub1, sub2], 10)
 	cb.registerCallback(callback)
+
+	#Getting camera info
+	print("Running")
+	camera_info = rospy.wait_for_message('/kinect/color/camera_info', CameraInfo)
+	print("GOt Cam")
+	#Making Camera Model
+	global cam_model
+	cam_model = PinholeCameraModel()
+	cam_model.fromCameraInfo(camera_info)
 
 	#Going the task pose
 	group.set_named_target("pose1")

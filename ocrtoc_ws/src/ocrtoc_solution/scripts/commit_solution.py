@@ -184,7 +184,7 @@ class CommitSolution(object):
 			roll = float(grasps_plots[-1])
 			print(grasps_plots[-1])
 			print(roll)
-			r,p,y= (roll - 90 ,90,0)
+			r,p,y= (roll + 90 ,90,0)
 
 			#Generating a pose stamped messgae
 			grasp_pose = geometry_msgs.msg.PoseStamped()
