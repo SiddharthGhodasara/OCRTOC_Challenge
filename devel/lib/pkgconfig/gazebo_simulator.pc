@@ -1,0 +1,8 @@
+prefix=/home/kaushik/ocrtoc_ws/devel
+
+Name: gazebo_simulator
+Description: Description of gazebo_simulator
+Version: 1.2.7
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,2 @@
+set(ocrtoc_task_MESSAGE_FILES "/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanAction.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionGoal.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanActionFeedback.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanGoal.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanResult.msg;/home/kaushik/ocrtoc_ws/devel/share/ocrtoc_task/msg/CleanFeedback.msg")
+set(ocrtoc_task_SERVICE_FILES "")

@@ -1,0 +1,8 @@
+prefix=/home/kaushik/ocrtoc_ws/devel
+
+Name: ocrtoc_solution
+Description: Description of ocrtoc_solution
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib -locrtoc_solution
+Requires: cmake_modules eigen_conversions actionlib actionlib_msgs geometry_msgs roscpp rospy std_msgs pcl_conversions pcl_ros

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kaushik/ocrtoc_ws/src/haf_grasping/include/CHaarFeature.h
+vector
+-
+opencv2/opencv.hpp
+-
+
+/home/kaushik/ocrtoc_ws/src/haf_grasping/src/CHaarFeature.cpp
+iostream
+-
+CHaarFeature.h
+/home/kaushik/ocrtoc_ws/src/haf_grasping/src/CHaarFeature.h
+vector
+-
+opencv/cv.h
+-
+
