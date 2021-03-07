@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Topic having the details about camera_info-->
+  <param name="camera_topic" value="/kinect/color/camera_info" />
+
+  <!-- Topic having the raw 8 bit color image-->
+  <param name="image_topic" value="/kinect/color/image_raw" />
+
+  <!-- Topic having the raw depth image-->
+  <param name="depth_topic" value="/kinect/depth/image_raw" />
+
+  <!-- Optical frame of camera -->
+  <param name="camera_frame" value="kinect_optical_frame" />
+
+  <!--Lanuching the node-->
+  <node name="object_detection" pkg="3D_Pose_Estimation" type="yolo_latest.py" output="screen"/>
+</launch>
