@@ -1,0 +1,13 @@
+
+<launch>
+  <include file="$(find motomini_moveit_config)/launch/demo.launch" />
+  <!--include file="$(find motoman_motomini_support)/launch/load_motomini.launch" /-->
+  <!--param name="use_gui" value="true" /-->
+  <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /-->
+  <!--node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /-->
+  <!--node name="move_arm_node" pkg="motoman_motomini_support" type="move_arm_js.py" output="screen"/-->
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find motoman_motomini_support)/rviz/display_robot.rviz" required="true" /-->
+</launch>
+
+
+

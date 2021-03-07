@@ -1,0 +1,265 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:macro name="motoman_motomini_gripper" params="prefix parent *origin">
+
+
+
+
+  <!-- Properties -->
+  <!--material name="black">
+      <color rgba="0 0 0 1" />
+  </material-->
+    <!--material name="red">
+      <color rgba="1 0 0 1" />
+  </material>
+  <material name="green">
+      <color rgba="0 1 0 1" />
+  </material>
+    <material name="white">
+      <color rgba="1 1 1 1" />
+  </material-->
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+
+
+    <link name="gripper_base">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/base.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/base.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="claw_1a">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_1.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="claw_1b">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_1.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="claw_2a">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_2.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="claw_2b">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_2.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_1a">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_1.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_1b">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_1.stl" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_2a">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+    <link name="link_2b">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+
+    <link name="link_2c">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+
+    <link name="link_2d">
+    <visual>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+ 
+
+<joint name="gripper_joint" type="fixed">
+    <parent link="${parent}"/>
+    <child link="gripper_base"/>
+    <xacro:insert_block name="origin" />
+    <!--<limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />-->
+</joint>
+<joint name="claw_1b_joint" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="claw_1b"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <origin rpy="0.0 0.0 0" xyz="0.045 0.01154 0.017503"/>
+  </joint>
+<joint name="claw_1a_joint" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="claw_1a"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <origin rpy="0.0 0.0 0" xyz="0.045 -0.01154 0.017503"/>
+    <mimic joint="claw_1b_joint" multiplier="-1"/>
+  </joint>
+
+<joint name="claw_2a_joint" type="revolute">
+    <parent link="claw_1a"/>
+    <child link="claw_2a"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <!--origin rpy="0.0 3.142 0" xyz="0.032 -0.011563 0.0050405"/-->
+    <origin rpy="0.0 3.142 0.2" xyz="0.03 0 -0.005"/>
+    <mimic joint="claw_1b_joint" multiplier="-1"/>
+  </joint>
+<joint name="claw_2b_joint" type="revolute">
+    <parent link="claw_1b"/>
+    <child link="claw_2b"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <origin rpy="3.142 3.142 -0.2" xyz="0.03 0 -0.005"/>
+    <mimic joint="claw_1b_joint" multiplier="-1"/>
+  </joint>
+
+<joint name="link_1a_joint" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="link_1a"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <origin rpy="0.0 0.0 3.142" xyz="0.045 -0.01154 0.0044"/>
+    <mimic joint="claw_1b_joint" multiplier="-1"/>
+  </joint>
+<joint name="link_1b_joint" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="link_1b"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <origin rpy="0.0 0.0 3.142" xyz="0.045 0.01154 0.0044"/>
+    <mimic joint="claw_1b_joint" multiplier="1"/>
+  </joint>
+<joint name="link_2a_joint" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="link_2a"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <origin rpy="0.0 0.0 3.142" xyz="0.062257 -0.0040985 0.02"/>
+    <mimic joint="claw_1b_joint" multiplier="-1"/>
+  </joint>
+<joint name="link_2b_joint" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="link_2b"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <origin rpy="0.0 0.0 3.142" xyz="0.062257 0.0040985 0.02"/>
+    <mimic joint="claw_1b_joint" multiplier="1"/>
+  </joint>
+<joint name="link_2c_joint" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="link_2c"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <origin rpy="0.0 0.0 3.142" xyz="0.062257 -0.0040985 0.005"/>
+    <mimic joint="claw_1b_joint" multiplier="-1"/>
+  </joint>
+<joint name="link_2d_joint" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="link_2d"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <axis xyz = "0 0 1" />
+    <origin rpy="0.0 0.0 3.142" xyz="0.062257 0.0040985 0.005"/>
+    <mimic joint="claw_1b_joint" multiplier="1"/>
+  </joint>
+
+
+    </xacro:macro>
+</robot>
