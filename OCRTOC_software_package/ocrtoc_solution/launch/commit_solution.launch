@@ -1,0 +1,11 @@
+<launch>
+  <!-- run commit_solution actionlib server -->
+  <node name="commit_solution" pkg="ocrtoc_solution" type="commit_solution.py" output="screen" >
+    <param name="materials_dir" value="/home/gaurav/catkin_ws/src/OCRTOC_software_package/ocrtoc_materials_patch"/>
+  </node>
+
+  <!-- run you algorithm-->
+  <!-- run you algorithm-->
+  <!-- run you algorithm-->
+
+</launch>
