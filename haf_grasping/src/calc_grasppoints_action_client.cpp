@@ -147,9 +147,9 @@ void CCalcGrasppointsClient::get_coord_cb(const geometry_msgs::PoseStamped::Cons
 	yy *= 100;
 	//Assigning the value to class variables
 	this->grasp_search_size_x = 18;
-	this->grasp_search_size_y = 30;
+	this->grasp_search_size_y = 18;
 	this->max_grasp_search_size_x = 18;				//max. limit 32-14=18
-	this->max_grasp_search_size_y = 30;				//max. limit 44-14=30
+	this->max_grasp_search_size_y = 18;				//max. limit 44-14=30
 	/*if (this->grasp_search_size_x < 1 or this->grasp_search_size_x >= this->max_grasp_search_size_x)
 		this->grasp_search_size_x = xx + 5;
 	if (this->grasp_search_size_y < 1 or this->grasp_search_size_y >= this->max_grasp_search_size_y)

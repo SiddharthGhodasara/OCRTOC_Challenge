@@ -23,7 +23,7 @@ class move_arm:
         #rospy.init_node('move_arm_motomini___node', anonymous=True)
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.s.connect((HOST, PORT))
-        #self.ser = serial.Serial('/dev/ttyACM0', baudrate = 9600, timeout = 1)
+        self.ser = serial.Serial('/dev/ttyACM1', baudrate = 9600, timeout = 1)
 
     def arm_go(self):
         valpos = arm_group.get_current_joint_values()
@@ -41,5 +41,5 @@ class move_arm:
 
     def  gripper_go(self, cmd):
         print("open")
-        #cmd_bytes = bytes(cmd)
-        #self.ser.write(cmd_bytes)
+        cmd_bytes = bytes(cmd)
+        self.ser.write(cmd_bytes)

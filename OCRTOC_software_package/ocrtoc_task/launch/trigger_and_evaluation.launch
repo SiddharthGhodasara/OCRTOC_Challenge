@@ -5,7 +5,7 @@
 
   <group ns="$(arg simulator)">
     <node pkg="ocrtoc_task" type="trigger_and_evaluation.py" name="trigger_and_evaluation" output="screen">
-      <param name="materials_dir" value="/home/gaurav/catkin_ws/src/OCRTOC/OCRTOC_software_package/ocrtoc_materials_patch"/>
+      <param name="materials_dir" value="/home/gaurav/ocrtoc_ws/src/OCRTOC_software_package/ocrtoc_materials_patch"/>
       <param name="scene" value="$(arg scene)"/>
     </node>
   </group>

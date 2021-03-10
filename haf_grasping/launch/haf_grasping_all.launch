@@ -38,7 +38,7 @@
 	<rosparam param="show_only_best_grasp"> false </rosparam>
 	
 	<!-- define the topic for incoming point clouds -->
-	<rosparam param="input_pc_topic">/realsense/depth/color/points</rosparam>
+	<rosparam param="input_pc_topic">/pcl/points</rosparam>
 	
 	<!-- define default frame for point cloud (if generated from pcd) -->
 	<rosparam param="base_frame">world</rosparam>

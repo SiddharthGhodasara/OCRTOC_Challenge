@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<launch>  
+    <include file="$(find ocrtoc_solution)launch/filter_pass.launch"/>
+  <node pkg="ocrtoc_solution" type="segmentation"  name="filter" />
+<!--node pkg="ocrtoc_task" type="pcl_controller_new.py"  name="pcl_controller" /-->
+  
+</launch>
+

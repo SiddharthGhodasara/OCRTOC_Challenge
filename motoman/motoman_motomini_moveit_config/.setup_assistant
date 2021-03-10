@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: motoman_motomini_support
+    relative_path: urdf/motoman_motomini.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/motoman_motomini.srdf
+  CONFIG:
+    author_name: bl
+    author_email: bl@gmail.com
+    generated_timestamp: 1615284368

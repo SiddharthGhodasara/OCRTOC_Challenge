@@ -33,6 +33,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/base.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="claw_1a">
     <visual>
@@ -46,6 +51,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_1.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="claw_1b">
     <visual>
@@ -59,6 +69,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_1.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="claw_2a">
     <visual>
@@ -72,6 +87,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_2.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="claw_2b">
     <visual>
@@ -85,6 +105,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/claw_2.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
 
   <link name="link_1a">
@@ -99,6 +124,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/link_1.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
 
   <link name="link_1b">
@@ -113,6 +143,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/link_1.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="link_2a">
     <visual>
@@ -126,6 +161,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
     <link name="link_2b">
     <visual>
@@ -139,6 +179,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl" />
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
 
     <link name="link_2c">
@@ -153,6 +198,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl" />
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
 
     <link name="link_2d">
@@ -167,7 +217,31 @@
         <mesh filename="package://motoman_motomini_support/meshes/gripper/link_2.stl" />
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
+
+      <!--link name="servo_motor">
+    <visual>
+      <geometry>
+        <box size="0.054 0.020 0.038"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.054 0.020 0.038"/>
+      </geometry>
+    </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
+  </link-->
  
 
 <joint name="gripper_joint" type="fixed">
@@ -259,6 +333,11 @@
     <origin rpy="0.0 0.0 -1.8033928" xyz="0.062257 0.0040985 0.005"/>
     <mimic joint="claw_1b_joint" multiplier="1"/>
   </joint>
+<!--joint name="servo_joint" type="fixed">
+    <parent link="gripper_base"/>
+    <child link="servo_motor"/>
+    <origin rpy="0.0 0.0 1.5707" xyz="0.062257 0.0040985 0"/>
+  </joint-->
 
 
     </xacro:macro>

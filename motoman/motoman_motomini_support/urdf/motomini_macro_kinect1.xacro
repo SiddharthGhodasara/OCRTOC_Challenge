@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-<xacro:macro name="motoman_motomini" params="prefix">
+<xacro:macro name="motoman_motomini" params="prefix parent *origin">
 
 
   <!-- Properties -->
@@ -9,31 +9,7 @@
   </material>
   <xacro:property name="M_PI" value="3.1415926535897931" />
 
- <!-- World frame -->
- <link name="world" />
 
-  <!-- Adding table to the world -->
-  <link name="table">
-  <origin xyz="0.0 0.0 0" rpy="0 0 0" />
-  <inertial>
-          <mass value="5" />
-          <origin xyz="0 0 0" />
-          <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1" />
-    </inertial>
-    <visual>
-      <geometry>
-        <box size="0.83 0.830 0.001"/>
-      </geometry>
-        <material name = "light_grey">
-         <color rgba="0.7 0.7 0.7 1.0"/>
-        </material>
-    </visual>
-    <collision>
-      <geometry>
-         <box size="0.83 0.830 0.001"/>
-      </geometry>
-    </collision>
-  </link>
 
   <!-- link list -->
   <link name="${prefix}base_link">
@@ -48,6 +24,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/motomini/collision/base_link.stl"/>
       </geometry>
     </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="${prefix}link_1_s">
     <visual>
@@ -61,6 +42,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/motomini/collision/link_1_s.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="${prefix}link_2_l">
     <visual>
@@ -74,6 +60,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/motomini/collision/link_2_l.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="${prefix}link_3_u">
     <visual>
@@ -87,6 +78,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/motomini/collision/link_3_u.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="${prefix}link_4_r">
     <visual>
@@ -100,6 +96,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/motomini/collision/link_4_r.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="${prefix}link_5_b">
     <visual>
@@ -113,6 +114,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/motomini/collision/link_5_b.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="${prefix}link_6_t">
     <visual>
@@ -126,6 +132,11 @@
         <mesh filename="package://motoman_motomini_support/meshes/motomini/collision/link_6_t.stl"/>
       </geometry>
     </collision>
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "0.1"/>
+        <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
   </link>
   <link name="${prefix}tool0"/>
 
@@ -166,34 +177,35 @@
 
 </link>
 
-<!--link name="kinect2_rgb_optical_frame" >
-</link-->
+<link name="camera_rgb_optical_frame" />
+
 
 <joint name="camera_joint" type="fixed">
-    <parent link="base_link"/>
+    <parent link="${prefix}base_link"/>
     <child link="camera_link"/>
-    <origin xyz="1.17 0 0.48" rpy="0 0.4712 ${-M_PI}"/>
+    <origin xyz="1.17 0.009 0.52" rpy="0.03 0.49 ${-M_PI}"/>
 </joint> 
 
-<!--0.865joint name="camera_optical_joint" type="fixed">  0.4712 ${{-M_PI/2}-0.4712}
+<joint name="camera_optical_joint" type="fixed">  <!--0.4712 ${{-M_PI/2}-0.4712}-->
     <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
-    <parent link="kinect2_link" />
-    <child link="kinect2_rgb_optical_frame" />
-</joint-->
+    <parent link="camera_link" />
+    <child link="camera_rgb_optical_frame" />
+</joint>
   
 
 
   <!-- joint list -->
-  <joint name="world_joint" type="fixed">
+  <!--joint name="world_joint" type="fixed">
     <parent link="world"/>
     <child link="table"/>
     <origin rpy="0.0 0.0 -1.57" xyz="0.0 0.0 0"/>
-  </joint>
+  </joint-->
   <joint name="table_joint" type="fixed">
-    <parent link="table" />
-    <child link = "base_link" />
-    <origin xyz="0 -0.1015 0.0" rpy="0.0 0.0 ${M_PI/2}" />
-  </joint>
+    <parent link="${parent}"/>
+    <child link="base_link"/>
+    <xacro:insert_block name="origin" />
+</joint>
+
   <joint name="${prefix}joint_1_s" type="revolute">
     <parent link="${prefix}base_link"/>
     <child link="${prefix}link_1_s"/>
@@ -234,7 +246,7 @@
     <child link="${prefix}link_6_t"/>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit lower="-6.2831" upper="6.2831" effort="0.07" velocity="10.4719"/>
+    <limit lower="${-pi/2}" upper="${pi/2}" effort="0.07" velocity="10.4719"/>
   </joint>
   <joint name="${prefix}joint_6_t-tool0" type="fixed">
     <origin xyz="0 0 -0.040 " rpy="${pi} 0 0"/>
@@ -255,6 +267,283 @@
     <parent link="${prefix}base_link"/>
     <child link="${prefix}base"/>
   </joint>
+
+
+<gazebo reference="joint_1_s">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="joint_2_l">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="joint_3_u">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="joint_4_r">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="joint_5_b">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="joint_6_t">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<!--gazebo reference="finger1">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <mu1>10000.0</mu1>
+    <mu2>10000.0</mu2>
+    <minDepth>0.001</minDepth>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="finger2">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <mu1>100000</mu1>
+    <mu2>100000</mu2>
+    <minDepth>0.001</minDepth>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo-->
+
+<gazebo reference="camera_link">
+    <sensor type="depth" name="camera_1">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>15.0</update_rate>
+      <camera>
+        <horizontal_fov>1.047197</horizontal_fov>
+        <image>          
+          <format>B8G8R8</format>
+          <width>640</width>
+          <height>480</height>
+        </image>
+        <depth_camera>
+        </depth_camera>
+        <clip>
+          <near>0.05</near>
+          <far>50</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+        <baseline>0.1</baseline>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>10.0</updateRate>
+        <cameraName>kinect</cameraName>
+        <frameName>camera_rgb_optical_frame</frameName>
+        <imageTopicName>rgb/image_raw</imageTopicName>
+        <depthImageTopicName>depth/image_raw</depthImageTopicName>
+        <pointCloudTopicName>depth/points</pointCloudTopicName>
+        <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName> 
+        <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>       
+        <pointCloudCutoff>0.4</pointCloudCutoff>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        <CxPrime>0.0</CxPrime>
+        <Cx>0.0</Cx>
+        <Cy>0.0</Cy>
+        <focalLength>0.0</focalLength>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+<!--gazebo reference="realsense_link">
+    <sensor type="depth" name="intelrealsense2">
+      <always_on>1</always_on>
+      <visualize>true</visualize>
+      <camera>
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <depth_camera>
+
+        </depth_camera>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+      </camera>
+      <plugin name="intelrealsense" filename="libgazebo_ros_openni_kinect.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>10.0</updateRate>
+        <cameraName>realsense</cameraName>
+        <frameName>realsense_depth_optical_frame</frameName>
+        <imageTopicName>/realsense/color/image_raw</imageTopicName>
+        <depthImageTopicName>/realsense/depth/image_raw</depthImageTopicName>
+        <pointCloudTopicName>depth/points2</pointCloudTopicName>
+        <cameraInfoTopicName>/realsense/color/camera_info</cameraInfoTopicName>
+        <depthImageCameraInfoTopicName>/realsense/depth/camera_info</depthImageCameraInfoTopicName>
+         <pointCloudCutoff>0.2</pointCloudCutoff>
+         <pointCloudCutoffMax>10.0</pointCloudCutoffMax>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+        <CxPrime>0.0</CxPrime>
+        <Cx>0.0</Cx>
+        <Cy>0.0</Cy>
+        <focalLength>0.0</focalLength>
+      </plugin>
+    </sensor>
+  </gazebo-->
+
+<!--gazebo>
+   <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+        <arm>
+           <arm_name>robot</arm_name>
+           <palm_link>link5</palm_link>
+           <gripper_link>finger1</gripper_link>
+           <gripper_link>finger2</gripper_link>
+        </arm>
+       <forces_angle_tolerance>100</forces_angle_tolerance>
+       <update_rate>1000</update_rate>
+       <grip_count_threshold>1</grip_count_threshold>
+       <max_grip_count>2</max_grip_count>
+       <release_tolerance>0.005</release_tolerance>
+       <disable_collisions_on_attach>true</disable_collisions_on_attach>
+       <contact_topic>__default_topic__</contact_topic>
+    </plugin>
+</gazebo-->
+  
+
+
+
+<!-- ...........................................control........................................................................... -->
+
+<gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+     <robotNamespace>/</robotNamespace>
+     <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+     <legacyModeNS>true</legacyModeNS>
+    </plugin>
+</gazebo>
+
+<transmission name="base_link1_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_1_s">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_link1_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>3</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link1_link2_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_2_l">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="link2_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>3</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link2_link3_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_3_u">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="link3_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>3</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link3_link4_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_4_r">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="link4_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>2</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link4_link5_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_5_b">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="link5_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>2</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link5_link6_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_6_t">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="link5_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>2</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<!--transmission name="link5_finger1_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_finger_joint">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_finger_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>2</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link5_finger2_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_finger_joint">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_finger_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>2</mechanicalReduction>
+    </actuator>
+</transmission-->
+
+
+
+
+
 
   </xacro:macro>
 </robot>

@@ -293,6 +293,10 @@ class do_task:
         plan = self.group.go(wait=True)
 
         self.yrc_controller.arm_go()
+        
+        self.yrc_controller.gripper_go('o')
+        
+        
 
 
     #Prediction Function
@@ -506,8 +510,12 @@ class do_task:
             #Subscribing to the topic publishing the coordinates of grasp
             grasps_plots = rospy.wait_for_message('/haf_grasping/grasp_hypothesis_with_eval', String)
             grasps_plots_list = grasps_plots.data.split(" ")
+            print(grasps_plots_list[-1])
             #Checking if grasp exsists
             if (grasps_plots != "" and grasps_plots_list[0] > 2):
+                #self.grasps_plots_max = grasps_plots_list
+                #break
+                
                 if int(grasps_plots_list[0]) < 100: #without scaling search area, the threshold was 70
                     grasp_buffer.append(grasps_plots_list)
                     if len(grasp_buffer) >= 5: 
@@ -519,6 +527,7 @@ class do_task:
                 else:
                     print("satisfied grasp condition")
                     break
+                
             rospy.Rate(1).sleep()
 
     def feedback(self, goal, i): 
@@ -536,14 +545,16 @@ class do_task:
         #Extracting pose of current object
         pose_curr_x = pose.pose.position.x
         pose_curr_y = pose.pose.position.y
-
-        (r1,p1,y1) = euler_from_quaternion(pose.pose.orientation, axes='sxyz')
-        (r2,p2,y2) = euler_from_quaternion(goal.pose_list[i].orientation, axes='sxyz')
+	
+	q1 = [pose.pose.orientation.x, pose.pose.orientation.y, pose.pose.orientation.z, pose.pose.orientation.w]
+	q2 = [goal.pose_list[i].orientation.x, goal.pose_list[i].orientation.y, goal.pose_list[i].orientation.z, goal.pose_list[i].orientation.w]
+        (r1,p1,y1) = euler_from_quaternion(q1, axes='sxyz')
+        (r2,p2,y2) = euler_from_quaternion(q2, axes='sxyz')
         print("Error in rpy: ")
         print((r2-r1), (p2-p1), (y2-y1))
         
         #Checking if threshold is within threshold
-        if abs(pose_curr_x - goal.pose_list[i].position.x) <= 1 and abs(pose_curr_y - goal.pose_list[i].position.y) <= 1:
+        if abs(pose_curr_x - goal.pose_list[i].position.x) <= 0.15 and abs(pose_curr_y - goal.pose_list[i].position.y) <= 0.15:
 
             print("Good Job Translation for {}".format(name))
             if abs(pose.pose.orientation.x -  goal.pose_list[i].orientation.x) <= 0.15 and abs(pose.pose.orientation.y -  goal.pose_list[i].orientation.y) <= 0.15 and abs(pose.pose.orientation.z -  goal.pose_list[i].orientation.z) <= 0.15 and abs(pose.pose.orientation.w -  goal.pose_list[i].orientation.w) <= 0.15:
@@ -566,7 +577,7 @@ class do_task:
             return 0
 
     def task(self, goal, i):
-
+	print("Task Started")
         tc = i
         #Getting the
         name = str(goal.object_list[tc])
@@ -589,7 +600,7 @@ class do_task:
 
         poly_1 = Polygon(box_1)
 
-        #Get the cuurent coordinates of all other objects
+        '''#Get the cuurent coordinates of all other objects
         for j in range(0, len(goal.object_list)):
             if j == tc: 
                 continue
@@ -638,7 +649,7 @@ class do_task:
                     goal.pose_list[tc].orientation.z , goal.pose_list[j].orientation.z  =goal.pose_list[j].orientation.z , goal.pose_list[tc].orientation.z
                     goal.pose_list[tc].orientation.w , goal.pose_list[j].orientation.w  =goal.pose_list[j].orientation.w , goal.pose_list[tc].orientation.w
                     return goal,i
-
+	'''
         #Failure resistance if object is not resistant 	
         name = goal.object_list[i]
         rospy.loginfo(type(name))
@@ -661,9 +672,9 @@ class do_task:
         rs_pose.header.frame_id = "/world"
 
         #Assiging Linear Coordinates
-        rs_pose.pose.position.x = yolo_x - 0.1
-        rs_pose.pose.position.y = yolo_y - 0.05
-        rs_pose.pose.position.z = yolo_z + 0.23
+        rs_pose.pose.position.x = yolo_x -0.05#- 0.08
+        rs_pose.pose.position.y = yolo_y -0.03#- 0.01
+        rs_pose.pose.position.z = yolo_z + 0.13
         
         #Converting degrees to radians
         #r_rad_rs = math.atan2(yolo_y, yolo_x)#0#math.atan2(yolo_y, yolo_x) #Roll
@@ -671,12 +682,14 @@ class do_task:
         #y_rad_rs = 0#math.atan2(yolo_y, yolo_x)#0#math.pi #Yaw
         #Getting the Quaternion coordinates from Euler
         
+        #r_rad_rs = math.atan2(-rs_pose.pose.position.y, rs_pose.pose.position.x)
         r_rad_rs = math.atan2(-yolo_y, yolo_x)
         p_rad_rs = 1.5707
-        y_rad_rs = 0
+        y_rad_rs = 0.0
         
         
         q_rs = quaternion_from_euler(r_rad_rs,p_rad_rs,y_rad_rs)
+       
             
         #Assigning orientation value to pose message
         rs_pose.pose.orientation.x = q_rs[0]#quat[0] #grasps_plots.orientation.x
@@ -685,16 +698,17 @@ class do_task:
         rs_pose.pose.orientation.w = q_rs[3]#quat[3] #grasps_plots.orientation.w
 
         #Moving the arm to Picking location
-        self.group.set_planning_time(50)
-        self.group.set_pose_target(rs_pose)
-        plan2 = self.group.plan()
-        rs_state = self.group.go(wait=True)
-
-        lelo = raw_input()
+        #print(rs_pose)
+        #self.group.set_planning_time(20)
+        #self.group.set_pose_target(rs_pose)
+        #plan2 = self.group.plan()
+        #rs_state = self.group.go(wait=True)
+        #xxxxxxx = raw_input("Input")
         #Make the robot move
-        self.yrc_controller.arm_go()
-
-        rospy.sleep(1)
+        #self.yrc_controller.arm_go()
+		
+		
+        #rospy.sleep(1)
         print("before publishing control message to haf grasping")
 
         #Sending control message to haf_grasping 
@@ -716,23 +730,26 @@ class do_task:
 
         #Extracting the roll
         roll = float(self.grasps_plots_max[-1])
+        print("Best ROll", roll)
         print(self.grasps_plots_max[-1])
-        r,p,y= (roll, 90, 0)#(0 ,0, roll) #(roll, 90, 0)
-
+        if position_y < 0:
+        	r,p,y= (roll - 90, 90, 0)#(0 ,0, roll) #(roll, 90, 0)
+	else:
+		r,p,y= (roll + 90, 90, 0)
         #Generating a pose stamped messgae
         grasp_pose = PoseStamped()
         grasp_pose.header.frame_id = "/world"
         #Assiging Linear Coordinates
-        grasp_pose.pose.position.x = position_x
-        grasp_pose.pose.position.y = position_y
-        grasp_pose.pose.position.z = position_z + 0.03
+        grasp_pose.pose.position.x = position_x + 0.02
+        grasp_pose.pose.position.y = position_y + 0.02
+        grasp_pose.pose.position.z = position_z + 0.05
         #Converting degrees to radians
         r_rad = (r*3.14159265358979323846)/180
         p_rad = (p*3.14159265358979323846)/180
         y_rad = (y*3.14159265358979323846)/180
         #Getting the Quaternion coordinates from Euler
-        q = quaternion_from_euler(r_rad,p_rad,y_rad)
-        
+        q = quaternion_from_euler(math.atan(math.tan(r_rad)),p_rad,y_rad) #math.atan(math.tan(r_rad) + math.atan2(-position_y, position_x))
+        print(math.atan(math.tan(r_rad)))
         #Assigning orientation value to pose message
         grasp_pose.pose.orientation.x = q[0]#quat[0] #grasps_plots.orientation.x
         grasp_pose.pose.orientation.y = q[1]#quat[1] #grasps_plots.orientation.y
@@ -746,7 +763,7 @@ class do_task:
         plan2 = self.group.plan()
         self.group.go(wait=True)
 
-        xxxx = raw_input("Input")
+        
         #Make the robot move
         self.yrc_controller.arm_go()
 
@@ -766,23 +783,26 @@ class do_task:
         #Going down to pick the object
         waypoints = []
         wpose = self.group.get_current_pose().pose
-        wpose.position.z -=  0.030 + 0.015
+        wpose.position.z -=  0.050
         waypoints.append(copy.deepcopy(wpose))
         (cartesian_plan, fraction) = self.group.compute_cartesian_path(waypoints,0.01, 0.0)
         self.group.execute(cartesian_plan, wait=True)
         
+        
+        xxxx = raw_input("Input")
+        	
         #Make the robot move
         self.yrc_controller.arm_go()
         
         rospy.sleep(1)
 
-        #Opening the gripper
+        #Closing the gripper
         self.yrc_controller.gripper_go('c')
 
         #Coming back up after pick object
         waypoints = []
         wpose = self.group.get_current_pose().pose
-        wpose.position.z += 0.15
+        wpose.position.z += 0.07
         waypoints.append(copy.deepcopy(wpose))
         (cartesian_plan, fraction) = self.group.compute_cartesian_path(waypoints,0.01, 0.0)
         self.group.execute(cartesian_plan, wait=True)
@@ -799,7 +819,7 @@ class do_task:
 
         r,p,y= (r ,1.57079632,0)
 
-        if name == "pudding_box" or name == "potted_meat_can" or swap == 1:
+        if name == "pudding_box" or name == "potted_meat_can":#:
             r = r + 1.57079632
 
         #Getting the Quaternion coordinates from Euler
@@ -807,18 +827,18 @@ class do_task:
         grasp_pose.header.frame_id = "/world"
         grasp_pose.pose.position.x = goal.pose_list[i].position.x - diff_x
         grasp_pose.pose.position.y = goal.pose_list[i].position.y + diff_y
-        grasp_pose.pose.position.z = position_z + 0.1
+        grasp_pose.pose.position.z = position_z + 0.07
         grasp_pose.pose.orientation.x = q[0]#quat[0] #grasps_plots.orientation.x
         grasp_pose.pose.orientation.y = q[1]#quat[1] #grasps_plots.orientation.y
         grasp_pose.pose.orientation.z = q[2]#quat[2] #grasps_plots.orientation.z
         grasp_pose.pose.orientation.w = q[3]#quat[3] #grasps_plots.orientation.w
-
-        if swap == 1: 
-            grasp_pose.pose.position.x = 0.3126
-            grasp_pose.pose.position.y = 0
+        print(grasp_pose)
+        #if swap == 1: 
+        #    grasp_pose.pose.position.x = 0.3126
+        #    grasp_pose.pose.position.y = 0
 
         #Moving the placing location, but 10cm above it
-        self.group.set_planning_time(50)
+        self.group.set_planning_time(20)
         self.group.set_pose_target(grasp_pose)
         plan2 = self.group.plan()
         
@@ -827,12 +847,14 @@ class do_task:
         #Make the robot move
         self.yrc_controller.arm_go()
 
-        rospy.sleep(1)
+        rospy.sleep(5)
+        
+        #self.yrc_controller.gripper_go('o')
 
         #Going down to place the object
         waypoints = []
         wpose = self.group.get_current_pose().pose
-        wpose.position.z -= goal.pose_list[i].position.z * 2
+        wpose.position.z -= 0.05
         waypoints.append(copy.deepcopy(wpose))
         (cartesian_plan, fraction) = self.group.compute_cartesian_path(waypoints,0.01, 0.0)
         self.group.execute(cartesian_plan, wait=True)
@@ -847,15 +869,15 @@ class do_task:
         self.yrc_controller.gripper_go('o')
 
         #Moving up from the placing location
-        waypoints = []
-        wpose = self.group.get_current_pose().pose
-        wpose.position.z += position_z + 0.1
-        waypoints.append(copy.deepcopy(wpose))
-        (cartesian_plan, fraction) = self.group.compute_cartesian_path(waypoints,0.01, 0.0)
-        self.group.execute(cartesian_plan, wait=True)
+        #waypoints = []
+        #wpose = self.group.get_current_pose().pose
+        #wpose.position.z += position_z + 0.1
+        #waypoints.append(copy.deepcopy(wpose))
+        #(cartesian_plan, fraction) = self.group.compute_cartesian_path(waypoints,0.01, 0.0)
+        #self.group.execute(cartesian_plan, wait=True)
 
         #Make the robot move
-        self.yrc_controller.arm_go()
+        #self.yrc_controller.arm_go()
 
 
         rospy.sleep(1)

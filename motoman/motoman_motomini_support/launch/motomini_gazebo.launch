@@ -1,0 +1,45 @@
+<launch>
+  <arg name="scene" default="1-1" doc="Scene id." />
+  <arg name="limited" default="true"  doc="If true, limits joint range [-PI, PI] on all joints." />
+  <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
+  <arg name="gui" default="true" doc="Starts gazebo gui" />
+  <arg name="gripper" default="robotiq_2f_85"  doc="Attach gripper on manipulator" />
+  <arg name="materials_dir" default="/home/siddharth/backup_18.04/ocrtoc_materials"  doc="The models and scenes path" />
+
+
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="/home/siddharth/catkin_ws/src/motoman/motoman_motomini_support/worlds/input.world"/>
+    <!-- value is true to set up the robot joints -->
+    <arg name="paused" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <include file ="$(find motoman_motomini_support)/launch/spawn_ground.launch">
+    <arg name="robot_name" value="ground" />
+    <arg name="sdf_robot_file" value="$(find motoman_motomini_support)/models/ground/model.sdf" />
+  </include>
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find motoman_motomini_support)/urdf/motomini.xacro'" />
+ 	
+
+    <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
+	    args="-urdf -param robot_description -model motoman_motomini -unpause" respawn="false"/>
+
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <rosparam file="$(find motoman_motomini_support)/config/moto_controller.yaml" command="load"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!--node name="move_arm_node" pkg="motoman_motomini_support" type="move_arm.py"/-->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"  output="screen" args="joint_state_controller
+                  arm_controller 
+                  gripper_controller"/>
+
+  <!--include file="$(find motoman_motomini_support)/launch/controllers.launch"/-->
+
+  <!--include file="$(find motoman_motomini_support)/launch/moveit_ur5.launch" /-->
+
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find motoman_motomini_support)/rviz/display_robot.rviz" required="true" /-->
+</launch>

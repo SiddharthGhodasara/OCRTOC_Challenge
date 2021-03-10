@@ -10,6 +10,10 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   ocrtoc_task
+  cmake_modules 
+  eigen_conversions
+  pcl_conversions 
+  pcl_ros
 )
 
 catkin_package(
@@ -24,6 +28,12 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+
+add_executable(segmentation src/segmentation.cpp)
+add_dependencies(segmentation ${segmentation_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(segmentation ${catkin_LIBRARIES})
+
+
 install(DIRECTORY
   controller
   launch
@@ -34,3 +44,5 @@ install(PROGRAMS
   scripts/commit_solution.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
+

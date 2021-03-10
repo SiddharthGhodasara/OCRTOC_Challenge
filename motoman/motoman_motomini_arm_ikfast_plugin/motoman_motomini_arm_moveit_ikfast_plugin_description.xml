@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library path="lib/libmotoman_motomini_arm_moveit_ikfast_plugin">
+  <class base_class_type="kinematics::KinematicsBase" name="motoman_motomini_arm/IKFastKinematicsPlugin" type="motoman_motomini_arm::IKFastKinematicsPlugin">
+    <description>IKFast61 plugin for closed-form kinematics of motoman_motomini arm</description>
+  </class>
+</library>

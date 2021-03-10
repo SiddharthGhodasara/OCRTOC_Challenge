@@ -58,14 +58,14 @@
           </inertia>
         </inertial>
       </link>
-      <pose>0.219931498169899 -0.30022746324539185 0.028679009526968002 -3.317835925740993e-08 1.8510040252014954e-08 3.790482423753763e-07</pose>
+      <pose>0.144 0.10 0.127 -3.317835925740993e-08 1.8510040252014954e-08 3.790482423753763e-07</pose>
     </model>
-    <!--model name="box2">
+    <model name="box2">
       <link name="link_box2">
         <collision name="default">
           <geometry>
             <mesh>
-              <uri>model://pudding_box/collision_meshes/collision.obj</uri>
+              <uri>model://gelatin_box/collision_meshes/collision.obj</uri>
               <scale>0.5 0.5 0.5</scale>
             </mesh>
           </geometry>
@@ -81,7 +81,7 @@
         <visual name="default">
           <geometry>
             <mesh>
-              <uri>model://pudding_box/visual_meshes/visual.dae</uri>
+              <uri>model://gelatin_box/visual_meshes/visual.dae</uri>
               <scale>0.5 0.5 0.5</scale>
             </mesh>
           </geometry>
@@ -99,8 +99,8 @@
           </inertia>
         </inertial>
       </link>
-      <pose>0.09974134713411331 -0.3002520799636841 0.009862901642918587 0.022348690049265055 -0.011391611208534954 -9.429408098291985e-05</pose>
-    </model-->
+      <pose>0.144 -0.10 0.009862901642918587 0.022348690049265055 -0.011391611208534954 -9.429408098291985e-05</pose>
+    </model>
     <!--model name="box3">
       <link name="link_box3">
         <collision name="default">
