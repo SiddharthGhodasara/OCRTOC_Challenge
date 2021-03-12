@@ -663,30 +663,84 @@ class do_task:
         # rospy.Rate(1).sleep()
         rs_state = 0
         #Extracting centroid coordiantes from YOLO
-        yolo_x = xy_pose.pose.position.x
+        yolo_x = xy_pose.pose.position.x - 0.05
         yolo_y = xy_pose.pose.position.y
         yolo_z = xy_pose.pose.position.z
 
         #Generating a pose stamped messgae
         rs_pose = PoseStamped()
-        rs_pose.header.frame_id = "/world"
+        rs_pose.header.frame_id = "/link_1_s"
 
+
+	req_distance = (yolo_x**2 + yolo_y**2)**0.5 - 0.1
+	x_back = req_distance * math.cos(math.atan2(yolo_y, yolo_x))
+	y_back = req_distance * math.sin(math.atan2(yolo_y, yolo_x))
         #Assiging Linear Coordinates
-        rs_pose.pose.position.x = yolo_x -0.05#- 0.08
-        rs_pose.pose.position.y = yolo_y -0.03#- 0.01
-        rs_pose.pose.position.z = yolo_z + 0.13
+        
+        go_pose = PoseStamped()
+        go_pose.header.frame_id = '/world'
+        go_pose.pose.position.x = x_back
+        go_pose.pose.position.y = y_back
+        go_pose.pose.position.z = 0.16
+        #r = math.atan2(-y_back, x_back)
+        
+        r_rad_rs = math.atan2(-yolo_y, yolo_x)
+        p_rad_rs = 1.57
+        y_rad_rs = 0.0
+        
+        q_rs = quaternion_from_euler(r_rad_rs,p_rad_rs,y_rad_rs)
+       
+            
+        #Assigning orientation value to pose message
+        go_pose.pose.orientation.x = q_rs[0]#quat[0] #grasps_plots.orientation.x
+        go_pose.pose.orientation.y = q_rs[1]#quat[1] #grasps_plots.orientation.y
+        go_pose.pose.orientation.z = q_rs[2]#quat[2] #grasps_plots.orientation.z
+        go_pose.pose.orientation.w = q_rs[3]#quat[3] #grasps_plots.orientation.w
+        
+        #print(rss_pose)
+        self.group.set_planning_time(20)
+        self.group.set_pose_target(go_pose)
+        plan2 = self.group.plan()
+        rs_state = self.group.go(wait=True)
+        xxxxxxx = raw_input("Input")
+        #Make the robot move
+        self.yrc_controller.arm_go()
+        
+        
+        
+        temp_point = PointStamped()
+        temp_point.header.frame_id = '/world'
+        temp_point.point.x = x_back
+        temp_point.point.y = y_back 
+        temp_point.point.z = 0.16
+       
+        
+        
+ 	target_frame = "link_1_s"
+	source_frame = "world"
+	transform = tf_buffer.lookup_transform(target_frame, 
+		source_frame, #source frame
+		rospy.Time(0), #get the tf at first available time
+		rospy.Duration(1.0)) #wait for 1 second
+
+    	#Applying the transform
+    	tool_point = tf2_geometry_msgs.do_transform_point(temp_point, transform)
+        
+        
+        rs_pose.pose.position.x = tool_point.point.x#yolo_x - 0.1#- 0.08
+        rs_pose.pose.position.y = tool_point.point.y#yolo_y #-0.03#- 0.01
+        rs_pose.pose.position.z = 0.16#tool_point.point.z #yolo_z + 0.14
         
         #Converting degrees to radians
-        #r_rad_rs = math.atan2(yolo_y, yolo_x)#0#math.atan2(yolo_y, yolo_x) #Roll
+        #r_rad_rs = 0#math.atan2(yolo_y, yolo_x)#0#math.atan2(yolo_y, yolo_x) #Roll
         #p_rad_rs = math.pi/2 #Pitch 
         #y_rad_rs = 0#math.atan2(yolo_y, yolo_x)#0#math.pi #Yaw
         #Getting the Quaternion coordinates from Euler
         
         #r_rad_rs = math.atan2(-rs_pose.pose.position.y, rs_pose.pose.position.x)
-        r_rad_rs = math.atan2(-yolo_y, yolo_x)
-        p_rad_rs = 1.5707
+        r_rad_rs = 0.0#math.atan2(-yolo_y, yolo_x)
+        p_rad_rs = 1.06
         y_rad_rs = 0.0
-        
         
         q_rs = quaternion_from_euler(r_rad_rs,p_rad_rs,y_rad_rs)
        
@@ -697,15 +751,34 @@ class do_task:
         rs_pose.pose.orientation.z = q_rs[2]#quat[2] #grasps_plots.orientation.z
         rs_pose.pose.orientation.w = q_rs[3]#quat[3] #grasps_plots.orientation.w
 
+
+	target_frame = "world"
+	source_frame = "link_1_s"
+	transform = tf_buffer.lookup_transform(target_frame, 
+		source_frame, #source frame
+		rospy.Time(0), #get the tf at first available time
+		rospy.Duration(1.0)) #wait for 1 second
+
+    	#Applying the transform
+    	rss_pose = tf2_geometry_msgs.do_transform_pose(rs_pose, transform)
+    	
+    	#rs_pose.pose.position.x = x_back#yolo_x - 0.1#- 0.08
+        #rs_pose.pose.position.y = y_back#yolo_y #-0.03#- 0.01
+        #rs_pose.pose.position.z = 0.16 #yolo_z + 0.14
+
         #Moving the arm to Picking location
-        #print(rs_pose)
-        #self.group.set_planning_time(20)
-        #self.group.set_pose_target(rs_pose)
-        #plan2 = self.group.plan()
-        #rs_state = self.group.go(wait=True)
-        #xxxxxxx = raw_input("Input")
+        
+        rss_pose.pose.position.x = x_back
+        rss_pose.pose.position.y = y_back
+        rss_pose.pose.position.z = 0.16
+        print(rss_pose)
+        self.group.set_planning_time(20)
+        self.group.set_pose_target(rss_pose)
+        plan2 = self.group.plan()
+        rs_state = self.group.go(wait=True)
+        xxxxxxx = raw_input("Input")
         #Make the robot move
-        #self.yrc_controller.arm_go()
+        self.yrc_controller.arm_go()
 		
 		
         #rospy.sleep(1)
@@ -732,23 +805,27 @@ class do_task:
         roll = float(self.grasps_plots_max[-1])
         print("Best ROll", roll)
         print(self.grasps_plots_max[-1])
-        if position_y < 0:
-        	r,p,y= (roll - 90, 90, 0)#(0 ,0, roll) #(roll, 90, 0)
-	else:
-		r,p,y= (roll + 90, 90, 0)
+	r, p, y = (roll, 90, 0)
+	#if position_y < 0:
+	#	r,p,y= (roll - 90, 90, 0)#(0 ,0, roll) #(roll, 90, 0)
+	#else:
+	#	r,p,y= (roll + 90, 90, 0)
         #Generating a pose stamped messgae
         grasp_pose = PoseStamped()
         grasp_pose.header.frame_id = "/world"
         #Assiging Linear Coordinates
-        grasp_pose.pose.position.x = position_x + 0.02
-        grasp_pose.pose.position.y = position_y + 0.02
-        grasp_pose.pose.position.z = position_z + 0.05
+        grasp_pose.pose.position.x = position_x #+ 0.04
+        grasp_pose.pose.position.y = position_y #+ 0.02
+        grasp_pose.pose.position.z = position_z + 0.02
         #Converting degrees to radians
         r_rad = (r*3.14159265358979323846)/180
         p_rad = (p*3.14159265358979323846)/180
         y_rad = (y*3.14159265358979323846)/180
         #Getting the Quaternion coordinates from Euler
-        q = quaternion_from_euler(math.atan(math.tan(r_rad)),p_rad,y_rad) #math.atan(math.tan(r_rad) + math.atan2(-position_y, position_x))
+        
+        print(math.atan(math.tan(r_rad) + math.atan2(-position_y, position_x)))
+        
+        q = quaternion_from_euler(math.atan(math.tan(r_rad) + math.atan2(-position_y, position_x)),p_rad,y_rad) #math.atan(math.tan(r_rad) + math.atan2(-position_y, position_x))
         print(math.atan(math.tan(r_rad)))
         #Assigning orientation value to pose message
         grasp_pose.pose.orientation.x = q[0]#quat[0] #grasps_plots.orientation.x
@@ -783,7 +860,7 @@ class do_task:
         #Going down to pick the object
         waypoints = []
         wpose = self.group.get_current_pose().pose
-        wpose.position.z -=  0.050
+        wpose.position.z -=  0.010
         waypoints.append(copy.deepcopy(wpose))
         (cartesian_plan, fraction) = self.group.compute_cartesian_path(waypoints,0.01, 0.0)
         self.group.execute(cartesian_plan, wait=True)

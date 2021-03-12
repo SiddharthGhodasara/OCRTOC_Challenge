@@ -65,7 +65,7 @@
       </link>
       <pose>0.11712410300970078 -0.10659811645746231 0.028678935021162033 -4.242179525336306e-06 -1.5470395165030092e-06 1.3913026894404628</pose>
     </model>
-    <model name="box2">
+    <!--model name="box2">
       <link name="link_box2">
         <collision name="default">
           <geometry>
@@ -252,7 +252,7 @@
         </inertial>
       </link>
       <pose>0.08641283959150314 0.06103251874446869 0.00851999968290329 4.6230187645642845e-09 4.046768352497703e-08 -1.3374294118751444</pose>
-    </model>
+    </model-->
   <physics type="ode">
       <max_contacts>50</max_contacts>
       <ode>

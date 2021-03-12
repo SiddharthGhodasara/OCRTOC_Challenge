@@ -18,6 +18,11 @@ import moveit_msgs.msg
 import geometry_msgs.msg
 import actionlib
 
+import tf 
+from tf.transformations import * 
+import tf2_ros
+import tf2_geometry_msgs
+
 from moveit_msgs.msg import MoveGroupAction, MoveGroupGoal, JointConstraint, Constraints
 
 moveit_commander.roscpp_initialize(sys.argv)
@@ -37,6 +42,11 @@ arm_group = moveit_commander.MoveGroupCommander("arm")
 
 
 display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path' , moveit_msgs.msg.DisplayTrajectory,queue_size=20)
+
+#Tranform Listener
+tf_listener = None
+#Transformations
+tf_buffer = tf2_ros.Buffer(rospy.Duration(1200.0)) #tf buffer length
 
 
 
@@ -67,13 +77,37 @@ def callback(pose):
 if __name__ == "__main__":
 	global s
 	rospy.init_node('move_arm_node')
+	
+	tf_listener = tf2_ros.TransformListener(tf_buffer)
+	
 	#pub = rospy.Publisher('joint_states', JointState, queue_size=1)
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	s.connect((HOST, PORT))
 	js = arm_group.get_current_joint_values()
 	#print(js)
 	move_arm(js)
-	print(arm_group.get_current_pose())
+	pose = arm_group.get_current_pose()
+	
+	print(pose)
+	
+	target_frame = "link_1_s"
+	source_frame = "world"
+	transform = tf_buffer.lookup_transform(target_frame, 
+		source_frame, #source frame
+		rospy.Time(0), #get the tf at first available time
+		rospy.Duration(1.0)) #wait for 1 second
+
+    	#Applying the transform
+	rs_pose = tf2_geometry_msgs.do_transform_pose(pose, transform)
+    	
+    	print(transform)
+    	
+	quat = [rs_pose.pose.orientation.x, rs_pose.pose.orientation.y, rs_pose.pose.orientation.z, rs_pose.pose.orientation.w]
+    	print(rs_pose)
+	r,p,y = euler_from_quaternion(quat, axes='sxyz')
+	print("Roll", r)
+	print("Pitch", p)
+	print("Yaw", y)
 	#rospy.Subscriber('/joint_states', JointState, callback)
 	rospy.spin()
 
