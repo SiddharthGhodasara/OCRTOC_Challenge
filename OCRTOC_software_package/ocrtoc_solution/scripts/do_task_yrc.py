@@ -770,7 +770,7 @@ class do_task:
         
         rss_pose.pose.position.x = x_back
         rss_pose.pose.position.y = y_back
-        rss_pose.pose.position.z = 0.16
+        rss_pose.pose.position.z = 0.17
         print(rss_pose)
         self.group.set_planning_time(20)
         self.group.set_pose_target(rss_pose)
@@ -814,18 +814,23 @@ class do_task:
         grasp_pose = PoseStamped()
         grasp_pose.header.frame_id = "/world"
         #Assiging Linear Coordinates
-        grasp_pose.pose.position.x = position_x #+ 0.04
+        grasp_pose.pose.position.x = position_x + 0.03
         grasp_pose.pose.position.y = position_y #+ 0.02
-        grasp_pose.pose.position.z = position_z + 0.02
+        grasp_pose.pose.position.z = position_z + 0.03
         #Converting degrees to radians
         r_rad = (r*3.14159265358979323846)/180
         p_rad = (p*3.14159265358979323846)/180
         y_rad = (y*3.14159265358979323846)/180
+        
+        
+        if name == "pudding_box" or name == "potted_meat_can":#:
+            r = r + 1.57079632
+        
         #Getting the Quaternion coordinates from Euler
         
         print(math.atan(math.tan(r_rad) + math.atan2(-position_y, position_x)))
         
-        q = quaternion_from_euler(math.atan(math.tan(r_rad) + math.atan2(-position_y, position_x)),p_rad,y_rad) #math.atan(math.tan(r_rad) + math.atan2(-position_y, position_x))
+        q = quaternion_from_euler(math.atan(math.tan(r_rad) -  math.atan2(-position_y, position_x)),p_rad,y_rad) #math.atan(math.tan(r_rad) + math.atan2(-position_y, position_x))
         print(math.atan(math.tan(r_rad)))
         #Assigning orientation value to pose message
         grasp_pose.pose.orientation.x = q[0]#quat[0] #grasps_plots.orientation.x
@@ -931,7 +936,7 @@ class do_task:
         #Going down to place the object
         waypoints = []
         wpose = self.group.get_current_pose().pose
-        wpose.position.z -= 0.05
+        wpose.position.z -= 0.01
         waypoints.append(copy.deepcopy(wpose))
         (cartesian_plan, fraction) = self.group.compute_cartesian_path(waypoints,0.01, 0.0)
         self.group.execute(cartesian_plan, wait=True)
@@ -946,15 +951,15 @@ class do_task:
         self.yrc_controller.gripper_go('o')
 
         #Moving up from the placing location
-        #waypoints = []
-        #wpose = self.group.get_current_pose().pose
-        #wpose.position.z += position_z + 0.1
-        #waypoints.append(copy.deepcopy(wpose))
-        #(cartesian_plan, fraction) = self.group.compute_cartesian_path(waypoints,0.01, 0.0)
-        #self.group.execute(cartesian_plan, wait=True)
+        waypoints = []
+        wpose = self.group.get_current_pose().pose
+        wpose.position.z += position_z + 0.1
+        waypoints.append(copy.deepcopy(wpose))
+        (cartesian_plan, fraction) = self.group.compute_cartesian_path(waypoints,0.01, 0.0)
+        self.group.execute(cartesian_plan, wait=True)
 
         #Make the robot move
-        #self.yrc_controller.arm_go()
+        self.yrc_controller.arm_go()
 
 
         rospy.sleep(1)

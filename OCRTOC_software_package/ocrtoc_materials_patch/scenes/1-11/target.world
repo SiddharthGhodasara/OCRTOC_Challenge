@@ -19,7 +19,7 @@
     <scene>
       <ambient>0.7 0.7 0.7</ambient>
     </scene>
-    <model name="box1">
+    <!--model name="box1">
       <link name="link_box1">
         <collision name="default">
           <geometry>
@@ -59,7 +59,7 @@
         </inertial>
       </link>
       <pose>0.144 0.10 0.127 -3.317835925740993e-08 1.8510040252014954e-08 3.790482423753763e-07</pose>
-    </model>
+    </model-->
     <model name="box2">
       <link name="link_box2">
         <collision name="default">
