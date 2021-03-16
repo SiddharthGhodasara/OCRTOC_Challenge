@@ -498,11 +498,12 @@ class do_task:
         req_obj = self.yolo(label)
         if req_obj is not None:
             while self.label_pub.get_num_connections < 1:
-                None
+                print("Waiting for connection")
 
             print(req_obj)
+            
             self.label_pub.publish(req_obj)
-        
+            print("Message sent to haf grasping")        
         grasp_buffer = []
         
         #Running till we get a suitable grasp
@@ -662,17 +663,30 @@ class do_task:
 
         # rospy.Rate(1).sleep()
         rs_state = 0
+        print("Yolo pose", xy_pose)
         #Extracting centroid coordiantes from YOLO
-        yolo_x = xy_pose.pose.position.x - 0.05
-        yolo_y = xy_pose.pose.position.y
+        yolo_x = xy_pose.pose.position.x #- 0.05  
+        yolo_y = xy_pose.pose.position.y 
         yolo_z = xy_pose.pose.position.z
 
         #Generating a pose stamped messgae
+        '''
         rs_pose = PoseStamped()
         rs_pose.header.frame_id = "/link_1_s"
-
-
-	req_distance = (yolo_x**2 + yolo_y**2)**0.5 - 0.1
+	'''
+	print("Yolo xy pose", yolo_x, yolo_y)
+	tot_distance = (yolo_x**2 + yolo_y**2)**0.5  # For hovering the realsense directly above the objects
+	req_distance = tot_distance - 0.03 #0.02 # For nearby objects, offset is lesser
+	z=0.18
+	pitch = 1.37#1.06
+	
+	print("REQUIRED DISTANCE",tot_distance)
+	if (tot_distance > 0.23):
+		print("Increasing height of arm")
+		z = 0.25
+		pitch = 1.06
+		req_distance = tot_distance - 0.14 #0.1  # For far objects, offset is more
+	
 	x_back = req_distance * math.cos(math.atan2(yolo_y, yolo_x))
 	y_back = req_distance * math.sin(math.atan2(yolo_y, yolo_x))
         #Assiging Linear Coordinates
@@ -681,12 +695,13 @@ class do_task:
         go_pose.header.frame_id = '/world'
         go_pose.pose.position.x = x_back
         go_pose.pose.position.y = y_back
-        go_pose.pose.position.z = 0.16
+        go_pose.pose.position.z = z
         #r = math.atan2(-y_back, x_back)
-        
-        r_rad_rs = math.atan2(-yolo_y, yolo_x)
-        p_rad_rs = 1.57
-        y_rad_rs = 0.0
+        print(xy_pose.pose.position.y-0.01)
+        print(math.atan2(xy_pose.pose.position.y-0.01, xy_pose.pose.position.x))
+        y_rad_rs = math.atan2(xy_pose.pose.position.y-0.01, xy_pose.pose.position.x)
+        p_rad_rs = pitch#1.57
+        r_rad_rs = 0.0
         
         q_rs = quaternion_from_euler(r_rad_rs,p_rad_rs,y_rad_rs)
        
@@ -697,7 +712,7 @@ class do_task:
         go_pose.pose.orientation.z = q_rs[2]#quat[2] #grasps_plots.orientation.z
         go_pose.pose.orientation.w = q_rs[3]#quat[3] #grasps_plots.orientation.w
         
-        #print(rss_pose)
+        print(go_pose)
         self.group.set_planning_time(20)
         self.group.set_pose_target(go_pose)
         plan2 = self.group.plan()
@@ -707,7 +722,7 @@ class do_task:
         self.yrc_controller.arm_go()
         
         
-        
+        '''
         temp_point = PointStamped()
         temp_point.header.frame_id = '/world'
         temp_point.point.x = x_back
@@ -729,7 +744,7 @@ class do_task:
         
         rs_pose.pose.position.x = tool_point.point.x#yolo_x - 0.1#- 0.08
         rs_pose.pose.position.y = tool_point.point.y#yolo_y #-0.03#- 0.01
-        rs_pose.pose.position.z = 0.16#tool_point.point.z #yolo_z + 0.14
+        rs_pose.pose.position.z = 0.22#tool_point.point.z #yolo_z + 0.14
         
         #Converting degrees to radians
         #r_rad_rs = 0#math.atan2(yolo_y, yolo_x)#0#math.atan2(yolo_y, yolo_x) #Roll
@@ -739,7 +754,7 @@ class do_task:
         
         #r_rad_rs = math.atan2(-rs_pose.pose.position.y, rs_pose.pose.position.x)
         r_rad_rs = 0.0#math.atan2(-yolo_y, yolo_x)
-        p_rad_rs = 1.06
+        p_rad_rs = pitch
         y_rad_rs = 0.0
         
         q_rs = quaternion_from_euler(r_rad_rs,p_rad_rs,y_rad_rs)
@@ -780,7 +795,7 @@ class do_task:
         #Make the robot move
         self.yrc_controller.arm_go()
 		
-		
+	'''
         #rospy.sleep(1)
         print("before publishing control message to haf grasping")
 
