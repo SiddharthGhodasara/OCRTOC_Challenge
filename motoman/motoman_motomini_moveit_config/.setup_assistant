@@ -6,6 +6,6 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/motoman_motomini.srdf
   CONFIG:
-    author_name: b
-    author_email: b@gmail.com
-    generated_timestamp: 1615798658
+    author_name: g
+    author_email: g@gmail.com
+    generated_timestamp: 1615884302

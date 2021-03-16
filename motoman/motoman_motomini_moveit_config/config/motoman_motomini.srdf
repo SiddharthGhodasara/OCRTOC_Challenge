@@ -26,6 +26,7 @@
     <disable_collisions link1="base_link" link2="link_1_s" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="link_2_l" reason="Never" />
     <disable_collisions link1="base_link" link2="link_3_u" reason="Never" />
+    <disable_collisions link1="base_link" link2="realsense_link" reason="Never" />
     <disable_collisions link1="base_link" link2="table" reason="Adjacent" />
     <disable_collisions link1="camera_link" link2="claw_1a" reason="Never" />
     <disable_collisions link1="camera_link" link2="claw_1b" reason="Never" />
@@ -88,7 +89,6 @@
     <disable_collisions link1="link_1_s" link2="link_2_l" reason="Adjacent" />
     <disable_collisions link1="link_1_s" link2="link_3_u" reason="Never" />
     <disable_collisions link1="link_1_s" link2="link_6_t" reason="Never" />
-    <disable_collisions link1="link_1_s" link2="realsense_link" reason="Never" />
     <disable_collisions link1="link_1_s" link2="table" reason="Never" />
     <disable_collisions link1="link_1a" link2="link_2a" reason="Never" />
     <disable_collisions link1="link_1a" link2="link_2b" reason="Never" />
@@ -125,7 +125,6 @@
     <disable_collisions link1="link_2c" link2="link_6_t" reason="Never" />
     <disable_collisions link1="link_2c" link2="realsense_link" reason="Never" />
     <disable_collisions link1="link_2d" link2="link_3_u" reason="Never" />
-    <disable_collisions link1="link_2d" link2="link_4_r" reason="Never" />
     <disable_collisions link1="link_2d" link2="link_5_b" reason="Never" />
     <disable_collisions link1="link_2d" link2="link_6_t" reason="Never" />
     <disable_collisions link1="link_2d" link2="realsense_link" reason="Never" />
@@ -139,5 +138,5 @@
     <disable_collisions link1="link_4_r" link2="realsense_link" reason="Never" />
     <disable_collisions link1="link_5_b" link2="link_6_t" reason="Adjacent" />
     <disable_collisions link1="link_5_b" link2="realsense_link" reason="Never" />
-    <disable_collisions link1="link_6_t" link2="realsense_link" reason="Adjacent" />
+    <disable_collisions link1="link_6_t" link2="realsense_link" reason="Never" />
 </robot>

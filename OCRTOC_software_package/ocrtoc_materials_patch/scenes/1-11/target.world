@@ -157,7 +157,7 @@
         <collision name="default">
           <geometry>
             <mesh>
-              <uri>model://rubiks_cube/collision_meshes/collision.obj</uri>
+              <uri>model://wood_block/collision_meshes/collision.obj</uri>
               <scale>1.0 1.0 1.0</scale>
             </mesh>
           </geometry>
@@ -173,7 +173,7 @@
         <visual name="default">
           <geometry>
             <mesh>
-              <uri>model://rubiks_cube/visual_meshes/visual.dae</uri>
+              <uri>model://wood_block/visual_meshes/visual.dae</uri>
               <scale>1.0 1.0 1.0</scale>
             </mesh>
           </geometry>
@@ -191,7 +191,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-0.263177 -0.203718 0.02867899462580681 0 0 0</pose>
+      <pose>-0.06 -0.20 0.02867899462580681 0 0 0</pose>
     </model>
     <!--model name="can2">
       <link name="link_can2">

@@ -154,7 +154,7 @@ void CCalcGrasppointsClient::get_coord_cb(const geometry_msgs::PoseStamped::Cons
 		this->grasp_search_size_x = xx + 5;
 	if (this->grasp_search_size_y < 1 or this->grasp_search_size_y >= this->max_grasp_search_size_y)
 		this->grasp_search_size_y = yy + 5;*/
-	ROS_INFO_STREAM("New Search size" <<this->grasp_search_size_y <<"YOLO" << this->grasp_search_size_x);
+	ROS_INFO_STREAM("New Search size" <<msg->pose.position.x <<"YOLO" << msg->pose.position.y );
 	//Extracting the coordinates
 	this->graspsearchcenter.x = msg->pose.position.x ;//- (yy/2);
 	this->graspsearchcenter.y = msg->pose.position.y ;

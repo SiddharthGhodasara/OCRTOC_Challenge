@@ -3,10 +3,10 @@
   <name>motoman_motomini_moveit_config</name>
   <version>0.3.0</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the motoman_motomini with the MoveIt Motion Planning Framework
+     An automatically generated package with all the configuration and launch files for using the motoman_motomini with the MoveIt! Motion Planning Framework
   </description>
-  <author email="b@gmail.com">b</author>
-  <maintainer email="b@gmail.com">b</maintainer>
+  <author email="g@gmail.com">g</author>
+  <maintainer email="g@gmail.com">g</maintainer>
 
   <license>BSD</license>
 
