@@ -1,0 +1,13 @@
+material Brown{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture /home/siddharth/ocrtoc_ws/src/motoman_motomini_support/urdf/texture.png
+                scale 1 1
+            }
+        }   
+    }
+}

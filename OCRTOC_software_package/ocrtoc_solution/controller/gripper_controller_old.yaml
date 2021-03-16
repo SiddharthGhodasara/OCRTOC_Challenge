@@ -12,7 +12,7 @@ gripper_controller:
 #  state_publish_rate:  25
 #  action_monitor_rate: 10
   type: position_controllers/GripperActionController
-  joint: l_finger_joint
+  joint: ur5_l_finger_joint
   action_monitor_rate: 20
   goal_tolerance: 0.002
   max_effort: 100

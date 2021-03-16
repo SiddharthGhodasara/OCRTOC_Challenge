@@ -29,19 +29,19 @@ joint_group_position_controller:
      - joint_5_b 
      - joint_6_t
 
-gripper_controller:
-  type: position_controllers/JointTrajectoryController
-  joints:
-     - claw_1b_joint 
+#gripper_controller:
+#  type: position_controllers/JointTrajectoryController
+#  joints:
+#     - claw_1b_joint 
 
-  constraints:
-      goal_time: 0.6
-      stopped_velocity_tolerance: 0.05
-      claw_1b_joint: {trajectory: 0.1, goal: 0.1}
+#  constraints:
+#      goal_time: 0.6
+#      stopped_velocity_tolerance: 0.05
+#      claw_1b_joint: {trajectory: 0.1, goal: 0.1}
 
-  stop_trajectory_duration: 0.5
-  state_publish_rate:  25
-  action_monitor_rate: 10
+#  stop_trajectory_duration: 0.5
+#  state_publish_rate:  25
+#  action_monitor_rate: 10
 
 
 

@@ -51,15 +51,6 @@
 
     <link name="realsense_depth_optical_frame">
   </link>
-<gazebo reference="realsense_link">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <kp>1000000.0</kp>
-    <kd>1.0</kd>
-    <mu1>10000.0</mu1>
-    <mu2>10000.0</mu2>
-    <minDepth>0.001</minDepth>
-<material>PR2/Grey1</material>
-    <turnGravityOff>true</turnGravityOff>
-</gazebo>
+
     </xacro:macro>
 </robot>
