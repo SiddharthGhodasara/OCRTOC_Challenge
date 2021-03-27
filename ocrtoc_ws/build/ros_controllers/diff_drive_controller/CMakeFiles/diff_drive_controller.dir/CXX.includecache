@@ -80,18 +80,6 @@ urdf/urdfdom_compatibility.h
 urdf_parser/urdf_parser.h
 -
 
-/home/kaushik/ocrtoc_ws/src/ros_controllers/diff_drive_controller/src/odometry.cpp
-diff_drive_controller/odometry.h
--
-boost/bind.hpp
--
-
-/home/kaushik/ocrtoc_ws/src/ros_controllers/diff_drive_controller/src/speed_limiter.cpp
-algorithm
--
-diff_drive_controller/speed_limiter.h
--
-
 /opt/ros/melodic/include/class_loader/class_loader.hpp
 boost/bind.hpp
 -

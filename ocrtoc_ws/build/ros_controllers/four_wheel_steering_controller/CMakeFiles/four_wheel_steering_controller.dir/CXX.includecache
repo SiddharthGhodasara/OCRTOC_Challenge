@@ -52,18 +52,6 @@ tf/transform_datatypes.h
 urdf_geometry_parser/urdf_geometry_parser.h
 -
 
-/home/kaushik/ocrtoc_ws/src/ros_controllers/four_wheel_steering_controller/src/odometry.cpp
-four_wheel_steering_controller/odometry.h
--
-boost/bind.hpp
--
-
-/home/kaushik/ocrtoc_ws/src/ros_controllers/four_wheel_steering_controller/src/speed_limiter.cpp
-algorithm
--
-four_wheel_steering_controller/speed_limiter.h
--
-
 /opt/ros/melodic/include/class_loader/class_loader.hpp
 boost/bind.hpp
 -

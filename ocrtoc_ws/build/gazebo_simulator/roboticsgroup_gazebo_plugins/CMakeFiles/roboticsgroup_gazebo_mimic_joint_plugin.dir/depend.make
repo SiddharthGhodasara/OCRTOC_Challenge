@@ -208,6 +208,7 @@ gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mi
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h

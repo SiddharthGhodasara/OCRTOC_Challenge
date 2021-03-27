@@ -126,6 +126,7 @@ gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/Rea
  /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
  /usr/include/gazebo-9/gazebo/msgs/param.pb.h
  /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+ /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
  /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
  /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
  /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h
@@ -717,6 +718,7 @@ gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gaz
  /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
  /usr/include/gazebo-9/gazebo/msgs/param.pb.h
  /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+ /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
  /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
  /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
  /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h

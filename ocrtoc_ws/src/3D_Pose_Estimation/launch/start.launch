@@ -13,5 +13,5 @@
   <param name="camera_frame" value="kinect_optical_frame" />
 
   <!--Lanuching the node-->
-  <node name="object_detection" pkg="3D_Pose_Estimation" type="yolo_latest.py" output="screen"/>
+  <node name="object_detection" pkg="3D_Pose_Estimation" type="yolo_stable.py" output="screen"/>
 </launch>

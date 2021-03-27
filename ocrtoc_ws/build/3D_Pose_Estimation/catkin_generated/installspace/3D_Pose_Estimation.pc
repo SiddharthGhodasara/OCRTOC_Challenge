@@ -1,0 +1,8 @@
+prefix=/home/kaushik/ocrtoc_ws/install
+
+Name: 3D_Pose_Estimation
+Description: Description of 3D_Pose_Estimation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

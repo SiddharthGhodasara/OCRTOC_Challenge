@@ -11,7 +11,7 @@ from control_msgs.msg import GripperCommandActionGoal
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 import math
 import time
-from do_task_class_orientation import do_task
+from do_task import do_task
 
 #Solution Class
 class CommitSolution(object):
@@ -46,7 +46,7 @@ class CommitSolution(object):
         	task_var = do_task()
 		i = 0
 		while(i<len(goal.object_list)):
-			goal, i = task_var.task(goal, i,0)
+			goal, i = task_var.task(goal, i)
 			rospy.sleep(1)
 
 		print("Going for 1st feedback")

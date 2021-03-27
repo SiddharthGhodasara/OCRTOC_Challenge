@@ -141,6 +141,22 @@ if __name__ == '__main__':
         # estimated
         result_p = result_pose_list[index].position
         result_q = result_pose_list[index].orientation
+        
+        if goal.object_list[index] == 'banana':
+        	
+        	r,p,y = tf.transformations.euler_from_quaternion([result_q.x, result_q.y, result_q.z, result_q.w], axes='sxyz')
+        	
+        	if r < 0.0:
+        		r = r + 0.18
+        	else:
+        		r = r - 0.18
+        		
+        	r_q = tf.transformations.quaternion_from_euler(r, p, y)
+        	result_q.x = r_q[0]
+        	result_q.y = r_q[1]
+        	result_q.z = r_q[2]
+        	result_q.w = r_q[3]
+        	
         R_est = np.array(tf.transformations.quaternion_matrix(
                          [result_q.x, result_q.y, result_q.z, result_q.w])
                          [0:3, 0:3])
@@ -169,6 +185,8 @@ if __name__ == '__main__':
     time_cost = end_time - start_time
     rospy.loginfo("Simulator: " + simulator_name)
     rospy.loginfo("Task name: " + task_name)
+    rospy.loginfo("Objects pose error: " + str(objects_pose_error))
     rospy.loginfo("Scene pose error: " + str(scene_pose_error) + ' meters')
     rospy.loginfo("Time cost: " + str(time_cost) + ' seconds')
     rospy.loginfo("Done.")
+

@@ -1,0 +1,8 @@
+prefix=/home/kaushik/ocrtoc_ws/install
+
+Name: rosplan_sensing_interface
+Description: Description of rosplan_sensing_interface
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

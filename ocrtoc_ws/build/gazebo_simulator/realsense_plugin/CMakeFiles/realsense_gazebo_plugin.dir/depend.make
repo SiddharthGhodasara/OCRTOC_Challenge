@@ -125,6 +125,7 @@ gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/Rea
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/RealSensePlugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h
@@ -716,6 +717,7 @@ gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gaz
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o: /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o: /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o: /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o: /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
 gazebo_simulator/realsense_plugin/CMakeFiles/realsense_gazebo_plugin.dir/src/gazebo_ros_realsense.cpp.o: /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h

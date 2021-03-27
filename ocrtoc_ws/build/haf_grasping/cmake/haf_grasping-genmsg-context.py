@@ -8,4 +8,4 @@ langs = "gencpp;geneus;genlisp;gennodejs;genpy"
 dep_include_paths_str = "haf_grasping;/home/kaushik/ocrtoc_ws/src/haf_grasping/msg;haf_grasping;/home/kaushik/ocrtoc_ws/devel/share/haf_grasping/msg;actionlib_msgs;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg;actionlib;/opt/ros/melodic/share/actionlib/cmake/../msg;std_msgs;/opt/ros/melodic/share/std_msgs/cmake/../msg;sensor_msgs;/opt/ros/melodic/share/sensor_msgs/cmake/../msg;geometry_msgs;/opt/ros/melodic/share/geometry_msgs/cmake/../msg;visualization_msgs;/opt/ros/melodic/share/visualization_msgs/cmake/../msg"
 PYTHON_EXECUTABLE = "/usr/bin/python2"
 package_has_static_sources = '' == 'TRUE'
-genmsg_check_deps_script = "/home/kaushik/catkin_ws/src/genmsg/scripts/genmsg_check_deps.py"
+genmsg_check_deps_script = "/opt/ros/melodic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py"

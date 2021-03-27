@@ -129,6 +129,7 @@ gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/src/Gaz
 gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/src/GazeboVersionHelpers.cpp.o: /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
 gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/src/GazeboVersionHelpers.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param.pb.h
 gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/src/GazeboVersionHelpers.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/src/GazeboVersionHelpers.cpp.o: /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
 gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/src/GazeboVersionHelpers.cpp.o: /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
 gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/src/GazeboVersionHelpers.cpp.o: /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
 gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/src/GazeboVersionHelpers.cpp.o: /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h

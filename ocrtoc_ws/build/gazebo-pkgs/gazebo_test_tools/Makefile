@@ -88,18 +88,6 @@ install/strip/fast: preinstall/fast
 	/opt/cmake-3.17.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/cmake-3.17.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/cmake-3.17.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -112,16 +100,6 @@ install/fast: preinstall/fast
 	/opt/cmake-3.17.2/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -132,6 +110,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/opt/cmake-3.17.2/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -144,16 +133,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/opt/cmake-3.17.2/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : test/fast
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/cmake-3.17.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/cmake-3.17.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -188,6 +188,51 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_py: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_py
+
+# fast build rule for target.
+gazebo_msgs_generate_messages_py/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
+.PHONY : gazebo_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_eus: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_eus
+
+# fast build rule for target.
+gazebo_msgs_generate_messages_eus/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build
+.PHONY : gazebo_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_lisp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_lisp
+
+# fast build rule for target.
+gazebo_msgs_generate_messages_lisp/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
+.PHONY : gazebo_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
 .PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
@@ -201,6 +246,36 @@ dynamic_reconfigure_generate_messages_py: gazebo-pkgs/gazebo_test_tools/CMakeFil
 dynamic_reconfigure_generate_messages_py/fast:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_py/fast
+
+# Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_cpp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/rule
+
+.PHONY : tf_generate_messages_cpp
+
+# fast build rule for target.
+tf_generate_messages_cpp/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/build
+.PHONY : tf_generate_messages_cpp/fast
+
+# Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_nodejs: gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_nodejs
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_nodejs/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
 
 # Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule:
@@ -248,6 +323,36 @@ fake_object_recognizer_cmd/fast:
 .PHONY : fake_object_recognizer_cmd/fast
 
 # Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_cpp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_cpp
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_cpp/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+
+# Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/rule
+
+# Convenience name for target.
+gazebo_test_tools_gencpp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/rule
+
+.PHONY : gazebo_test_tools_gencpp
+
+# fast build rule for target.
+gazebo_test_tools_gencpp/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/build
+.PHONY : gazebo_test_tools_gencpp/fast
+
+# Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
 .PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
@@ -276,6 +381,21 @@ tf2_msgs_generate_messages_eus: gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msg
 tf2_msgs_generate_messages_eus/fast:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
 .PHONY : tf2_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_lisp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/rule
+
+.PHONY : tf_generate_messages_lisp
+
+# fast build rule for target.
+tf_generate_messages_lisp/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/build
+.PHONY : tf_generate_messages_lisp/fast
 
 # Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
@@ -308,21 +428,6 @@ dynamic_reconfigure_gencfg/fast:
 .PHONY : dynamic_reconfigure_gencfg/fast
 
 # Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
 .PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
@@ -336,21 +441,6 @@ dynamic_reconfigure_generate_messages_lisp: gazebo-pkgs/gazebo_test_tools/CMakeF
 dynamic_reconfigure_generate_messages_lisp/fast:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
 
 # Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_py.dir/rule:
@@ -368,66 +458,6 @@ tf_generate_messages_py/fast:
 .PHONY : tf_generate_messages_py/fast
 
 # Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_cpp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_cpp
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_cpp/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build
-.PHONY : gazebo_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_nodejs: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_nodejs/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
-.PHONY : gazebo_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/rule:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/rule
 .PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/rule
@@ -443,51 +473,6 @@ fake_object_recognizer/fast:
 .PHONY : fake_object_recognizer/fast
 
 # Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_nodejs: gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_nodejs
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_nodejs/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_cpp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_cpp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/rule
-
-# Convenience name for target.
-gazebo_test_tools_gencpp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/rule
-
-.PHONY : gazebo_test_tools_gencpp
-
-# fast build rule for target.
-gazebo_test_tools_gencpp/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gencpp.dir/build
-.PHONY : gazebo_test_tools_gencpp/fast
-
-# Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_ros_gencfg.dir/rule:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_ros_gencfg.dir/rule
 .PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_ros_gencfg.dir/rule
@@ -501,21 +486,6 @@ gazebo_ros_gencfg: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_ros_gencfg.di
 gazebo_ros_gencfg/fast:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_ros_gencfg.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_ros_gencfg.dir/build
 .PHONY : gazebo_ros_gencfg/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
@@ -548,49 +518,34 @@ gazebo_test_tools/fast:
 .PHONY : gazebo_test_tools/fast
 
 # Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_eus: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
+gazebo_msgs_generate_messages_nodejs: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_eus
+.PHONY : gazebo_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_eus/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build
-.PHONY : gazebo_msgs_generate_messages_eus/fast
+gazebo_msgs_generate_messages_nodejs/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
+.PHONY : gazebo_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_py: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+gazebo_msgs_generate_messages_cpp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_py
+.PHONY : gazebo_msgs_generate_messages_cpp
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_py/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
-.PHONY : gazebo_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_lisp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
+gazebo_msgs_generate_messages_cpp/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build
+.PHONY : gazebo_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_generate_messages_eus.dir/rule:
@@ -608,19 +563,19 @@ gazebo_test_tools_generate_messages_eus/fast:
 .PHONY : gazebo_test_tools_generate_messages_eus/fast
 
 # Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_lisp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+tf2_msgs_generate_messages_lisp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_lisp
+.PHONY : tf2_msgs_generate_messages_lisp
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_lisp/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
-.PHONY : gazebo_msgs_generate_messages_lisp/fast
+tf2_msgs_generate_messages_lisp/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+.PHONY : tf2_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_generate_messages.dir/rule:
@@ -651,21 +606,6 @@ _gazebo_test_tools_generate_messages_check_deps_RecognizeGazeboObject: gazebo-pk
 _gazebo_test_tools_generate_messages_check_deps_RecognizeGazeboObject/fast:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/_gazebo_test_tools_generate_messages_check_deps_RecognizeGazeboObject.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/_gazebo_test_tools_generate_messages_check_deps_RecognizeGazeboObject.dir/build
 .PHONY : _gazebo_test_tools_generate_messages_check_deps_RecognizeGazeboObject/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_py.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
 
 # Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_geneus.dir/rule:
@@ -743,21 +683,6 @@ cube_spawner/fast:
 .PHONY : cube_spawner/fast
 
 # Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gennodejs.dir/rule:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gennodejs.dir/rule
 .PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_gennodejs.dir/rule
@@ -803,36 +728,6 @@ gazebo_test_tools_genpy/fast:
 .PHONY : gazebo_test_tools_genpy/fast
 
 # Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_eus: gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-.PHONY : tf_generate_messages_eus
-
-# fast build rule for target.
-tf_generate_messages_eus/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
-
-# Convenience name for target.
-gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/rule:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/rule
-.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/rule
-
-# Convenience name for target.
-fake_object_recognizer_node: gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/rule
-
-.PHONY : fake_object_recognizer_node
-
-# fast build rule for target.
-fake_object_recognizer_node/fast:
-	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/build
-.PHONY : fake_object_recognizer_node/fast
-
-# Convenience name for target.
 gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/rule:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/rule
 .PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/rule
@@ -861,6 +756,36 @@ gazebo_test_tools_generate_messages_cpp: gazebo-pkgs/gazebo_test_tools/CMakeFile
 gazebo_test_tools_generate_messages_cpp/fast:
 	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_generate_messages_cpp.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools_generate_messages_cpp.dir/build
 .PHONY : gazebo_test_tools_generate_messages_cpp/fast
+
+# Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_eus: gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/rule
+
+.PHONY : tf_generate_messages_eus
+
+# fast build rule for target.
+tf_generate_messages_eus/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_eus.dir/build
+.PHONY : tf_generate_messages_eus/fast
+
+# Convenience name for target.
+gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/rule:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/rule
+.PHONY : gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/rule
+
+# Convenience name for target.
+fake_object_recognizer_node: gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/rule
+
+.PHONY : fake_object_recognizer_node
+
+# fast build rule for target.
+fake_object_recognizer_node/fast:
+	cd /home/kaushik/ocrtoc_ws/build && $(MAKE) $(MAKESILENT) -f gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/build.make gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/build
+.PHONY : fake_object_recognizer_node/fast
 
 src/FakeObjectRecognizer.o: src/FakeObjectRecognizer.cpp.o
 
@@ -1061,11 +986,6 @@ help:
 	@echo "... gazebo_test_tools_genlisp"
 	@echo "... gazebo_test_tools_gennodejs"
 	@echo "... gazebo_test_tools_genpy"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... std_srvs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_eus"
 	@echo "... tf2_msgs_generate_messages_lisp"

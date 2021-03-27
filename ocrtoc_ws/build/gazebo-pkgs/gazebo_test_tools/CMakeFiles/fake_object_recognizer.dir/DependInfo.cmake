@@ -22,10 +22,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/kaushik/ocrtoc_ws/devel/include"
   "/home/kaushik/ocrtoc_ws/src/gazebo-pkgs/gazebo_test_tools/include"
-  "/home/kaushik/catkin_ws/devel/include"
-  "/home/kaushik/catkin_ws/src/geometry2/tf2_ros/include"
-  "/home/kaushik/catkin_ws/src/geometry2/tf2/include"
-  "/home/kaushik/catkin_ws/src/geometry2/tf2_msgs/include"
+  "/home/kaushik/temp_ws/devel/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/gazebo-9"

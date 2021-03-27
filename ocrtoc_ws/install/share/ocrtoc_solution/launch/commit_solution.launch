@@ -1,0 +1,10 @@
+<launch>
+  <!-- run commit_solution actionlib server -->
+ <include file="$(find haf_grasping)/launch/haf_grasping_all.launch"  />
+ <!--node name="object_detection" pkg="ocrtoc_solution" type="yolo.py" output="screen" /-->
+ <node name="commit_solution" pkg="ocrtoc_solution" type="commit_solution.py" output="screen" >
+    <param name="materials_dir" value="/home/kaushik/ocrtoc_materials"/>
+  </node>
+  <include file="$(find ocrtoc_task)/launch/moveit_ur5.launch" />
+  <include file="$(find ocrtoc_task)/launch/tutorial.launch" />
+</launch>

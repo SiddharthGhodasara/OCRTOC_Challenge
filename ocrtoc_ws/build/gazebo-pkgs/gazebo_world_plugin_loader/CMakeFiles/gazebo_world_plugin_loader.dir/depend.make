@@ -186,6 +186,7 @@ gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir
 gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/src/GazeboPluginLoader.cpp.o: /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
 gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/src/GazeboPluginLoader.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param.pb.h
 gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/src/GazeboPluginLoader.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/src/GazeboPluginLoader.cpp.o: /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
 gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/src/GazeboPluginLoader.cpp.o: /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
 gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/src/GazeboPluginLoader.cpp.o: /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
 gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/src/GazeboPluginLoader.cpp.o: /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h

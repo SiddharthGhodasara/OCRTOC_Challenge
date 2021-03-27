@@ -132,10 +132,10 @@ diff_drive_controller_EXTERNAL_OBJECTS =
 /home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so
 /home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /opt/ros/melodic/lib/librealtime_tools.so
 /home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /opt/ros/melodic/lib/libtf.so
-/home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /home/kaushik/catkin_ws/devel/lib/libtf2_ros.so
+/home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /opt/ros/melodic/lib/libtf2_ros.so
 /home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /opt/ros/melodic/lib/libactionlib.so
 /home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /opt/ros/melodic/lib/libmessage_filters.so
-/home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /home/kaushik/catkin_ws/devel/lib/libtf2.so
+/home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /opt/ros/melodic/lib/libtf2.so
 /home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /opt/ros/melodic/lib/liburdf.so
 /home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
 /home/kaushik/ocrtoc_ws/devel/lib/libdiff_drive_controller.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so

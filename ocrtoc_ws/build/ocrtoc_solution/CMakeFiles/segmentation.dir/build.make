@@ -295,7 +295,7 @@ segmentation_EXTERNAL_OBJECTS =
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /usr/lib/x86_64-linux-gnu/liblz4.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libtopic_tools.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libtf.so
-/home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /home/kaushik/catkin_ws/devel/lib/libtf2_ros.so
+/home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libtf2_ros.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libactionlib.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libmessage_filters.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libroscpp.so
@@ -306,7 +306,7 @@ segmentation_EXTERNAL_OBJECTS =
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /home/kaushik/catkin_ws/devel/lib/libtf2.so
+/home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libtf2.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libroscpp_serialization.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/librostime.so
 /home/kaushik/ocrtoc_ws/devel/lib/ocrtoc_solution/segmentation: /opt/ros/melodic/lib/libcpp_common.so

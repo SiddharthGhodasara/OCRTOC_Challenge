@@ -1,0 +1,8 @@
+# CMake generated Testfile for 
+# Source directory: /home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base
+# Build directory: /home/kaushik/ocrtoc_ws/build/rosplan/rosplan_knowledge_base
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(_ctest_rosplan_knowledge_base_rostest_test_launch_knowledge_base.test "/home/kaushik/ocrtoc_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python2" "/opt/ros/melodic/share/catkin/cmake/test/run_tests.py" "/home/kaushik/ocrtoc_ws/build/test_results/rosplan_knowledge_base/rostest-test_launch_knowledge_base.xml" "--return-code" "/usr/bin/python2 /opt/ros/melodic/share/rostest/cmake/../../../bin/rostest --pkgdir=/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base --package=rosplan_knowledge_base --results-filename test_launch_knowledge_base.xml --results-base-dir \"/home/kaushik/ocrtoc_ws/build/test_results\" /home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/test/launch/knowledge_base.test ")
+set_tests_properties(_ctest_rosplan_knowledge_base_rostest_test_launch_knowledge_base.test PROPERTIES  _BACKTRACE_TRIPLES "/opt/ros/melodic/share/catkin/cmake/test/tests.cmake;160;add_test;/opt/ros/melodic/share/rostest/cmake/rostest-extras.cmake;52;catkin_run_tests_target;/opt/ros/melodic/share/rostest/cmake/rostest-extras.cmake;80;add_rostest;/opt/ros/melodic/share/rostest/cmake/rostest-extras.cmake;100;_add_rostest_google_test;/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/CMakeLists.txt;109;add_rostest_gtest;/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/CMakeLists.txt;0;")

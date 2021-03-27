@@ -52,12 +52,6 @@ urdf_parser/urdf_parser.h
 ackermann_steering_controller/ackermann_steering_controller.h
 -
 
-/home/kaushik/ocrtoc_ws/src/ros_controllers/ackermann_steering_controller/src/odometry.cpp
-ackermann_steering_controller/odometry.h
--
-boost/bind.hpp
--
-
 /home/kaushik/ocrtoc_ws/src/ros_controllers/diff_drive_controller/include/diff_drive_controller/speed_limiter.h
 
 /opt/ros/melodic/include/class_loader/class_loader.hpp

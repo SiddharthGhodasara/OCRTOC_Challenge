@@ -360,7 +360,7 @@
     <!-- Realsense Link -->
   <xacro:include filename="$(find ur_e_description)/urdf/_d435.urdf.xacro" />
   <sensor_d435 parent="${prefix}wrist_3_link">
-    <origin xyz="0.011013 0.094580 -0.10724" rpy="-3.1296068 0.028976 1.6645942"/>
+    <origin xyz="0.0 0.094580 -0.05724" rpy="-3.1296068 0.028976 1.6645942"/>
   </sensor_d435>
 
     <!-- Kinect link -->

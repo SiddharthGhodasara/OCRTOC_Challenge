@@ -108,10 +108,10 @@ fake_object_recognizer_EXTERNAL_OBJECTS =
 /home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
 /home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
 /home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /opt/ros/melodic/lib/libtf.so
-/home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /home/kaushik/catkin_ws/devel/lib/libtf2_ros.so
+/home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /opt/ros/melodic/lib/libtf2_ros.so
 /home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /opt/ros/melodic/lib/libactionlib.so
 /home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /opt/ros/melodic/lib/libmessage_filters.so
-/home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /home/kaushik/catkin_ws/devel/lib/libtf2.so
+/home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /opt/ros/melodic/lib/libtf2.so
 /home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so
 /home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /opt/ros/melodic/lib/libroscpp.so
 /home/kaushik/ocrtoc_ws/devel/lib/libfake_object_recognizer.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so

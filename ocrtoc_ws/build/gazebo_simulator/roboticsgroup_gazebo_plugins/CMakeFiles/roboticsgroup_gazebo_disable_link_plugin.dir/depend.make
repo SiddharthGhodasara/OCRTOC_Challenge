@@ -186,6 +186,7 @@ gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_di
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
 gazebo_simulator/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h

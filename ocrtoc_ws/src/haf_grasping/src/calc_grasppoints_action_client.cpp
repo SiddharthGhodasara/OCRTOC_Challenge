@@ -68,7 +68,7 @@ public:
 	std::string base_frame_default;
 	int gripper_opening_width; 			//defines pre-grasp gripper opening width
 
-	void get_coord_cb(const geometry_msgs::PointStamped::ConstPtr& msg);
+	void get_coord_cb(const geometry_msgs::PoseStamped::ConstPtr& msg);
 	void get_grasp_cb(const sensor_msgs::PointCloud2ConstPtr& pc_in);
 	void open_pcd_and_trig_get_grasp_cb(std_msgs::String pcd_path);
 	bool set_grasp_center(haf_grasping::GraspSearchCenter::Request &req, haf_grasping::GraspSearchCenter::Response &res);
@@ -80,11 +80,11 @@ public:
 
 	CCalcGrasppointsClient(ros::NodeHandle nh_)
 	{
-		//ROS_INFO("NOOOOO!!!!!!");
+		ROS_INFO("NOOOOO!!!!!!");
 		this->graspsearchcenter.x = -1;
 		nh_.param("grasp_search_size_x", this->grasp_search_size_x, 18);	//default value = max. limit 32
 		nh_.param("grasp_search_size_y", this->grasp_search_size_y, 30);	//default value = max. limit 44
-		this->coord_sub = nh_.subscribe("/pose", 1, &CCalcGrasppointsClient::get_coord_cb, this);
+		this->coord_sub = nh_.subscribe("/label", 1, &CCalcGrasppointsClient::get_coord_cb, this);
 		//define center of grasp search rectangle (respectively take from launch file)
 		//define grasp approach direction (respectively take from launch file)
 		this->approach_vector.x = this->approach_vector.y = 0.0;
@@ -129,12 +129,13 @@ public:
 };
 
 // define goal (input) for grasp calculation, send it to grasp action server and receive result
-void CCalcGrasppointsClient::get_coord_cb(const geometry_msgs::PointStamped::ConstPtr& msg)
+void CCalcGrasppointsClient::get_coord_cb(const geometry_msgs::PoseStamped::ConstPtr& msg)
 {
 	//ROS_INFO("Coord Callback");
 	//Extracting the header
 	std::string str;
 	std::vector<std::string> result;
+	/*
 	//Storing the frame id  in another variables
 	str = msg->header.frame_id;
 	//Spliting the string with , as delimiter
@@ -145,19 +146,20 @@ void CCalcGrasppointsClient::get_coord_cb(const geometry_msgs::PointStamped::Con
 	//Changing the units from m to cm
 	xx *= 100;
 	yy *= 100;
+	*/
 	//Assigning the value to class variables
 	this->grasp_search_size_x = 18;
 	this->grasp_search_size_y = 30;
 	this->max_grasp_search_size_x = 18;				//max. limit 32-14=18
 	this->max_grasp_search_size_y = 30;				//max. limit 44-14=30
 	if (this->grasp_search_size_x < 1 or this->grasp_search_size_x >= this->max_grasp_search_size_x)
-		this->grasp_search_size_x = 7;
+		this->grasp_search_size_x = 11;
 	if (this->grasp_search_size_y < 1 or this->grasp_search_size_y >= this->max_grasp_search_size_y)
-		this->grasp_search_size_y = 7;
+		this->grasp_search_size_y = 11;
 	//ROS_INFO_STREAM("The correct Search size is: " <<this->grasp_search_size_y << this->grasp_search_size_x);
 	//Extracting the coordinates
-	this->graspsearchcenter.x = msg->point.x;
-	this->graspsearchcenter.y = msg->point.y;
+	this->graspsearchcenter.x = msg->pose.position.x;
+	this->graspsearchcenter.y = msg->pose.position.y;
 	this->graspsearchcenter.z = 0; //msg->point.z;
 
 	//ROS_INFO_STREAM("coordinates of yolo x"<<this->graspsearchcenter.x);

@@ -1,0 +1,50 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/kaushik/temp_ws/devel/include/**",
+        "/home/kaushik/ocrtoc_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/ackermann_steering_controller/include/**",
+        "/home/kaushik/temp_ws/src/agile_grasp/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/diff_drive_controller/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/effort_controllers/include/**",
+        "/home/kaushik/temp_ws/src/sahayak_bot/find-object/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/force_torque_sensor_controller/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/forward_command_controller/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/four_wheel_steering_controller/include/**",
+        "/home/kaushik/temp_ws/src/sahayak_bot/gazebo-pkgs/gazebo_grasp_plugin/include/**",
+        "/home/kaushik/temp_ws/src/sahayak_bot/gazebo_ros_link_attacher/include/**",
+        "/home/kaushik/temp_ws/src/sahayak_bot/gazebo-pkgs/gazebo_state_plugins/include/**",
+        "/home/kaushik/temp_ws/src/sahayak_bot/gazebo-pkgs/gazebo_test_tools/include/**",
+        "/home/kaushik/temp_ws/src/sahayak_bot/gazebo-pkgs/gazebo_version_helpers/include/**",
+        "/home/kaushik/temp_ws/src/sahayak_bot/gazebo-pkgs/gazebo_world_plugin_loader/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/gripper_action_controller/include/**",
+        "/home/kaushik/ocrtoc_ws/src/haf_grasping/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/imu_sensor_controller/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/joint_state_controller/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/joint_trajectory_controller/include/**",
+        "/home/kaushik/ocrtoc_ws/src/motoman/motoman_driver/include/**",
+        "/home/kaushik/temp_ws/src/sahayak_bot/general-message-pkgs/object_msgs_tools/include/**",
+        "/home/kaushik/temp_ws/src/pcl_reg/include/**",
+        "/home/kaushik/temp_ws/src/pointcloud_merger/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/position_controllers/include/**",
+        "/home/kaushik/ocrtoc_ws/src/gazebo_simulator/realsense_plugin/include/**",
+        "/home/kaushik/temp_ws/src/robot_localization/include/**",
+        "/home/kaushik/temp_ws/src/sahayak_bot/robotiq_85_gripper-master/robotiq_85_simulation/roboticsgroup_gazebo_plugins/include/**",
+        "/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/include/**",
+        "/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_planning_system/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ur5e_arm_controller_ikfast_plugin/include/**",
+        "/home/kaushik/ocrtoc_ws/src/ros_controllers/velocity_controllers/include/**",
+        "/home/kaushik/temp_ws/src/whycon/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

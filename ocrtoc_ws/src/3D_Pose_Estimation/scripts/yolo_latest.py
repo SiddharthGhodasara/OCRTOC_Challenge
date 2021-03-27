@@ -89,10 +89,9 @@ for file in os.listdir(pcd_path):
     file_label = str(file).split('.')[0]
     meshes_dir[file_label] = s
 
-
 #Derive the paths to the YOLO weights and model configuration
-weightsPath = os.path.sep.join([package_path, 'yolo', "yolov3-tiny-obj_5000.weights"])
-configPath = os.path.sep.join([package_path, 'yolo', "yolov3-tiny.cfg"])
+weightsPath = os.path.sep.join([package_path, 'yolo', "yolov3-tiny-obj_4000.weights"])
+configPath = os.path.sep.join([package_path, 'yolo', "yolov3-tiny-obj.cfg"])
 
 # load our YOLO object detector trained on custom data
 print("[INFO] loading YOLO from disk...")
@@ -410,6 +409,9 @@ def prediction(image, req_label):
                 #Publishing
                 pub.publish(total_trans)
                 print("Published")
+        
+        empty = PoseStamped()
+        pub.publish(empty)
 
             
 
