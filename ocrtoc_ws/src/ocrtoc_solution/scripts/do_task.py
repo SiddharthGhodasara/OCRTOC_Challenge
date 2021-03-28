@@ -85,6 +85,11 @@ class do_task:
 		goal,i = self.check_swap.check(name, i, self.obj_pose, self.obj_size, goal)
 		occ_stop = time.time()
 		
+		#Getting the new goal details
+		name = str(goal.object_list[i])
+		goal_x = goal.pose_list[i].position.x
+		goal_y = goal.pose_list[i].position.y
+		
 		#Getting the required objects position
 		perception_start = time.time()
 		obj_pose = self.preception_obj.predict(name)
