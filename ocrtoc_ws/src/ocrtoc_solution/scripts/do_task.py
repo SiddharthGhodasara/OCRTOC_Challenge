@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 
 #Importing libraries
+import time
 import rospy
 import numpy as np
 from tf.transformations import euler_from_quaternion
@@ -79,22 +80,29 @@ class do_task:
 		for obj in goal.object_list:
 			self.obj_size[obj] = self.preception_obj.get_dim(obj)
 			self.obj_pose[obj] = self.preception_obj.predict(obj)
-
+		
+		occ_start = time.time()
 		goal,i = self.check_swap.check(name, i, self.obj_pose, self.obj_size, goal)
-
+		occ_stop = time.time()
+		
 		#Getting the required objects position
+		perception_start = time.time()
 		obj_pose = self.preception_obj.predict(name)
 		#print('Yolos pose:', obj_pose)
 		if (obj_pose is None):
 			i+=1
 			print("Object not detected by YOLO, skipping " +  name)
 			return goal, i
-
+		perception_stop = time.time()
+		
 		self.motion_planning.move_arm(pose_quat = obj_pose, offset = [-0.06, 0.0, 0.17], pose_type = 0)
-
+			
 		#Getting the grasp coordinates
+		grasping_start = time.time()
 		grasp_pose = self.grasping_obj.get_grasps_coord(obj_pose)
-
+		grasping_stop = time.time()
+		
+		moveit_start = time.time()
 		self.motion_planning.move_arm(pose_quat = grasp_pose,offset = [0,0,0], pose_type = 0)
 
 		#Opening the gripper
@@ -134,7 +142,8 @@ class do_task:
 		self.motion_planning.waypoints(-0.14)
 		#Opening the gripper
 		self.motion_planning.gripper_state('open')
-
+		moveit_stop = time.time()
+		
 		#Moving up from the placing location
 		self.motion_planning.waypoints(grasp_pose.pose.position.z+0.1)
 
@@ -144,7 +153,10 @@ class do_task:
 		#Going back to task pose
 		self.motion_planning.move_arm(pose_type = 2)
 
-
+		print("Occupany Time", occ_stop - occ_start)
+		print("Perception Time", perception_stop - perception_start)
+		print("Grasping Time", grasping_stop - grasping_start)
+		print("Moveit Time", moveit_stop - moveit_start)
 		res_im_feedback = self.feedback(goal,i)
 		counter = 0
 		if (res_im_feedback) == -1: 
