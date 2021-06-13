@@ -6,41 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/include/object_msgs_tools/ObjectFunctions.h
-object_msgs/Object.h
--
-geometry_msgs/PoseStamped.h
--
-
-/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/include/object_msgs_tools/ObjectTFBroadcaster.h
-ros/ros.h
--
-object_msgs/Object.h
--
-object_msgs/RegisterObject.h
--
-tf/transform_broadcaster.h
--
-boost/thread.hpp
--
-
-/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/src/ObjectFunctions.cpp
-ros/ros.h
--
-object_msgs_tools/ObjectFunctions.h
--
-eigen_conversions/eigen_msg.h
--
-
-/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/src/ObjectTFBroadcaster.cpp
-object_msgs_tools/ObjectTFBroadcaster.h
--
-object_msgs_tools/ObjectFunctions.h
--
-object_msgs/ObjectInfo.h
--
-
-/home/kaushik/temp_ws/devel/include/object_msgs/Object.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/Object.h
 string
 -
 vector
@@ -74,7 +40,7 @@ geometry_msgs/Pose.h
 geometry_msgs/Pose.h
 -
 
-/home/kaushik/temp_ws/devel/include/object_msgs/ObjectInfo.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/ObjectInfo.h
 ros/service_traits.h
 -
 object_msgs/ObjectInfoRequest.h
@@ -82,7 +48,7 @@ object_msgs/ObjectInfoRequest.h
 object_msgs/ObjectInfoResponse.h
 -
 
-/home/kaushik/temp_ws/devel/include/object_msgs/ObjectInfoRequest.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/ObjectInfoRequest.h
 string
 -
 vector
@@ -98,7 +64,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/kaushik/temp_ws/devel/include/object_msgs/ObjectInfoResponse.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/ObjectInfoResponse.h
 string
 -
 vector
@@ -116,7 +82,7 @@ ros/message_operations.h
 object_msgs/Object.h
 -
 
-/home/kaushik/temp_ws/devel/include/object_msgs/RegisterObject.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/RegisterObject.h
 ros/service_traits.h
 -
 object_msgs/RegisterObjectRequest.h
@@ -124,7 +90,7 @@ object_msgs/RegisterObjectRequest.h
 object_msgs/RegisterObjectResponse.h
 -
 
-/home/kaushik/temp_ws/devel/include/object_msgs/RegisterObjectRequest.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/RegisterObjectRequest.h
 string
 -
 vector
@@ -140,7 +106,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/kaushik/temp_ws/devel/include/object_msgs/RegisterObjectResponse.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/RegisterObjectResponse.h
 string
 -
 vector
@@ -154,6 +120,40 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
+-
+
+/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/include/object_msgs_tools/ObjectFunctions.h
+object_msgs/Object.h
+-
+geometry_msgs/PoseStamped.h
+-
+
+/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/include/object_msgs_tools/ObjectTFBroadcaster.h
+ros/ros.h
+-
+object_msgs/Object.h
+-
+object_msgs/RegisterObject.h
+-
+tf/transform_broadcaster.h
+-
+boost/thread.hpp
+-
+
+/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/src/ObjectFunctions.cpp
+ros/ros.h
+-
+object_msgs_tools/ObjectFunctions.h
+-
+eigen_conversions/eigen_msg.h
+-
+
+/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/src/ObjectTFBroadcaster.cpp
+object_msgs_tools/ObjectTFBroadcaster.h
+-
+object_msgs_tools/ObjectFunctions.h
+-
+object_msgs/ObjectInfo.h
 -
 
 /opt/ros/melodic/include/eigen_conversions/eigen_msg.h

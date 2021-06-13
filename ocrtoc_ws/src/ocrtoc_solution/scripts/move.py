@@ -141,11 +141,11 @@ class Arm:
 
 				
 				#Checking if we are not reached the lower closinhg limit
-				if cmd > 0.005:
+				if cmd > 0.0002:
 					gripper_cmd.goal.command.position = cmd
 					gripper_cmd.goal.command.max_effort = 0.01
 					self.gripper_cmd_pub.publish(gripper_cmd)
-					cmd -= 0.0005
+					cmd -= 0.0004
 					rospy.Rate(20).sleep()
 
 				#Re do the task if the lower limit is reached

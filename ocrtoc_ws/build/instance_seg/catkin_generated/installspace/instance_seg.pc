@@ -1,0 +1,8 @@
+prefix=/home/kaushik/ocrtoc_ws/install
+
+Name: instance_seg
+Description: Description of instance_seg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

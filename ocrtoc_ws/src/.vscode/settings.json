@@ -4,5 +4,10 @@
         "/home/kaushik/temp_ws/devel/lib/python2.7/dist-packages",
         "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages",
         "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/kaushik/temp_ws/devel/lib/python2.7/dist-packages",
+        "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
     ]
 }

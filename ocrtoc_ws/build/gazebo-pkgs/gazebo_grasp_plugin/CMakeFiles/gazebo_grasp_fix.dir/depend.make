@@ -131,6 +131,7 @@ gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspF
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspFix.cpp.o: /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspFix.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspFix.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspFix.cpp.o: /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspFix.cpp.o: /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspFix.cpp.o: /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspFix.cpp.o: /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h
@@ -618,6 +619,7 @@ gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspG
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspGripper.cpp.o: /usr/include/gazebo-9/gazebo/msgs/packet.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspGripper.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspGripper.cpp.o: /usr/include/gazebo-9/gazebo/msgs/param_v.pb.h
+gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspGripper.cpp.o: /usr/include/gazebo-9/gazebo/msgs/performance_metrics.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspGripper.cpp.o: /usr/include/gazebo-9/gazebo/msgs/physics.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspGripper.cpp.o: /usr/include/gazebo-9/gazebo/msgs/pid.pb.h
 gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/src/GazeboGraspGripper.cpp.o: /usr/include/gazebo-9/gazebo/msgs/planegeom.pb.h

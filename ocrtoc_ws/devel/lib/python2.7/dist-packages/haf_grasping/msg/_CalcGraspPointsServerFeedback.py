@@ -72,7 +72,8 @@ string data
     unpack serialized message in str into this message instance
     :param str: byte array of serialized message, ``str``
     """
-    codecs.lookup_error("rosmsg").msg_type = self._type
+    if python3:
+      codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       if self.feedback is None:
         self.feedback = std_msgs.msg.String()
@@ -113,7 +114,8 @@ string data
     :param str: byte array of serialized message, ``str``
     :param numpy: numpy python module
     """
-    codecs.lookup_error("rosmsg").msg_type = self._type
+    if python3:
+      codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       if self.feedback is None:
         self.feedback = std_msgs.msg.String()

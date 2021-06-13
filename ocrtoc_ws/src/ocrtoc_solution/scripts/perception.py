@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-
 import tf
 import os
 import cv2
@@ -32,7 +31,7 @@ class Perception:
 		self.LABELS = open(labelsPath).read().strip().split("\n")
 
 		#Derive the paths to the YOLO weights and model configuration
-		weightsPath = os.path.sep.join([package_path, 'yolo', "yolov3-tiny-obj_4000.weights"])
+		weightsPath = os.path.sep.join([package_path, 'yolo', "yolov3-tiny-obj_best.weights"])
 		configPath = os.path.sep.join([package_path, 'yolo', "yolov3-tiny-obj.cfg"])
 
 		# Load our YOLO object detector trained on custom data

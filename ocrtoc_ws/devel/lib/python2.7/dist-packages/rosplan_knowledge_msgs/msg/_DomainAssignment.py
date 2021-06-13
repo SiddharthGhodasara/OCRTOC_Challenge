@@ -203,7 +203,8 @@ uint8 special_type
     unpack serialized message in str into this message instance
     :param str: byte array of serialized message, ``str``
     """
-    codecs.lookup_error("rosmsg").msg_type = self._type
+    if python3:
+      codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       if self.LHS is None:
         self.LHS = rosplan_knowledge_msgs.msg.DomainFormula()
@@ -376,7 +377,8 @@ uint8 special_type
     :param str: byte array of serialized message, ``str``
     :param numpy: numpy python module
     """
-    codecs.lookup_error("rosmsg").msg_type = self._type
+    if python3:
+      codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       if self.LHS is None:
         self.LHS = rosplan_knowledge_msgs.msg.DomainFormula()

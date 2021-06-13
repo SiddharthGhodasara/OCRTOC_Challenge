@@ -1,0 +1,10 @@
+{
+    "ros.distro": "melodic",
+    "python.autoComplete.extraPaths": [
+        "/home/kaushik/rlab_ws/devel/lib/python2.7/dist-packages",
+        "/home/kaushik/catkin_ws/devel/lib/python2.7/dist-packages",
+        "/home/kaushik/thriftbot_ws/devel/lib/python2.7/dist-packages",
+        "/home/kaushik/ocrtoc_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ]
+}

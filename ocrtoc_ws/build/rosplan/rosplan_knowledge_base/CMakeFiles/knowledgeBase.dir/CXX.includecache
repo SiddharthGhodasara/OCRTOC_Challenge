@@ -1774,6 +1774,10 @@ rosplan_knowledge_base/KnowledgeComparitor.h
 boost/algorithm/string.hpp
 -
 
+/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/PDDLDomainParser.cpp
+rosplan_knowledge_base/PDDLDomainParser.h
+/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/rosplan_knowledge_base/PDDLDomainParser.h
+
 /home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/PDDLKnowledgeBase.cpp
 rosplan_knowledge_base/PDDLKnowledgeBase.h
 /home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/rosplan_knowledge_base/PDDLKnowledgeBase.h
@@ -1785,6 +1789,10 @@ rosplan_knowledge_base/PDDLProblemParser.h
 /home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/PPDDLKnowledgeBase.cpp
 rosplan_knowledge_base/PPDDLKnowledgeBase.h
 -
+
+/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/PPDDLParser.cpp
+rosplan_knowledge_base/PPDDLParser.h
+/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/rosplan_knowledge_base/PPDDLParser.h
 
 /home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/PPDDLUtils.cpp
 rosplan_knowledge_base/PPDDLUtils.h
@@ -1809,6 +1817,10 @@ rosplan_knowledge_base/RDDLUtils.h
 -
 rosplan_knowledge_base/RDDLKnowledgeBase.h
 /home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/rosplan_knowledge_base/RDDLKnowledgeBase.h
+
+/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/RDDLTaskParser.cpp
+rosplan_knowledge_base/RDDLTaskParser.h
+/home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/rosplan_knowledge_base/RDDLTaskParser.h
 
 /home/kaushik/ocrtoc_ws/src/rosplan/rosplan_knowledge_base/src/RDDLUtils.cpp
 rosplan_knowledge_base/RDDLUtils.h

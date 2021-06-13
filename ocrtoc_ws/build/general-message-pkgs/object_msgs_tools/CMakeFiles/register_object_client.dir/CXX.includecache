@@ -6,13 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/src/register_object_client.cpp
-ros/ros.h
--
-object_msgs/RegisterObject.h
--
-
-/home/kaushik/temp_ws/devel/include/object_msgs/RegisterObject.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/RegisterObject.h
 ros/service_traits.h
 -
 object_msgs/RegisterObjectRequest.h
@@ -20,7 +14,7 @@ object_msgs/RegisterObjectRequest.h
 object_msgs/RegisterObjectResponse.h
 -
 
-/home/kaushik/temp_ws/devel/include/object_msgs/RegisterObjectRequest.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/RegisterObjectRequest.h
 string
 -
 vector
@@ -36,7 +30,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/kaushik/temp_ws/devel/include/object_msgs/RegisterObjectResponse.h
+/home/kaushik/ocrtoc_ws/devel/include/object_msgs/RegisterObjectResponse.h
 string
 -
 vector
@@ -50,6 +44,12 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
+-
+
+/home/kaushik/ocrtoc_ws/src/general-message-pkgs/object_msgs_tools/src/register_object_client.cpp
+ros/ros.h
+-
+object_msgs/RegisterObject.h
 -
 
 /opt/ros/melodic/include/ros/advertise_options.h

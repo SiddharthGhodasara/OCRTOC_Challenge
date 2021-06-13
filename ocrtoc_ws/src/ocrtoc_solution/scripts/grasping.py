@@ -37,29 +37,25 @@ class Grasping:
             grasps_plots_list = grasps_plots.data.split(" ")
             
             print(grasps_plots_list[0])
-            #Checking if grasp exsists
             if (grasps_plots != "" and grasps_plots_list[0] > 2):
 
-                
                 #Breaking if we get score higher than threshold
                 if int(grasps_plots_list[0]) < 90:
-                    '''
+
                     if abs(float(grasps_plots_list[-4]) - pose.pose.position.x) <= 0.1 and abs(float(grasps_plots_list[-3]) - pose.pose.position.y) <= 0.1:
-                        self.grasps_plots_max = grasps_plots_list
-                        break
+                        self.grasp_buffer.append(grasps_plots_list)
+                        print(len(self.grasp_buffer))
+                        if len(self.grasp_buffer) >= self.max_tries: 
+                            latest_grapss = self.grasp_buffer[-self.max_tries:-1]
+                            self.grasps_plots_max = max(self.grasp_buffer)
+                            print(self.grasps_plots_max[0])
+                            break
+                        #self.grasps_plots_max = grasps_plots_list
+                        #break
+                        else:
+                            pass
 
                     else:
-                        pass
-                    
-                    '''
-                    self.grasp_buffer.append(grasps_plots_list)
-                    #Waiting for maximum 5 grasps
-                    if len(self.grasp_buffer) >= self.max_tries: 
-                        self.grasps_plots_max = max(self.grasp_buffer)
-                        break
-                    
-                    else:
-                        
                         pass
                     
                 else:
