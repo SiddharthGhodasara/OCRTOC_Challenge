@@ -18,14 +18,11 @@
 //#include <obj_recognition/SegmentedClustersArray.h>
 //#include <obj_recognition/ClusterData.h>
 
-
-
-
 // Topics
 static const std::string IMAGE_TOPIC = "/passthrough/output";
 static const std::string PUBLISH_TOPIC = "/pcl/points";
 
-static const float val = 0.003; 
+static const float val = 0.002;
 // ROS Publisher
 ros::Publisher pub;
 pcl::PCLPointCloud2::Ptr cloud (new pcl::PCLPointCloud2), cloud_filtered (new pcl::PCLPointCloud2);
@@ -34,7 +31,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr temp_cloud (new pcl::PointCloud<pcl::Poin
 void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 {
 // Container for original & filtered data
-    
+
     //pcl::PCLPointCloud2* cloud = new pcl::PCLPointCloud2;
     //pcl::PCLPointCloud2ConstPtr cloudPtr(cloud);
     //pcl::PCLPointCloud2 cloud_filtered;
@@ -61,7 +58,7 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     //pass.setFilterLimitsNegative (true);
     pass.filter (*temp_cloud);
     */
-    
+
     pcl::ModelCoefficients::Ptr coefficients (new pcl::ModelCoefficients ());
     pcl::PointIndices::Ptr inliers (new pcl::PointIndices ());
     // Create the segmentation object
@@ -72,7 +69,7 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     seg.setModelType (pcl::SACMODEL_PLANE);
     seg.setMethodType (pcl::SAC_RANSAC);
     seg.setDistanceThreshold (0.01);
-  
+
     seg.setInputCloud (temp_cloud);
     seg.segment (*inliers, *coefficients);
 
@@ -87,13 +84,13 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     extract.setIndices (inliers);
     extract.setNegative (true);
     extract.filter (*object);
-    
+
     pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB>);
     tree->setInputCloud (object);
     std::vector<pcl::PointIndices> cluster_indices;
     pcl::EuclideanClusterExtraction<pcl::PointXYZRGB> ec;
-    ec.setClusterTolerance (0.01); 
-    ec.setMinClusterSize (10);
+    ec.setClusterTolerance (0.1); // 2cm
+    ec.setMinClusterSize (100);
     ec.setMaxClusterSize (25000);
     ec.setSearchMethod (tree);
     ec.setInputCloud (object);
@@ -106,9 +103,9 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     sensor_msgs::PointCloud2 output;
     pcl::PCLPointCloud2 outputPCL;
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr point_cloud_segmented(new pcl::PointCloud<pcl::PointXYZRGB>);
-
+/*
   int j= 0;
- 
+
   for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin(); it != cluster_indices.end(); ++it)
 	  {
         for (std::vector<int>::const_iterator pit = it->indices.begin(); pit != it->indices.end(); ++pit)
@@ -188,32 +185,29 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 				       }
                  }
                 point_cloud_segmented->push_back(point);
-			
+
             }
         j++;
     }
- 
+  */
   // Convert to ROS data type
-  point_cloud_segmented->header.frame_id = object->header.frame_id;
-  //if(point_cloud_segmented->size()) 
+  //point_cloud_segmented->header.frame_id = object->header.frame_id;
+  //if(point_cloud_segmented->size())
   //{
   //    pcl::toPCLPointCloud2(*plane, outputPCL);
   //}
-  
-  //else 
+
+  //else
   //{
-     pcl::toPCLPointCloud2(*point_cloud_segmented, outputPCL);
-     //pcl::toPCLPointCloud2(*object, outputPCL);
+     pcl::toPCLPointCloud2(*object, outputPCL);
   //}
-  
+
   pcl_conversions::fromPCL(outputPCL, output);
 
   // Publish the data
   //pcl::toROSMsg(*plane, output);
-  
-  
   pub.publish (output);
-  
+
 }
 
 
@@ -240,4 +234,3 @@ int main (int argc, char** argv)
     // Success
     return 0;
 }
-
