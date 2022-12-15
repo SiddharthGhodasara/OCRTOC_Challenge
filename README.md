@@ -1,5 +1,5 @@
 # OCRTOC_Challenge
-Contains all codes for our submission to [Open Cloud Robotics Table Organization Challenge]("http://www.ocrtoc.org/#/") 2020.
+Contains all codes for our submission to [Open Cloud Robotics Table Organization Challenge](http://www.ocrtoc.org/#/) 2020.
 
 The respository consists of the entire ROS workspace to perform the task along with the data points, python based annotator and the annotations to train the YOLO v3 Tiny object detector.
 
